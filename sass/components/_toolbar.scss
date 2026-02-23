@@ -1,0 +1,63 @@
+.toolbar {
+  background-color: var(--bg-neutral-400);
+  margin-bottom: 3.5rem;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    padding-block: 1.5rem;
+  }
+
+  &__group {
+    display: inline-flex;
+    gap: 1.5rem;
+    align-items: center;
+    &--start {
+      padding-right: 2rem;
+      justify-self: self-start;
+      border-right: 2px solid var(--color-gray-dark);
+    }
+
+    &--center {
+      padding-left: 2rem;
+      justify-self: self-start;
+    }
+
+    &--end {
+      justify-self: self-end;
+    }
+  }
+
+  &__btn {
+    &--filter {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+
+  &__select {
+    font-size: 20px;
+    color: var(--color-gray-light);
+    background-color: var(--color-white);
+    border: none;
+    padding: 0.6rem;
+    cursor: pointer;
+    border: 2px solid transparent;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    &:focus {
+      outline: none;
+      border: 2px solid #b88e2f;
+    }
+  }
+
+  &__label {
+    font-size: 20px;
+  }
+}

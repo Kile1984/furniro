@@ -1,0 +1,122 @@
+.rooms {
+  background-color: var(--bg-neutral-200);
+  padding-block: 3rem;
+  overflow: hidden;
+
+  &__content {
+    align-self: center;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-left: max(1rem, calc((100vw - 75rem)));
+  }
+
+  &__title {
+    margin-bottom: 1.5rem;
+  }
+
+  &__text {
+    color: var(--color-black-light);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+
+  &__main {
+    position: relative;
+  }
+
+  &__overlay {
+    color: var(--color-black-light);
+    font-weight: 500;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 1rem;
+  }
+
+  &__overlay-title {
+    font-size: 1.75rem;
+  }
+
+  &__arrow {
+    position: absolute;
+    bottom: 1rem;
+    left: 12.5rem;
+
+    background-color: var(--color-accent);
+    padding: 0.5rem;
+  }
+
+  &__slider {
+    &-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &--right {
+        right: 3rem;
+      }
+      &--left {
+        left: -2rem;
+      }
+    }
+  }
+
+  &__slider-track {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 40px;
+    position: relative;
+  }
+
+  &__slide {
+    flex: 0 0 80%;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  &__slide img {
+    width: 100%;
+
+    object-fit: cover;
+    display: block;
+  }
+
+  &__dot {
+    display: inline-flex;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: transparent;
+
+    &--active {
+      border: 1px solid var(--color-accent);
+    }
+
+    &--active .rooms__dot-inner {
+      background-color: var(--color-gray-light);
+    }
+
+    &.rooms__dot--active .rooms__dot-inner {
+      background-color: var(--color-accent);
+    }
+  }
+
+  &__dot-inner {
+    display: inline-flex;
+    background-color: var(--color-gray-light);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+}

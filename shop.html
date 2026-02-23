@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon.png"
+    />
+    <script src="js/main.js defer"></script>
+    <title>Furniro | Shop</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="container container--wide header__inner">
+        <a href="index.html" class="header__logo">
+          <img src="./assets/images/Logo.png" alt="Logo" />
+        </a>
+
+        <nav class="header__nav" aria-label="Main navigation">
+          <ul class="header__nav-list">
+            <li>
+              <a href="index.html" class="header__nav-link nav-link">Home</a>
+            </li>
+            <li>
+              <a href="shop.html" class="header__nav-link nav-link active-link"
+                >Shop</a
+              >
+            </li>
+            <li>
+              <a href="about.html" class="header__nav-link nav-link">About</a>
+            </li>
+            <li>
+              <a href="contact.html" class="header__nav-link nav-link"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="header__actions">
+          <ul class="header__actions-list">
+            <li>
+              <a href="account.html" aria-label="Account">
+                <svg class="icon">
+                  <use
+                    href="./assets/icons/sprite.svg#icon-account-alert"
+                  ></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="search.html" aria-label="Search">
+                <svg class="icon">
+                  <use href="./assets/icons/sprite.svg#icon-search"></use>
+                </svg>
+              </a>
+            </li>
+
+            <li>
+              <a href="whishlist.html" aria-label="Whishlist">
+                <svg class="icon">
+                  <use href="./assets/icons/sprite.svg#icon-heart"></use>
+                </svg>
+              </a>
+            </li>
+
+            <li>
+              <a href="shopping-cart" aria-label="Cart">
+                <svg class="icon icon-search">
+                  <use
+                    href="./assets/icons/sprite.svg#icon-shipping-cart"
+                  ></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- PAGE HEADING SHOP -->
+    <main class="page page--shop">
+      <header class="page-hero">
+        <div class="container">
+          <h1 class="page-title page-title--medium page-hero__title">Shop</h1>
+          <nav class="page-hero__breadcrumb">
+            <a href="index.html" class="text-body text-body--medium">Home</a> >
+            <span>Shop</span>
+          </nav>
+        </div>
+      </header>
+
+      <!-- TOOLBAR -->
+      <div class="toolbar">
+        <div class="container toolbar__inner">
+          <div class="toolbar__group toolbar__group--start">
+            <button class="toolbar__btn toolbar__btn--filter">
+              <svg class="icon">
+                <use href="./assets/icons/sprite.svg#icon-filtering"></use>
+              </svg>
+              <span>Filter</span>
+            </button>
+            <button class="toolbar__btn toolbar__btn--grid-4">
+              <svg class="icon">
+                <use href="./assets/icons/sprite.svg#icon-grid"></use>
+              </svg>
+            </button>
+            <button class="toolbar__btn toolbar__btn--grid-2">
+              <svg class="icon">
+                <use href="./assets/icons/sprite.svg#icon-view-list"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="toolbar__group toolbar__group--center">
+            <span class="toolbar__results">Showing 1–16 of 32 results</span>
+          </div>
+          <div class="toolbar__group toolbar__group--end">
+            <div class="toolbar__control">
+              <label for="view" class="toolbar__label pr-sm">Show</label>
+              <select class="toolbar__select toolbar__select--show" id="view">
+                <option value="">16</option>
+                <option value="">32</option>
+              </select>
+            </div>
+
+            <div class="toolbar__control">
+              <label for="sort" class="toolbar__label pr-sm">Sort by</label>
+              <select class="toolbar__select toolbar__select--sort" id="sort">
+                <option value="">Default</option>
+                <option value="">Price: Lower to Hight</option>
+                <option value="">Price: Hight to Low</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCT -->
+      <section class="products">
+        <div class="container">
+          <h2 class="section-title products__main-title text-center">
+            Our Product
+          </h2>
+
+          <div class="products__grid">
+            <!-- 1 -->
+            <article class="product-card">
+              <div class="product-card__overlay">
+                <button
+                  type="button"
+                  class="btn btn--secondary product-card__btn"
+                >
+                  Add to cart
+                </button>
+
+                <a
+                  href="product.html"
+                  class="btn btn--outline product-card__view"
+                >
+                  View details
+                </a>
+
+                <div class="product-card__actions">
+                  <button type="button" class="product-card__action">
+                    <svg class="icon">
+                      <use href="./assets/icons/sprite.svg#icon-share"></use>
+                    </svg>
+                    <span>Share</span>
+                  </button>
+                  <button type="button" class="product-card__action">
+                    <svg class="icon">
+                      <use href="./assets/icons/sprite.svg#icon-compare"></use>
+                    </svg>
+                    <span>Compare</span>
+                  </button>
+                  <button type="button" class="product-card__action">
+                    <svg class="icon">
+                      <use
+                        href="./assets/icons/sprite.svg#icon-heart-white"
+                      ></use>
+                    </svg>
+                    <span>Like</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="product-card__image-wrapper">
+                <img
+                  src="./assets/images/product-syltherine.png"
+                  alt="Syltherine"
+                  class="product-card__image"
+                />
+                <span class="product-card__badge product-card__badge--red"
+                  >-30%</span
+                >
+              </div>
+
+              <div class="product-card__content">
+                <h3 class="product-card__title">Syltherine</h3>
+                <p class="product-card__description">Stylish cafe chair</p>
+                <div class="product-card__price">
+                  <span class="product-card__price-current">Rp 2.500.000</span>
+                  <span class="product-card__price-old">Rp 3.500.000</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 2 -->
+            <article class="product-card">
+              <div class="product-card__overlay">
+                <button
+                  type="button"
+                  class="btn btn--secondary product-card__btn"
+                >
+                  Add to cart
+                </button>
+                <a
+                  href="product.html"
+                  class="btn btn--outline product-card__view"
+                  >View details</a
+                >
+                <div class="product-card__actions">
+                  <button type="button" class="product-card__action">
+                    <svg class="icon">
+                      <use href="./assets/icons/sprite.svg#icon-share"></use>
+                    </svg>
+                    Share
+                  </button>
+                  <button type="button" class="product-card__action">
+                    <svg class="icon">
+                      <use href="./assets/icons/sprite.svg#icon-compare"></use>
+                    </svg>
+                    Compare
+                  </button>
+                  <button type="button" class="product-card__action">
+                    <svg class="icon">
+                      <use
+                        href="./assets/icons/sprite.svg#icon-heart-white"
+                      ></use>
+                    </svg>
+                    Like
+                  </button>
+                </div>
+              </div>
+
+              <div class="product-card__image-wrapper">
+                <img
+                  src="./assets/images/product-leviosa.png"
+                  alt="Leviosa"
+                  class="product-card__image"
+                />
+              </div>
+
+              <div class="product-card__content">
+                <h3 class="product-card__title">Leviosa</h3>
+                <p class="product-card__description">Stylish cafe chair</p>
+                <div class="product-card__price">
+                  <span class="product-card__price-current">Rp 2.500.000</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 3 -->
+            <article class="product-card">
+              <div class="product-card__overlay">
+                <button
+                  type="button"
+                  class="btn btn--secondary product-card__btn"
+                >
+                  Add to cart
+                </button>
+                <a
+                  href="product.html"
+                  class="btn btn--outline product-card__view"
+                  >View details</a
+                >
+                <div class="product-card__actions">
+                  <button type="button" class="product-card__action">
+                    <svg class="icon">
+                      <use href="./assets/icons/sprite.svg#icon-share"></use>
+                    </svg>
+                    Share
+                  </button>
+                  <button type="button" class="product-card__action">
+                    <svg class="icon">
+                      <use href="./assets/icons/sprite.svg#icon-compare"></use>
+                    </svg>
+                    Compare
+                  </button>
+                  <button type="button" class="product-card__action">
+                    <svg class="icon">
+                      <use
+                        href="./assets/icons/sprite.svg#icon-heart-white"
+                      ></use>
+                    </svg>
+                    Like
+                  </button>
+                </div>
+              </div>
+
+              <div class="product-card__image-wrapper">
+                <img
+                  src="./assets/images/product-lolito.png"
+                  alt="Lolito"
+                  class="product-card__image"
+                />
+                <span class="product-card__badge product-card__badge--red"
+                  >-50%</span
+                >
+              </div>
+
+              <div class="product-card__content">
+                <h3 class="product-card__title">Lolito</h3>
+                <p class="product-card__description">Luxury big sofa</p>
+                <div class="product-card__price">
+                  <span class="product-card__price-current">Rp 7.000.000</span>
+                  <span class="product-card__price-old">Rp 14.000.000</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 4 -->
+            <article class="product-card">
+              <div class="product-card__overlay">
+                <button
+                  type="button"
+                  class="btn btn--secondary product-card__btn"
+                >
+                  Add to cart
+                </button>
+                <a
+                  href="product.html"
+                  class="btn btn--outline product-card__view"
+                  >View details</a
+                >
+                <div class="product-card__actions">
+                  <button type="button" class="product-card__action">
+                    <svg class="icon">
+                      <use href="./assets/icons/sprite.svg#icon-share"></use>
+                    </svg>
+                    Share
+                  </button>
+                  <button type="button" class="product-card__action">
+                    <svg class="icon">
+                      <use href="./assets/icons/sprite.svg#icon-compare"></use>
+                    </svg>
+                    Compare
+                  </button>
+                  <button type="button" class="product-card__action">
+                    <svg class="icon">
+                      <use
+                        href="./assets/icons/sprite.svg#icon-heart-white"
+                      ></use>
+                    </svg>
+                    Like
+                  </button>
+                </div>
+              </div>
+
+              <div class="product-card__image-wrapper">
+                <img
+                  src="./assets/images/product-respira.png"
+                  alt="Respira"
+                  class="product-card__image"
+                />
+                <span class="product-card__badge product-card__badge--green"
+                  >New</span
+                >
+              </div>
+
+              <div class="product-card__content">
+                <h3 class="product-card__title">Respira</h3>
+                <p class="product-card__description">Outdoor bar table</p>
+                <div class="product-card__price">
+                  <span class="product-card__price-current">Rp 500.000</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 5 -->
+            <article class="product-card">
+              <div class="product-card__overlay">
+                <button
+                  type="button"
+                  class="btn btn--secondary product-card__btn"
+                >
+                  Add to cart
+                </button>
+                <a
+                  href="product.html"
+                  class="btn btn--outline product-card__view"
+                  >View details</a
+                >
+                <div class="product-card__actions">
+                  <button type="button" class="product-card__action">
+                    <svg class="icon">
+                      <use href="./assets/icons/sprite.svg#icon-share"></use>
+                    </svg>
+                    Share
+                  </button>
+                  <button type="button" class="product-card__action">
+                    <svg class="icon">
+                      <use href="./assets/icons/sprite.svg#icon-compare"></use>
+                    </svg>
+                    Compare
+                  </button>
+                  <button type="button" class="product-card__action">
+                    <svg class="icon">
+                      <use
+                        href="./assets/icons/sprite.svg#icon-heart-white"
+                      ></use>
+                    </svg>
+                    Like
+                  </button>
+                </div>
+              </div>
+
+              <div class="product-card__image-wrapper">
+                <img
+                  src="./assets/images/product-grifo.png"
+                  alt="Grifo"
+                  class="product-card__image"
+                />
+              </div>
+
+              <div class="product-card__content">
+                <h3 class="product-card__title">Grifo</h3>
+                <p class="product-card__description">Night lamp</p>
+                <div class="product-card__price">
+                  <span class="product-card__price-current">Rp 1.500.000</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 6 -->
+            <article class="product-card">
+              <div class="product-card__overlay">
+                <button
+                  type="button"
+                  class="btn btn--secondary product-card__btn"
+                >
+                  Add to cart
+                </button>
+                <a
+                  href="product.html"
+                  class="btn btn--outline product-card__view"
+                  >View details</a
+                >
+                <div class="product-card__actions">
+                  <button type="button" class="product-card__action">
+                    <svg class="icon">
+                      <use href="./assets/icons/sprite.svg#icon-share"></use>
+                    </svg>
+                    Share
+                  </button>
+                  <button type="button" class="product-card__action">
+                    <svg class="icon">
+                      <use href="./assets/icons/sprite.svg#icon-compare"></use>
+                    </svg>
+                    Compare
+                  </button>
+                  <button type="button" class="product-card__action">
+                    <svg class="icon">
+                      <use
+                        href="./assets/icons/sprite.svg#icon-heart-white"
+                      ></use>
+                    </svg>
+                    Like
+                  </button>
+                </div>
+              </div>
+
+              <div class="product-card__image-wrapper">
+                <img
+                  src="./assets/images/product-muggo.png"
+                  alt="Muggo"
+                  class="product-card__image"
+                />
+                <span class="product-card__badge product-card__badge--green"
+                  >New</span
+                >
+              </div>
+
+              <div class="product-card__content">
+                <h3 class="product-card__title">Muggo</h3>
+                <p class="product-card__description">Small mug</p>
+                <div class="product-card__price">
+                  <span class="product-card__price-current">Rp 150.000</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 7 -->
+            <article class="product-card">
+              <div class="product-card__overlay">
+                <button
+                  type="button"
+                  class="btn btn--secondary product-card__btn"
+                >
+                  Add to cart
+                </button>
+                <a
+                  href="product.html"
+                  class="btn btn--outline product-card__view"
+                  >View details</a
+                >
+                <div class="product-card__actions">
+                  <button type="button" class="product-card__action">
+                    <svg class="icon">
+                      <use href="./assets/icons/sprite.svg#icon-share"></use>
+                    </svg>
+                    Share
+                  </button>
+                  <button type="button" class="product-card__action">
+                    <svg class="icon">
+                      <use href="./assets/icons/sprite.svg#icon-compare"></use>
+                    </svg>
+                    Compare
+                  </button>
+                  <button type="button" class="product-card__action">
+                    <svg class="icon">
+                      <use
+                        href="./assets/icons/sprite.svg#icon-heart-white"
+                      ></use>
+                    </svg>
+                    Like
+                  </button>
+                </div>
+              </div>
+
+              <div class="product-card__image-wrapper">
+                <img
+                  src="./assets/images/product-pinkgy.png"
+                  alt="Pinqky"
+                  class="product-card__image"
+                />
+                <span class="product-card__badge product-card__badge--red"
+                  >-50%</span
+                >
+              </div>
+
+              <div class="product-card__content">
+                <h3 class="product-card__title">Pinqky</h3>
+                <p class="product-card__description">Cute bed set</p>
+                <div class="product-card__price">
+                  <span class="product-card__price-current">Rp 7.000.000</span>
+                  <span class="product-card__price-old">Rp 14.000.000</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 8 -->
+            <article class="product-card">
+              <div class="product-card__overlay">
+                <button
+                  type="button"
+                  class="btn btn--secondary product-card__btn"
+                >
+                  Add to cart
+                </button>
+                <a
+                  href="product.html"
+                  class="btn btn--outline product-card__view"
+                  >View details</a
+                >
+                <div class="product-card__actions">
+                  <button type="button" class="product-card__action">
+                    <svg class="icon">
+                      <use href="./assets/icons/sprite.svg#icon-share"></use>
+                    </svg>
+                    Share
+                  </button>
+                  <button type="button" class="product-card__action">
+                    <svg class="icon">
+                      <use href="./assets/icons/sprite.svg#icon-compare"></use>
+                    </svg>
+                    Compare
+                  </button>
+                  <button type="button" class="product-card__action">
+                    <svg class="icon">
+                      <use
+                        href="./assets/icons/sprite.svg#icon-heart-white"
+                      ></use>
+                    </svg>
+                    Like
+                  </button>
+                </div>
+              </div>
+
+              <div class="product-card__image-wrapper">
+                <img
+                  src="./assets/images/product-potty.png"
+                  alt="Potty"
+                  class="product-card__image"
+                />
+                <span class="product-card__badge product-card__badge--green"
+                  >New</span
+                >
+              </div>
+
+              <div class="product-card__content">
+                <h3 class="product-card__title">Potty</h3>
+                <p class="product-card__description">Minimalist flower pot</p>
+                <div class="product-card__price">
+                  <span class="product-card__price-current">Rp 500.000</span>
+                </div>
+              </div>
+            </article>
+
+            <button class="btn btn--secondary products__load-more">
+              Show More
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section class="features">FEATURES</section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__inner container">
+        <div class="footer__info">
+          <a href="#" class="footer__logo">
+            <img src="./assets/images/Logo.png" alt="Logo" />
+          </a>
+          <p class="footer__address text-body">
+            400 University Drive Suite 200 Coral Gables, <br />FL 33134 USA
+          </p>
+        </div>
+
+        <ul class="footer__links">
+          <h4 class="footer__heading">Links</h4>
+          <li class="footer__item">
+            <a href="index.html" class="footer__link">Home</a>
+          </li>
+          <li class="footer__item">
+            <a href="shop.html" class="footer__link active-link">Shop</a>
+          </li>
+          <li class="footer__item">
+            <a href="about.html" class="footer__link">About</a>
+          </li>
+          <li class="footer__item">
+            <a href="contact.html" class="footer__link">Contact</a>
+          </li>
+        </ul>
+
+        <ul class="footer__links">
+          <h4 class="footer__heading">Help</h4>
+          <li class="footer__item">
+            <a href="payment.html" class="footer__link">Payment Options</a>
+          </li>
+          <li class="footer__item">
+            <a href="returns.html" class="footer__link">Returns</a>
+          </li>
+          <li class="footer__item">
+            <a href="privacy.html" class="footer__link">Privacy Policies</a>
+          </li>
+        </ul>
+
+        <div class="footer__newsletter">
+          <h4 class="footer__heading">Newsletter</h4>
+          <form action="#" class="footer__form">
+            <input
+              type="email"
+              class="footer__mail"
+              id="mail"
+              placeholder="Enter Your Email Address"
+            />
+
+            <button class="footer__submit btn">Subscribe</button>
+          </form>
+        </div>
+
+        <div class="footer__rights">
+          <p>2023 furino. All rights reverved</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

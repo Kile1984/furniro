@@ -1,0 +1,89 @@
+// HERO TITLE HOME ONLY
+.heading-hero {
+  font-size: var(--fs-hero); /*52px*/
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+// PAGE TITLE, ONE PER PAGE
+.page-title {
+  font-size: var(--fs-page); /*48px*/
+  font-weight: 400;
+
+  &--medium {
+    font-weight: 500;
+  }
+}
+
+// PAGE TITLE PRODUCT
+.page-title--product {
+  font-size: var(--fs-page-product); /*42px*/
+}
+
+// SECTION TITLE
+.section-title {
+  font-size: var(--fs-section); /*40px*/
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+// SECTION TITLE SMALL
+.section-title--small {
+  font-size: var(--fs-section-small); /*32px*/
+  line-height: normal;
+  font-weight: 700;
+}
+
+// UI TITLE COMPONENT LEVEL
+.ui-title {
+  font-size: var(--fs-ui); /*24px*/
+  line-height: 1;
+  font-weight: 600;
+
+  &--dark {
+    font-weight: 700;
+  }
+}
+
+// BODY TEXT
+
+.text-body-xl {
+  font-size: var(--fs-body-xl); /*20px*/
+}
+
+.text-body-lg {
+  font-size: var(--fs-body-lg); /*18px*/
+}
+
+.text-body {
+  font-size: var(--fs-body); /*16px*/
+  line-height: 1.5;
+  font-weight: 400;
+
+  &--medium {
+    font-weight: 500;
+  }
+}
+
+.text-sm {
+  font-size: var(--fs-sm); /*14px*/
+  line-height: normal;
+  font-weight: 400;
+}
+
+.text-xs {
+  font-size: var(--fs-xs); /*13px*/
+  line-height: normal;
+  font-weight: 400;
+}
+
+.text-body--medium {
+  font-weight: 500;
+}
+
+// LINKS-NAVIGATION
+.nav-link {
+  font-size: var(--fs-body);
+  font-weight: 500;
+  text-decoration: none;
+}

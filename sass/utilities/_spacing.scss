@@ -1,0 +1,9 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  // gap: var(--space-section);
+}
+
+section + section {
+  padding-block: 3.5rem;
+}

@@ -1,0 +1,99 @@
+.footer {
+  border-top: 2px solid var(--bg-neutral-100);
+  padding-block: 3.125rem;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 1rem;
+    row-gap: 3rem;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  &__address {
+    color: var(--color-gray-light);
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-left: 3.5rem;
+  }
+
+  &__heading {
+    font-size: 16px;
+    color: var(--color-gray-light);
+    font-weight: 500;
+  }
+
+  &__item {
+    margin-bottom: -0.5rem;
+  }
+
+  &__link {
+    font-weight: 600;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
+  }
+
+  &__form {
+    font-size: 14px;
+    display: flex;
+    margin-top: 2rem;
+    gap: 1rem;
+  }
+
+  &__mail {
+    border: none;
+    border-bottom: 2px solid var(--color-black);
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+
+    &:focus,
+    &:focus-visible {
+      outline: none;
+      border-color: var(--color-accent);
+    }
+
+    &::placeholder {
+      outline: none;
+      color: var(--color-gray-light);
+    }
+  }
+
+  &__submit {
+    font-size: inherit;
+    padding: 0;
+    border-bottom: 2px solid var(--color-black);
+    transition:
+      transform 0.3s ease,
+      color 0.3s ease,
+      border 0.1s ease;
+
+    &:hover {
+      transform: translateY(3px);
+      color: var(--color-accent);
+      border-bottom: 2px solid var(--color-accent);
+    }
+  }
+
+  &__rights {
+    padding-top: 3.125rem;
+    grid-column: 1/-1;
+    border-top: 2px solid var(--bg-neutral-100);
+  }
+}

@@ -1,0 +1,16 @@
+.products {
+  &__main-title {
+    margin-bottom: var(--space-heading-lg);
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--gap-lg);
+  }
+
+  &__load-more {
+    justify-self: center;
+    grid-column: 1/-1;
+  }
+}
