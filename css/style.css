@@ -481,6 +481,28 @@ ol {
   justify-self: center;
   grid-column: 1/-1;
 }
+.products__btn-group {
+  justify-self: center;
+  grid-column: 1/-1;
+  display: flex;
+  gap: 2rem;
+}
+.products__btn {
+  color: var(--color-black);
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  text-transform: capitalize;
+  background-color: var(--bg-neutral-500);
+  font-weight: 400;
+}
+.products__btn--active {
+  color: var(--color-white);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  text-transform: capitalize;
+  background-color: var(--color-accent);
+}
 
 .rooms {
   background-color: var(--bg-neutral-200);
@@ -644,6 +666,37 @@ ol {
   padding-block: 6.5rem;
   display: flex;
   justify-content: center;
+}
+
+.features {
+  background-color: var(--bg-neutral-400);
+  margin-top: var(--space-section);
+  padding-block: 6rem;
+}
+.features__inner {
+  display: flex;
+  justify-content: space-between;
+}
+.features__box {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem;
+  align-self: self-start;
+}
+.features__title {
+  font-size: 25px;
+}
+.features__img {
+  grid-row: 1/span 2;
+  align-self: center;
+  justify-self: center;
+}
+.features__text {
+  color: var(--color-gray-light);
+  font-weight: 500;
+  grid-column: 2/-1;
+  align-self: self-end;
+  font-size: 20px;
 }
 
 .header__inner {

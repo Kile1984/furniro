@@ -13,4 +13,29 @@
     justify-self: center;
     grid-column: 1/-1;
   }
+
+  &__btn-group {
+    justify-self: center;
+    grid-column: 1/-1;
+    display: flex;
+    gap: 2rem;
+  }
+
+  &__btn {
+    color: var(--color-black);
+    border: none;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    text-transform: capitalize;
+    background-color: var(--bg-neutral-500);
+    font-weight: 400;
+  }
+
+  &__btn--active {
+    color: var(--color-white);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    text-transform: capitalize;
+    background-color: var(--color-accent);
+  }
 }
