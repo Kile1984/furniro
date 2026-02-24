@@ -403,6 +403,44 @@ ol {
   font-size: 20px;
 }
 
+.filter-drawer {
+  display: flex;
+  flex-direction: column;
+  width: 340px;
+  background-color: var(--bg-neutral-500);
+  padding: 1rem;
+  gap: 30px;
+}
+.filter-drawer__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.filter-drawer__close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter-form__body {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+.filter-form__title {
+  margin-bottom: 0.5rem;
+}
+.filter-form__option {
+  display: flex;
+  gap: 0.5rem;
+}
+
 .hero {
   background-image: url(../../assets/images/hero-img.png);
   background-size: cover;
@@ -489,18 +527,12 @@ ol {
 }
 .products__btn {
   color: var(--color-black);
-  border: none;
-  border-radius: 12px;
-  padding: 1rem 1.5rem;
-  text-transform: capitalize;
-  background-color: var(--bg-neutral-500);
-  font-weight: 400;
+  border-radius: 10px;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--bg-neutral-400);
 }
 .products__btn--active {
   color: var(--color-white);
-  border-radius: 12px;
-  padding: 1rem 1.5rem;
-  text-transform: capitalize;
   background-color: var(--color-accent);
 }
 
