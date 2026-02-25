@@ -1,10 +1,16 @@
 .filter-drawer {
+  position: absolute;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  width: 340px;
+  width: min(90vw, 360px);
   background-color: var(--bg-neutral-500);
   padding: 1rem;
   gap: 30px;
+
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 2;
 
   &__header {
     display: flex;
@@ -39,8 +45,185 @@
   &__title {
     margin-bottom: 0.5rem;
   }
+
   &__option {
+    position: relative;
     display: flex;
+    align-items: center;
     gap: 0.5rem;
+    cursor: pointer;
+
+    &:hover .filter-form__box {
+      border-color: #b88e2f;
+    }
+
+    input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+
+      &:checked + .filter-form__box {
+        background: #b88e2f;
+        border-color: #b88e2f;
+      }
+
+      &:checked + .filter-form__box::after {
+        transform: scale(1);
+      }
+    }
+
+    input[type="radio"]:checked + .filter-form__radio {
+      border-color: #b88e2f;
+    }
+
+    input[type="radio"]:checked + .filter-form__radio::after {
+      transform: scale(1);
+    }
   }
+
+  &__box {
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid #d9d9d9;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+      transform: scale(0);
+      transition: transform 0.15s ease;
+    }
+  }
+
+  &__radio {
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid #d9d9d9;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: #b88e2f;
+      border-radius: 50%;
+      transform: scale(0);
+      transition: transform 0.15s ease;
+    }
+  }
+
+  &__colors {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  &__color {
+    position: relative;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  &__color-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+
+    &:checked + .filter-form__dot {
+      border-color: #b88e2f; /* Furniro gold */
+      transform: scale(1.1);
+      will-change: transform;
+    }
+
+    &:checked + .filter-form__dot::after {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border: 2px solid white;
+      border-radius: 50%;
+    }
+  }
+
+  &__dot {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: block;
+    transition: all 0.2s ease;
+    border: 2.5px solid transparent;
+
+    &--black {
+      background: #000;
+    }
+
+    &--gray {
+      background: #777;
+    }
+
+    &--beige {
+      background: #d2b48c;
+    }
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    input {
+      flex: 1;
+      min-width: 0;
+      padding: 8px 10px;
+
+      border: 1px solid #e5e5e5;
+      border-radius: 6px;
+      background: #fff;
+
+      font-size: 14px;
+
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+      &:focus {
+        outline: none;
+        border-color: #b88e2f;
+        box-shadow: 0 0 0 2px rgba(184, 142, 47, 0.15);
+      }
+    }
+
+    span {
+      color: #888;
+    }
+  }
+}
+
+.filter {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  // pointer-events: auto;
+}
+
+.filter-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  // pointer-events: auto;
+  z-index: 1;
 }
