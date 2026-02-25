@@ -1,0 +1,16 @@
+.about-story {
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap-xl);
+  }
+
+  &__title {
+    color: var(--color-gray);
+    margin-bottom: 2rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+}

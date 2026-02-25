@@ -847,6 +847,7 @@ ol {
   padding-block: 6.5rem;
   display: flex;
   justify-content: center;
+  margin-bottom: var(--space-section);
 }
 
 .features {
@@ -878,6 +879,94 @@ ol {
   grid-column: 2/-1;
   align-self: self-end;
   font-size: 20px;
+}
+
+.about-cta__title {
+  margin-bottom: 2rem;
+}
+
+.about-story__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap-xl);
+}
+.about-story__title {
+  color: var(--color-gray);
+  margin-bottom: 2rem;
+}
+.about-story p {
+  margin-bottom: 1rem;
+}
+
+.contact-cta__text {
+  color: var(--color-gray);
+  max-width: 80ch;
+  margin: 0 auto;
+}
+.contact-cta__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 7.5rem;
+}
+.contact-cta__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.contact-cta__box {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: auto 1fr;
+  column-gap: 2rem;
+}
+.contact-cta__icon {
+  height: 35px;
+  grid-row: 1/-1;
+}
+.contact-cta__form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2.5rem;
+}
+.contact-cta__form-group:focus-within .contact-cta__label {
+  transform: translateY(10px);
+}
+.contact-cta__label {
+  font-weight: 500;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+.contact-cta__input {
+  height: 75px;
+  border-radius: 4px;
+  border: 2px solid var(--color-gray-light);
+  outline: none;
+  padding-left: 1rem;
+  transition: border 0.5s ease;
+}
+.contact-cta__input:focus {
+  border: 2px solid var(--color-accent);
+}
+.contact-cta__input::placeholder {
+  color: var(--color-gray-light);
+}
+.contact-cta__message {
+  padding-left: 1rem;
+  padding-top: 1rem;
+  outline: none;
+  border-radius: 4px;
+  border: 2px solid var(--color-gray-light);
+  transition: border 0.5s ease;
+}
+.contact-cta__message::placeholder {
+  color: var(--color-gray-light);
+}
+.contact-cta__message:focus {
+  border: 2px solid var(--color-accent);
+}
+.contact-cta__submit {
+  padding-inline: 5rem;
+  border-radius: 4px;
 }
 
 .header__inner {
@@ -1012,6 +1101,10 @@ ol {
 
 .pr-sm {
   padding-right: 0.5rem;
+}
+
+.mb-0 {
+  margin-bottom: 0;
 }
 
 .page {

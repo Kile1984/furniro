@@ -10,8 +10,8 @@
       sizes="32x32"
       href="./assets/images/favicon.png"
     />
-    <script src="js/main.js defer"></script>
-    <title>Furniro | Shop</title>
+    <script src="js/main.js" defer></script>
+    <title>Furniro | About</title>
   </head>
   <body>
     <!-- HEADER -->
@@ -61,7 +61,7 @@
             </li>
 
             <li>
-              <a href="whishlist.html" aria-label="Whishlist">
+              <a href="wishlist.html" aria-label="Wishlist">
                 <svg class="icon">
                   <use href="./assets/icons/sprite.svg#icon-heart"></use>
                 </svg>
@@ -69,7 +69,7 @@
             </li>
 
             <li>
-              <a href="shopping-cart" aria-label="Cart">
+              <a href="shopping-cart.html" aria-label="Cart">
                 <svg class="icon icon-search">
                   <use
                     href="./assets/icons/sprite.svg#icon-shipping-cart"
@@ -82,7 +82,114 @@
       </div>
     </header>
 
-    <main class="page page--contact"></main>
+    <!-- PAGE HEADING SHOP -->
+    <main class="page page--about">
+      <header class="page-hero">
+        <div class="container">
+          <h1 class="page-title page-title--medium page-hero__title">About</h1>
+          <nav
+            class="page-hero__breadcrumb text-center"
+            aria-label="Breadcrumb"
+          >
+            <a href="index.html" class="text-body text-body--medium">Home</a> >
+            <span>About</span>
+          </nav>
+        </div>
+      </header>
+
+      <!-- ABOUT STORY -->
+      <section class="about-story">
+        <div class="container about-story__inner">
+          <img
+            src="./assets/images/about-02.png"
+            alt="About"
+            class="about-story__img"
+          />
+          <div class="about-story__text">
+            <h2 class="section-title about-story__title">
+              Founded with the idea of blending functionality and aesthetics
+            </h2>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Provident accusamus voluptatum eum inventore nulla esse sed dolor
+              exercitationem tempore? Perspiciatis repellat nisi odio, explicabo
+              omnis magnam! Optio voluptatibus dicta architecto.
+            </p>
+            <p>
+              Laudantium, voluptatum et facilis repellendus dolorem officiis
+              eius quaerat consequatur dolore asperiores molestias quia
+              doloremque harum cum sunt quidem nobis. Ut aperiam mollitia quod
+              ad esse suscipit dolores obcaecati quaerat!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section class="features">
+        <div class="container container--wide features__inner">
+          <div class="features__box features__quality">
+            <img
+              src="./assets/images/trophy.png"
+              alt=""
+              class="features__img"
+            />
+            <h3 class="features__title ui-title ui-title--dark">
+              High Quality
+            </h3>
+            <p class="text-body-xl features__text">
+              crafted from top materials
+            </p>
+          </div>
+          <div class="features__box features__warranty">
+            <img
+              src="./assets/images/guarantee.png"
+              alt=""
+              class="features__img"
+            />
+            <h3 class="features__title ui-title ui-title--dark">
+              Warranty Protection
+            </h3>
+            <p class="text-body-xl features__text">Over 2 years</p>
+          </div>
+          <div class="features__box features__shipping">
+            <img
+              src="./assets/images/shipping.png"
+              alt=""
+              class="features__img"
+            />
+            <h3 class="features__title ui-title ui-title--dark">
+              Free Shipping
+            </h3>
+            <p class="text-body-xl features__text">Order over 150 $</p>
+          </div>
+          <div class="features__box features__support">
+            <img
+              src="./assets/images/customer-support.png"
+              alt=""
+              class="features__img"
+            />
+            <h3 class="features__title ui-title ui-title--dark">
+              24 / 7 Support
+            </h3>
+            <p class="text-body-xl features__text">Dedicated support</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT CTA -->
+      <section class="about-cta text-center">
+        <div class="container">
+          <h3 class="section-title about-cta__title">
+            Discover Our Collection
+          </h3>
+
+          <button class="btn btn--primary">
+            <a href="shop.html">Shop Now</a>
+          </button>
+        </div>
+      </section>
+    </main>
 
     <footer class="footer">
       <div class="footer__inner container">
@@ -139,7 +246,7 @@
         </div>
 
         <div class="footer__rights">
-          <p>2023 furino. All rights reverved</p>
+          <p>2023 Furniro. All rights reserved.</p>
         </div>
       </div>
     </footer>
