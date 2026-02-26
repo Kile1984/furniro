@@ -969,6 +969,23 @@ ol {
   border-radius: 4px;
 }
 
+.breadcrumb {
+  background-color: var(--bg-neutral-400);
+  margin-bottom: 2rem;
+  padding-block: 1.5rem;
+}
+.breadcrumb__nav {
+  display: flex;
+  gap: 1rem;
+}
+.breadcrumb__link {
+  color: var(--color-gray-light);
+}
+.breadcrumb__product {
+  border-left: 1px solid var(--color-gray-light);
+  padding-left: 1.5rem;
+}
+
 .header__inner {
   display: grid;
   grid-template-columns: auto 1fr auto;
