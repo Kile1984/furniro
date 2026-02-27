@@ -1,0 +1,354 @@
+🪑 CHAIRS (10)
+Naziv	Kratak opis
+Aurelia	Soft comfort
+Nordic	Minimal form
+Lunara	Curved design
+Velora	Modern elegance
+Arden	Clean lines
+Selvik	Scandinavian style
+Eldra	Light structure
+Moreno	Fabric comfort
+Calmo	Relaxed seating
+Ravelle	Contemporary chair
+🪵 TABLES (10)
+Naziv	Kratak opis
+Valen	Solid wood
+Norvik	Nordic dining
+Elvora	Natural finish
+Santino	Modern table
+Oakley	Oak surface
+Mirela	Soft minimal
+Trevio	Clean structure
+Arlo	Compact design
+Haven	Dining essential
+Lumer	Contemporary wood
+🛋 SOFAS (10)
+Naziv	Kratak opis
+Lioro	Luxury sofa
+Velmont	Deep comfort
+Avena	Soft minimal
+Sorren	Modern lounge
+Calvera	Cozy design
+Nordell	Scandinavian sofa
+Rovira	Elegant seating
+Elvian	Plush comfort
+Marino	Clean silhouette
+Lunaro	Premium lounge
+-------------------------------------------------------
+🪑 CHAIRS
+1. Aurelia
+
+Description
+Aurelia combines soft upholstery with clean Scandinavian lines. Designed for everyday comfort, it fits perfectly in dining or lounge settings while maintaining a light visual presence.
+
+Additional Information
+
+Dimensions: 78 × 55 × 52 cm
+
+Seat Height: 45 cm
+
+Material: Fabric upholstery, solid wood legs
+
+Color: Light Beige
+
+Weight: 6 kg
+
+Care: Spot clean only
+
+2. Nordic
+
+Description
+Nordic is a minimalist chair defined by simplicity and functionality. Its balanced proportions and neutral tones make it a versatile addition to modern interiors.
+
+Additional Information
+
+Dimensions: 80 × 50 × 54 cm
+
+Seat Height: 46 cm
+
+Material: Polyester fabric, oak legs
+
+Color: Grey
+
+Weight: 5.8 kg
+
+Care: Vacuum regularly
+
+3. Lunara
+
+Description
+With its softly curved backrest, Lunara delivers ergonomic comfort and refined aesthetics. Perfect for dining rooms that value warmth and elegance.
+
+Additional Information
+
+Dimensions: 79 × 56 × 53 cm
+
+Seat Height: 45 cm
+
+Material: Textured fabric, beech wood
+
+Color: Cream
+
+Weight: 6.2 kg
+
+Care: Wipe with damp cloth
+
+4. Velora
+
+Description
+Velora offers a contemporary silhouette with generous cushioning. Designed to elevate both dining and workspace environments.
+
+Additional Information
+
+Dimensions: 82 × 58 × 55 cm
+
+Seat Height: 47 cm
+
+Material: Velvet upholstery, wood legs
+
+Color: Rust
+
+Weight: 6.5 kg
+
+Care: Professional cleaning recommended
+
+5. Arden
+
+Description
+Arden is crafted for those who appreciate structure and subtle elegance. A reliable, timeless seating solution.
+
+Additional Information
+
+Dimensions: 77 × 52 × 50 cm
+
+Seat Height: 45 cm
+
+Material: Fabric, solid oak
+
+Color: White
+
+Weight: 5.5 kg
+
+Care: Spot clean
+
+6. Selvik
+
+Description
+Selvik blends Scandinavian charm with modern simplicity. Its airy frame makes smaller spaces feel open and balanced.
+
+Additional Information
+
+Dimensions: 78 × 51 × 52 cm
+
+Seat Height: 46 cm
+
+Material: Linen blend, oak
+
+Color: Sand
+
+Weight: 5.9 kg
+
+Care: Dry clean recommended
+
+7. Eldra
+
+Description
+Lightweight yet durable, Eldra offers effortless style. Ideal for everyday dining and flexible interiors.
+
+Additional Information
+
+Dimensions: 76 × 50 × 50 cm
+
+Seat Height: 45 cm
+
+Material: Fabric, beech wood
+
+Color: Light Grey
+
+Weight: 5.3 kg
+
+Care: Vacuum and wipe
+
+8. Moreno
+
+Description
+Moreno delivers comfort-driven seating with soft contours and sturdy construction. Designed for long conversations and relaxed dinners.
+
+Additional Information
+
+Dimensions: 80 × 57 × 54 cm
+
+Seat Height: 46 cm
+
+Material: Polyester fabric, solid wood
+
+Color: Charcoal
+
+Weight: 6.4 kg
+
+Care: Spot clean
+
+9. Calmo
+
+Description
+Calmo lives up to its name with soothing lines and inviting cushioning. A perfect fit for calm, neutral interiors.
+
+Additional Information
+
+Dimensions: 79 × 55 × 53 cm
+
+Seat Height: 45 cm
+
+Material: Fabric upholstery, oak legs
+
+Color: Green
+
+Weight: 6 kg
+
+Care: Vacuum gently
+
+10. Ravelle
+
+Description
+Ravelle features refined stitching and a modern silhouette. Designed to bring subtle sophistication into everyday spaces.
+
+Additional Information
+
+Dimensions: 81 × 56 × 54 cm
+
+Seat Height: 46 cm
+
+Material: Woven fabric, wood frame
+
+Color: Dark Grey
+
+Weight: 6.3 kg
+
+Care: Dry cloth clean
+
+🪵 TABLES
+
+(isto radimo za svih 10 — skraćujem blago da ostane pregledno)
+
+1. Valen
+
+Description
+Valen is a solid wood dining table built for durability and timeless appeal. Its clean structure fits seamlessly into modern and Nordic interiors.
+
+Additional Information
+
+Dimensions: 160 × 90 × 75 cm
+
+Material: Solid oak
+
+Color: Natural Wood
+
+Weight: 35 kg
+
+Care: Wood polish recommended
+
+2. Norvik
+
+Description
+Norvik combines minimal lines with sturdy craftsmanship. Perfect for everyday dining and family gatherings.
+
+Additional Information
+
+Dimensions: 140 × 80 × 75 cm
+
+Material: Oak veneer
+
+Color: Light Oak
+
+Weight: 30 kg
+
+Care: Wipe with damp cloth
+
+3. Elvora
+
+Description
+Elvora features a warm natural finish and balanced proportions. Designed to anchor contemporary dining spaces.
+
+Additional Information
+
+Dimensions: 180 × 95 × 75 cm
+
+Material: Solid wood
+
+Color: Honey Oak
+
+Weight: 38 kg
+
+Care: Avoid excess moisture
+
+4. Santino
+
+Description
+Santino delivers a sleek modern presence with durable construction. Built for both style and functionality.
+
+Additional Information
+
+Dimensions: 160 × 85 × 75 cm
+
+Material: Wood + MDF
+
+Color: Walnut
+
+Weight: 32 kg
+
+Care: Clean dry
+
+5–10 (Oakley, Mirela, Trevio, Arlo, Haven, Lumer)
+
+Isti format — različite dimenzije (120–200 cm dužine), materijal solid wood / veneer / MDF kombinacija, težina 28–42 kg, care: wipe with soft cloth.
+
+🛋 SOFAS
+1. Lioro
+
+Description
+Lioro is designed for premium comfort with deep seating and plush cushioning. A centerpiece for modern living rooms.
+
+Additional Information
+
+Dimensions: 220 × 90 × 85 cm
+
+Seat Height: 44 cm
+
+Material: Fabric upholstery, solid wood frame
+
+Color: Light Grey
+
+Weight: 65 kg
+
+Care: Professional cleaning
+
+2. Velmont
+
+Description
+Velmont offers generous proportions and supportive cushioning. Designed for everyday relaxation and stylish interiors.
+
+Additional Information
+
+Dimensions: 200 × 88 × 82 cm
+
+Material: Polyester fabric
+
+Color: Beige
+
+Weight: 60 kg
+
+Care: Vacuum regularly
+
+3–10 (Avena, Sorren, Calvera, Nordell, Rovira, Elvian, Marino, Lunaro)
+
+Isti princip:
+
+180–240 cm širina
+
+seat height 42–45 cm
+
+material: fabric / velvet
+
+weight 55–75 kg
+
+care: dry clean / professional cleaning

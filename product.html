@@ -94,8 +94,10 @@
         </div>
       </div>
 
-      <article class="product">
-        <div class="container">
+      <!-- PRODUCT -->
+      <article class="section product">
+        <div class="container product__inner">
+          <!-- GALLERY -->
           <section class="product__gallery">
             <div class="product__gallery-thumbnails">
               <img
@@ -123,33 +125,177 @@
               />
             </div>
           </section>
+
+          <!-- INFO -->
           <section class="product__info">
-            <h1 class="product__name">Asgard sofa</h1>
+            <h1 class="product__name page-title--product">Asgard sofa</h1>
             <p class="product__price">
-              <span class="product__currency">Rs.</span>
-              <span class="product__amount">250,000.00</span>
+              <span class="product__currency ui-title">Rs.</span>
+              <span class="product__amount ui-title">250,000.00</span>
             </p>
 
-            <div class="product__rating">
-              <div class="product__stars" aria-hidden="true">★★★★☆</div>
+            <!-- rating -->
+            <div class="product__rating" aria-label="Rated 4 out of 5 stars">
+              <div class="product__stars" aria-hidden="true">
+                <svg class="icon">
+                  <use href="./assets/icons/sprite.svg#icon-star"></use>
+                </svg>
+                <svg class="icon">
+                  <use href="./assets/icons/sprite.svg#icon-star"></use>
+                </svg>
+                <svg class="icon">
+                  <use href="./assets/icons/sprite.svg#icon-star"></use>
+                </svg>
+                <svg class="icon">
+                  <use href="./assets/icons/sprite.svg#icon-star"></use>
+                </svg>
+                <svg class="icon">
+                  <use href="./assets/icons/sprite.svg#icon-star"></use>
+                </svg>
+              </div>
 
-              <span class="product__review-text">
+              <div class="product__review-text">
                 <span class="product__review-count">5</span>
                 <span class="product__review-label">Customer Reviews</span>
-              </span>
+              </div>
             </div>
-            <p class="product__description-short">
+
+            <!-- description -->
+            <p class="product__description-short text-xs">
               Setting the bar as one of the loudest speakers in its class, the
               Kilburn is a compact, stout-hearted hero with a well-balanced
               audio which boasts a clear midrange and extended highs for a
               sound.
             </p>
-            <div class="product__size"></div>
+
+            <!-- size -->
+            <div class="product__size">
+              <p class="product__label">Size</p>
+              <label class="product__size-option product__size-option--s">
+                <input type="radio" name="size" value="s" />
+                <span class="product__size-radio"></span>
+                <span class="product__size-label">S</span>
+              </label>
+
+              <label class="product__size-option product__size-option--l">
+                <input type="radio" name="size" value="l" />
+                <span class="product__size-radio"></span>
+                <span class="product__size-label">L</span>
+              </label>
+
+              <label class="product__size-option product__size-option--xl">
+                <input type="radio" name="size" value="xl" />
+                <span class="product__size-radio"></span>
+                <span class="product__size-label">XL</span>
+              </label>
+            </div>
+            <!-- quantity -->
+            <div class="product__actions">
+              <div class="product__quantity">
+                <button
+                  type="button"
+                  class="btn product__quantity-btn product__quantity-btn--decrement"
+                >
+                  -
+                </button>
+
+                <input
+                  type="number"
+                  min="1"
+                  value="1"
+                  id="quantity"
+                  class="product__quantity-input"
+                />
+
+                <button
+                  type="button"
+                  class="btn product__quantity-btn product__quantity-btn--increment"
+                >
+                  +
+                </button>
+              </div>
+              <button type="button" class="btn product__add-to-cart">
+                Add To Cart
+              </button>
+              <button type="button" class="btn product__compare">
+                <span>+</span> Compare
+              </button>
+            </div>
           </section>
+
+          <!-- META -->
+
+          <dl class="product__meta">
+            <div class="product__meta-item">
+              <dt class="product__meta-label">SKU</dt>
+              <dd class="product__meta-value">SS001</dd>
+            </div>
+
+            <div class="product__meta-item">
+              <dt class="product__meta-label">Category</dt>
+              <dd>
+                <a href="#" class="product__meta-link"> Sofas</a>
+              </dd>
+            </div>
+
+            <div class="product__meta-item">
+              <dt class="product__meta-label">Tags</dt>
+              <dd>
+                <a href="#" class="product__meta-link"> Sofas,</a>
+                <a href="#" class="product__meta-link">Chair,</a>
+                <a href="#" class="product__meta-link">Home</a>
+              </dd>
+            </div>
+
+            <div class="product__meta-item">
+              <dt class="product__meta-label">Share</dt>
+
+              <dd>
+                <a href="#" class="product__meta-link">
+                  <svg class="icon">
+                    <use href="./assets/icons/sprite.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+                <a href="#" class="product__meta-link">
+                  <svg class="icon">
+                    <use href="./assets/icons/sprite.svg#icon-twitter"></use>
+                  </svg>
+                </a>
+                <a href="#" class="product__meta-link">
+                  <svg class="icon">
+                    <use href="./assets/icons/sprite.svg#icon-linkedin"></use>
+                  </svg>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+          <!-- <div class="product__meta-item">
+              <span class="product__meta-label">SKU:</span>
+              <span class="product__meta-value">SS001</span>
+            </div>
+
+            <div class="product__meta-item">
+              <span class="product__meta-label">Category:</span>
+              <a href="#" class="product__meta-link">Sofas</a>
+            </div> -->
+
+          <!-- <div class="product__meta-item">
+              <span class="product__meta-label">Tags:</span>
+              <ul class="product__tags">
+                <li><a href="#">Sofa</a></li>
+                <li><a href="#">Chair</a></li>
+                <li><a href="#">Home</a></li>
+              </ul>
+            </div> -->
+
+          <!-- <div class="product__meta-item">
+              <span class="product__meta-label">Share:</span>
+            </div> -->
         </div>
       </article>
 
-      <section class="products">
+      <section class="section products">
         <div class="container">
           <h2 class="section-title products__main-title text-center">
             Related Products
