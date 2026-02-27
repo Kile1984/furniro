@@ -137,20 +137,20 @@
             <!-- rating -->
             <div class="product__rating" aria-label="Rated 4 out of 5 stars">
               <div class="product__stars" aria-hidden="true">
-                <svg class="icon">
-                  <use href="./assets/icons/sprite.svg#icon-star"></use>
+                <svg class="icon product__icon-star">
+                  <use href="./assets/icons/sprite.svg#icon-star-full"></use>
                 </svg>
-                <svg class="icon">
-                  <use href="./assets/icons/sprite.svg#icon-star"></use>
+                <svg class="icon product__icon-star">
+                  <use href="./assets/icons/sprite.svg#icon-star-full"></use>
                 </svg>
-                <svg class="icon">
-                  <use href="./assets/icons/sprite.svg#icon-star"></use>
+                <svg class="icon product__icon-star">
+                  <use href="./assets/icons/sprite.svg#icon-star-full"></use>
                 </svg>
-                <svg class="icon">
-                  <use href="./assets/icons/sprite.svg#icon-star"></use>
+                <svg class="icon product__icon-star">
+                  <use href="./assets/icons/sprite.svg#icon-star-full"></use>
                 </svg>
-                <svg class="icon">
-                  <use href="./assets/icons/sprite.svg#icon-star"></use>
+                <svg class="icon product__icon-star">
+                  <use href="./assets/icons/sprite.svg#icon-star-full"></use>
                 </svg>
               </div>
 
@@ -171,23 +171,24 @@
             <!-- size -->
             <div class="product__size">
               <p class="product__label">Size</p>
-              <label class="product__size-option product__size-option--s">
-                <input type="radio" name="size" value="s" />
-                <span class="product__size-radio"></span>
-                <span class="product__size-label">S</span>
-              </label>
+              <div class="product__size-options">
+                <label class="product__size-option product__size-option--s">
+                  <input type="radio" name="size" value="s" />
+                  <span class="product__size-label">S</span>
+                </label>
 
-              <label class="product__size-option product__size-option--l">
-                <input type="radio" name="size" value="l" />
-                <span class="product__size-radio"></span>
-                <span class="product__size-label">L</span>
-              </label>
+                <label class="product__size-option product__size-option--l">
+                  <input type="radio" name="size" value="l" />
 
-              <label class="product__size-option product__size-option--xl">
-                <input type="radio" name="size" value="xl" />
-                <span class="product__size-radio"></span>
-                <span class="product__size-label">XL</span>
-              </label>
+                  <span class="product__size-label">L</span>
+                </label>
+
+                <label class="product__size-option product__size-option--xl">
+                  <input type="radio" name="size" value="xl" />
+
+                  <span class="product__size-label">XL</span>
+                </label>
+              </div>
             </div>
             <!-- quantity -->
             <div class="product__actions">
@@ -224,24 +225,26 @@
           </section>
 
           <!-- META -->
-
           <dl class="product__meta">
             <div class="product__meta-item">
               <dt class="product__meta-label">SKU</dt>
+              <dd>:</dd>
               <dd class="product__meta-value">SS001</dd>
             </div>
 
             <div class="product__meta-item">
               <dt class="product__meta-label">Category</dt>
+              <dd>:</dd>
               <dd>
-                <a href="#" class="product__meta-link"> Sofas</a>
+                <a href="#" class="product__meta-link">Sofas</a>
               </dd>
             </div>
 
             <div class="product__meta-item">
               <dt class="product__meta-label">Tags</dt>
+              <dd>:</dd>
               <dd>
-                <a href="#" class="product__meta-link"> Sofas,</a>
+                <a href="#" class="product__meta-link">Sofas,</a>
                 <a href="#" class="product__meta-link">Chair,</a>
                 <a href="#" class="product__meta-link">Home</a>
               </dd>
@@ -249,49 +252,26 @@
 
             <div class="product__meta-item">
               <dt class="product__meta-label">Share</dt>
-
-              <dd>
+              <dd>:</dd>
+              <dd class="product__meta-icons">
                 <a href="#" class="product__meta-link">
-                  <svg class="icon">
-                    <use href="./assets/icons/sprite.svg#icon-facebook"></use>
+                  <svg class="icon product__icon">
+                    <use href="./assets/icons/sprite.svg#icon-facebook2"></use>
                   </svg>
                 </a>
                 <a href="#" class="product__meta-link">
-                  <svg class="icon">
+                  <svg class="icon product__icon">
                     <use href="./assets/icons/sprite.svg#icon-twitter"></use>
                   </svg>
                 </a>
                 <a href="#" class="product__meta-link">
-                  <svg class="icon">
+                  <svg class="icon product__icon">
                     <use href="./assets/icons/sprite.svg#icon-linkedin"></use>
                   </svg>
                 </a>
               </dd>
             </div>
           </dl>
-
-          <!-- <div class="product__meta-item">
-              <span class="product__meta-label">SKU:</span>
-              <span class="product__meta-value">SS001</span>
-            </div>
-
-            <div class="product__meta-item">
-              <span class="product__meta-label">Category:</span>
-              <a href="#" class="product__meta-link">Sofas</a>
-            </div> -->
-
-          <!-- <div class="product__meta-item">
-              <span class="product__meta-label">Tags:</span>
-              <ul class="product__tags">
-                <li><a href="#">Sofa</a></li>
-                <li><a href="#">Chair</a></li>
-                <li><a href="#">Home</a></li>
-              </ul>
-            </div> -->
-
-          <!-- <div class="product__meta-item">
-              <span class="product__meta-label">Share:</span>
-            </div> -->
         </div>
       </article>
 
@@ -328,15 +308,13 @@
                   </button>
                   <button type="button" class="product-card__action">
                     <svg class="icon">
-                      <use href="./assets/icons/sprite.svg#icon-compare"></use>
+                      <use href="./assets/icons/sprite.svg#icon-commpare"></use>
                     </svg>
                     <span>Compare</span>
                   </button>
                   <button type="button" class="product-card__action">
                     <svg class="icon">
-                      <use
-                        href="./assets/icons/sprite.svg#icon-heart-white"
-                      ></use>
+                      <use href="./assets/icons/sprite.svg#icon-heart"></use>
                     </svg>
                     <span>Like</span>
                   </button>
@@ -387,15 +365,13 @@
                   </button>
                   <button type="button" class="product-card__action">
                     <svg class="icon">
-                      <use href="./assets/icons/sprite.svg#icon-compare"></use>
+                      <use href="./assets/icons/sprite.svg#icon-commpare"></use>
                     </svg>
                     Compare
                   </button>
                   <button type="button" class="product-card__action">
                     <svg class="icon">
-                      <use
-                        href="./assets/icons/sprite.svg#icon-heart-white"
-                      ></use>
+                      <use href="./assets/icons/sprite.svg#icon-heart"></use>
                     </svg>
                     Like
                   </button>
@@ -442,15 +418,13 @@
                   </button>
                   <button type="button" class="product-card__action">
                     <svg class="icon">
-                      <use href="./assets/icons/sprite.svg#icon-compare"></use>
+                      <use href="./assets/icons/sprite.svg#icon-commpare"></use>
                     </svg>
                     Compare
                   </button>
                   <button type="button" class="product-card__action">
                     <svg class="icon">
-                      <use
-                        href="./assets/icons/sprite.svg#icon-heart-white"
-                      ></use>
+                      <use href="./assets/icons/sprite.svg#icon-heart"></use>
                     </svg>
                     Like
                   </button>
@@ -501,15 +475,13 @@
                   </button>
                   <button type="button" class="product-card__action">
                     <svg class="icon">
-                      <use href="./assets/icons/sprite.svg#icon-compare"></use>
+                      <use href="./assets/icons/sprite.svg#icon-commpare"></use>
                     </svg>
                     Compare
                   </button>
                   <button type="button" class="product-card__action">
                     <svg class="icon">
-                      <use
-                        href="./assets/icons/sprite.svg#icon-heart-white"
-                      ></use>
+                      <use href="./assets/icons/sprite.svg#icon-heart"></use>
                     </svg>
                     Like
                   </button>

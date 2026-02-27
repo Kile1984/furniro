@@ -31,10 +31,14 @@
   }
 
   &__btn {
-    &--filter {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &--grid-4 svg,
+    &--grid-2 svg {
+      width: 26px;
+      height: 26px;
     }
   }
 

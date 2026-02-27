@@ -244,8 +244,8 @@ ol {
 }
 
 .icon {
-  width: 26px;
-  height: 26px;
+  width: 16px;
+  height: 16px;
   fill: currentColor;
   display: inline-block;
 }
@@ -295,8 +295,7 @@ ol {
   gap: 0.2rem;
 }
 .product-card__action .icon {
-  width: 16px;
-  height: 16px;
+  margin-right: 0.3rem;
 }
 .product-card__image-wrapper {
   position: relative;
@@ -379,10 +378,14 @@ ol {
 .toolbar__group--end {
   justify-self: self-end;
 }
-.toolbar__btn--filter {
+.toolbar__btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+}
+.toolbar__btn--grid-4 svg, .toolbar__btn--grid-2 svg {
+  width: 26px;
+  height: 26px;
 }
 .toolbar__select {
   font-size: 20px;
@@ -921,7 +924,6 @@ ol {
   column-gap: 2rem;
 }
 .contact-cta__icon {
-  height: 35px;
   grid-row: 1/-1;
 }
 .contact-cta__form-group {
@@ -1051,6 +1053,46 @@ ol {
 .product__size {
   margin-bottom: 1rem;
 }
+.product__label {
+  margin-bottom: 1rem;
+  color: var(--color-gray-light);
+}
+.product__size-options {
+  display: flex;
+  gap: 1rem;
+}
+.product__size-option {
+  cursor: pointer;
+}
+.product__size-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.product__size-option input:checked + .product__size-label {
+  background: #b88e2f;
+  color: var(--color-white);
+}
+.product__size-option input:hover + .product__size-label {
+  background-color: var(--color-gray-light);
+}
+.product__size-option input:focus + .product__size-label {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+.product__size-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0 0.8rem;
+  border-radius: 8px;
+  background-color: var(--bg-neutral-500);
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
 .product__actions {
   display: flex;
   gap: 1rem;
@@ -1114,7 +1156,7 @@ ol {
 }
 .product__meta-item {
   display: grid;
-  grid-template-columns: 120px 1fr;
+  grid-template-columns: 120px auto 1fr;
   column-gap: 1rem;
 }
 .product__meta-label {
@@ -1128,6 +1170,20 @@ ol {
 }
 .product__meta-link:hover {
   text-decoration: underline;
+}
+.product__meta-icons {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+.product__icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  color: var(--color-black);
+}
+.product__icon-star {
+  color: var(--color-accent);
 }
 .header__inner {
   display: grid;
