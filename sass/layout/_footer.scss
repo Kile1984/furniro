@@ -79,10 +79,10 @@
     font-size: inherit;
     padding: 0;
     border-bottom: 2px solid var(--color-black);
-    transition:
-      transform 0.3s ease,
-      color 0.3s ease,
-      border 0.1s ease;
+    // transition:
+    //   transform 0.3s ease,
+    //   color 0.3s ease,
+    //   border-bottom 0.3s ease;
 
     &:hover {
       transform: translateY(3px);

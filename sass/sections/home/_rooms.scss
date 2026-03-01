@@ -11,7 +11,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
-    margin-left: max(1rem, calc((100vw - 75rem)));
+    // margin-left: max(1rem, calc((100vw - 75rem)));
   }
 
   &__title {

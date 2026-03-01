@@ -1,12 +1,4 @@
 .features {
-  background-color: var(--bg-neutral-400);
-  margin-top: var(--space-section);
-  padding-block: 6rem;
-
-  &__inner {
-    display: flex;
-    justify-content: space-between;
-  }
   &__box {
     display: grid;
     grid-template-columns: auto 1fr;

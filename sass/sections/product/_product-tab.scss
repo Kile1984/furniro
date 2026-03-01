@@ -1,0 +1,41 @@
+.product-tabs {
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 3rem;
+  }
+
+  &__btn {
+    color: var(--color-gray-light);
+
+    &--active {
+      color: var(--color-black);
+      font-weight: 500;
+    }
+  }
+
+  &__count {
+  }
+
+  &__content {
+  }
+
+  &__panel {
+    color: var(--color-gray-light);
+    display: none;
+
+    &--active {
+      display: block;
+    }
+
+    p {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    p:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+}

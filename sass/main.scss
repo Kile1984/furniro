@@ -3,21 +3,25 @@
 @use "./base/base";
 @use "./base/typography";
 
+@use "./utilities/helpers";
+@use "./utilities/spacing";
+
+@use "./layout/header";
+@use "./layout/container";
+@use "./layout/footer";
+
 @use "./components/buttons";
 @use "./components/icons";
 @use "./components/product-card";
 @use "./components/toolbar";
 @use "./components/filter-drawer";
+@use "./components/cart";
+@use "./components/features-box";
+
+@use "./sections/features";
 
 @use "./pages/home";
 @use "./pages/shop";
 @use "./pages/about";
 @use "./pages/contact";
 @use "./pages/product";
-
-@use "./layout/header";
-@use "./layout/container";
-@use "./layout/footer";
-
-@use "./utilities/helpers";
-@use "./utilities/spacing";

@@ -1,4 +1,5 @@
 .product {
+  margin-bottom: 3.5rem;
   &__inner {
     display: grid;
     grid-template-columns: 0.5fr 0.5fr;
@@ -205,6 +206,7 @@
 
   &__add-to-cart {
     border: 1px solid var(--color-black);
+
     border-radius: 8px;
     transition: border 0.3s ease;
 
@@ -228,7 +230,7 @@
 
   &__meta {
     color: var(--color-gray-light);
-    border-top: 1px solid var(--color-gray-light);
+
     padding-top: 1.5rem;
 
     display: grid;

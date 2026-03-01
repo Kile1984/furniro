@@ -44,9 +44,7 @@
             <li>
               <a href="account.html" aria-label="Account">
                 <svg class="icon">
-                  <use
-                    href="./assets/icons/sprite.svg#icon-account-alert"
-                  ></use>
+                  <use href="./assets/icons/sprite.svg#icon-user"></use>
                 </svg>
               </a>
             </li>
@@ -69,9 +67,7 @@
             <li>
               <a href="shopping-cart" aria-label="Cart">
                 <svg class="icon icon-search">
-                  <use
-                    href="./assets/icons/sprite.svg#icon-shipping-cart"
-                  ></use>
+                  <use href="./assets/icons/sprite.svg#icon-cart"></use>
                 </svg>
               </a>
             </li>
@@ -225,7 +221,7 @@
           </section>
 
           <!-- META -->
-          <dl class="product__meta">
+          <dl class="product__meta border-top">
             <div class="product__meta-item">
               <dt class="product__meta-label">SKU</dt>
               <dd>:</dd>
@@ -275,6 +271,85 @@
         </div>
       </article>
 
+      <!-- TABS -->
+      <section class="section product-tabs border-top">
+        <div class="container">
+          <div class="product-tabs__nav">
+            <button
+              type="button"
+              class="product-tabs__btn product-tabs__btn--active ui-title ui-title--light"
+            >
+              Description
+            </button>
+
+            <button
+              type="button"
+              class="product-tabs__btn ui-title ui-title--light"
+            >
+              Additional Information
+            </button>
+
+            <button
+              type="button"
+              class="product-tabs__btn ui-title ui-title--light"
+            >
+              Reviews [<span class="prodict-tab__count">5</span>]
+            </button>
+          </div>
+
+          <div class="product-tabs__content">
+            <div class="product-tabs__panel product-tabs__panel--active">
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Delectus molestias, quibusdam ea dicta ducimus repudiandae eaque
+                obcaecati quis illum inventore autem, accusantium neque laborum
+                adipisci.
+              </p>
+              <p>
+                Quibusdam autem unde iure dignissimos! Ab facilis praesentium
+                sed dolor error cupiditate iure voluptatum eaque dolorem, maxime
+                natus unde eveniet reiciendis, voluptates quibusdam blanditiis
+                autem doloribus quam assumenda nam rem necessitatibus. Libero
+                deleniti aliquam vel?
+              </p>
+            </div>
+
+            <div class="product-tabs__panel">
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Delectus molestias, quibusdam ea dicta ducimus repudiandae eaque
+                obcaecati quis illum inventore autem, accusantium neque laborum
+                adipisci.
+              </p>
+              <p>
+                Quibusdam autem unde iure dignissimos! Ab facilis praesentium
+                sed dolor error cupiditate iure voluptatum eaque dolorem, maxime
+                natus unde eveniet reiciendis, voluptates quibusdam blanditiis
+                autem doloribus quam assumenda nam rem necessitatibus. Libero
+                deleniti aliquam vel?
+              </p>
+            </div>
+
+            <div class="product-tabs__panel">
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Delectus molestias, quibusdam ea dicta ducimus repudiandae eaque
+                obcaecati quis illum inventore autem, accusantium neque laborum
+                adipisci.
+              </p>
+              <p>
+                Quibusdam autem unde iure dignissimos! Ab facilis praesentium
+                sed dolor error cupiditate iure voluptatum eaque dolorem, maxime
+                natus unde eveniet reiciendis, voluptates quibusdam blanditiis
+                autem doloribus quam assumenda nam rem necessitatibus. Libero
+                deleniti aliquam vel?
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRODUCTS -->
       <section class="section products">
         <div class="container">
           <h2 class="section-title products__main-title text-center">
@@ -302,13 +377,13 @@
                 <div class="product-card__actions">
                   <button type="button" class="product-card__action">
                     <svg class="icon">
-                      <use href="./assets/icons/sprite.svg#icon-share"></use>
+                      <use href="./assets/icons/sprite.svg#icon-share2"></use>
                     </svg>
                     <span>Share</span>
                   </button>
                   <button type="button" class="product-card__action">
                     <svg class="icon">
-                      <use href="./assets/icons/sprite.svg#icon-commpare"></use>
+                      <use href="./assets/icons/sprite.svg#icon-tab"></use>
                     </svg>
                     <span>Compare</span>
                   </button>
@@ -359,21 +434,21 @@
                 <div class="product-card__actions">
                   <button type="button" class="product-card__action">
                     <svg class="icon">
-                      <use href="./assets/icons/sprite.svg#icon-share"></use>
+                      <use href="./assets/icons/sprite.svg#icon-share2"></use>
                     </svg>
-                    Share
+                    <span>Share</span>
                   </button>
                   <button type="button" class="product-card__action">
                     <svg class="icon">
-                      <use href="./assets/icons/sprite.svg#icon-commpare"></use>
+                      <use href="./assets/icons/sprite.svg#icon-tab"></use>
                     </svg>
-                    Compare
+                    <span>Compare</span>
                   </button>
                   <button type="button" class="product-card__action">
                     <svg class="icon">
                       <use href="./assets/icons/sprite.svg#icon-heart"></use>
                     </svg>
-                    Like
+                    <span>Like</span>
                   </button>
                 </div>
               </div>
@@ -412,21 +487,21 @@
                 <div class="product-card__actions">
                   <button type="button" class="product-card__action">
                     <svg class="icon">
-                      <use href="./assets/icons/sprite.svg#icon-share"></use>
+                      <use href="./assets/icons/sprite.svg#icon-share2"></use>
                     </svg>
-                    Share
+                    <span>Share</span>
                   </button>
                   <button type="button" class="product-card__action">
                     <svg class="icon">
-                      <use href="./assets/icons/sprite.svg#icon-commpare"></use>
+                      <use href="./assets/icons/sprite.svg#icon-tab"></use>
                     </svg>
-                    Compare
+                    <span>Compare</span>
                   </button>
                   <button type="button" class="product-card__action">
                     <svg class="icon">
                       <use href="./assets/icons/sprite.svg#icon-heart"></use>
                     </svg>
-                    Like
+                    <span>Like</span>
                   </button>
                 </div>
               </div>
@@ -469,21 +544,21 @@
                 <div class="product-card__actions">
                   <button type="button" class="product-card__action">
                     <svg class="icon">
-                      <use href="./assets/icons/sprite.svg#icon-share"></use>
+                      <use href="./assets/icons/sprite.svg#icon-share2"></use>
                     </svg>
-                    Share
+                    <span>Share</span>
                   </button>
                   <button type="button" class="product-card__action">
                     <svg class="icon">
-                      <use href="./assets/icons/sprite.svg#icon-commpare"></use>
+                      <use href="./assets/icons/sprite.svg#icon-tab"></use>
                     </svg>
-                    Compare
+                    <span>Compare</span>
                   </button>
                   <button type="button" class="product-card__action">
                     <svg class="icon">
                       <use href="./assets/icons/sprite.svg#icon-heart"></use>
                     </svg>
-                    Like
+                    <span>Like</span>
                   </button>
                 </div>
               </div>
