@@ -94,65 +94,54 @@
       <!-- CART -->
       <section class="cart-page">
         <div class="container cart-page__inner">
-          <table class="cart-page__table">
-            <thead class="cart-page__table-head">
-              <tr class="cart-page__table-tr">
-                <th class="cart-page__table-th">Product</th>
-                <th class="cart-page__table-th">Price</th>
-                <th class="cart-page__table-th">Quantity</th>
-                <th class="cart-page__table-th">Subtotal</th>
-                <th class="cart-page__table-th"></th>
-              </tr>
-            </thead>
+          <div class="cart-page__items">
+            <div class="cart-page__headers">
+              <span>Product</span>
+              <span>Price</span>
+              <span>Quantity</span>
+              <span>Subtotal</span>
+            </div>
 
-            <tbody class="cart-page__table-body">
-              <tr class="cart-page__table-spacer"></tr>
-              <tr class="cart-page__table-row">
-                <td class="cart-page__table-product">
-                  <a href="product.html">
-                    <img src="./assets/images/product-pinkgy.png" alt="Sofa" />
-                    <span class="cart-page__table-title">Asgaard sofa</span>
-                  </a>
-                </td>
-                <td class="cart-page__teble-price-currency">
-                  <span class="cart-page__table-currency">Rs.</span>
-                  <span class="cart-page__table-price">250.000,000</span>
-                </td>
-                <td class="cart-page__table-quantity">
-                  <input
-                    type="number"
-                    value="1"
-                    min="1"
-                    class="cart-page__table-input"
-                  />
-                </td>
+            <div class="cart-page__item">
+              <div class="cart-page__product">
+                <a href="#" class="cart-page__link">
+                  <img src="./assets/images/product-grifo.png" alt="Grifo" />
+                  <span>Grifo</span>
+                </a>
+              </div>
 
-                <td class="cart-page__table-subtotal">Rs. 250,000.000</td>
+              <div class="cart-page__price">Rs. 250,00.00</div>
 
-                <td class="cart-page__table-remove">
-                  <button class="cart-page__table-remove-btn">
-                    <svg class="icon">
-                      <use href="./assets/icons/sprite.svg#icon-bin2"></use>
-                    </svg>
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+              <div class="cart-page__quantity">
+                <input type="number" class="cart-page__input" value="1" />
+              </div>
+
+              <div class="cart-page__subtotal">Rs. 250,00.00</div>
+
+              <button class="cart-page__remove-btn">
+                <svg class="icon">
+                  <use href="./assets/icons/sprite.svg#icon-bin2"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
 
           <aside class="cart-page__summary">
-            <h2 class="cart-page__summary-title">Cart Totals</h2>
-            <div class="cart-page__summary-row">
-              <span class="cart-page__summary-label">Subtotal</span>
-              <span class="cart-page__summary-value">Rs. 25,00.00</span>
+            <div class="cart-page__summary-body">
+              <h2 class="cart-page__summary-title">Cart Totals</h2>
+
+              <div class="cart-page__summary-row">
+                <span class="cart-page__summary-label">Subtotal</span>
+                <span class="cart-page__summary-price"> Rs. 250,000.00 </span>
+              </div>
+
+              <div class="cart-page__summary-row">
+                <span class="cart-page__summary-label">Total</span>
+                <span class="cart-page__summary-price"> Rs. 250,000.00 </span>
+              </div>
             </div>
 
-            <div class="cart-page__summary-row cart-page__summary-row--total">
-              <span class="cart-page__summary-label">Total</span>
-              <span class="cart-page__summary-value">Rs. 25,00.00</span>
-            </div>
-
-            <button type="button" class="btn cart-page__summary-btn-checkout">
+            <button type="button" class="btn cart-page__summary-btn">
               Check Out
             </button>
           </aside>

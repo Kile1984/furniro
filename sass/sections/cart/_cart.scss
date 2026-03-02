@@ -2,74 +2,57 @@
   &__inner {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 2rem;
+    justify-content: space-between;
   }
 
-  &__table {
-    border-collapse: collapse;
-  }
-
-  &__table-head {
+  &__headers {
+    font-weight: 500;
     background-color: var(--bg-neutral-500);
-  }
-
-  &__table-tr {
-    text-align: center;
-  }
-
-  &__table-th {
     padding: 1rem;
+    margin-bottom: 3rem;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 1rem;
   }
 
-  &__table-body {
-  }
-
-  &__table-spacer {
-    height: 3.5rem;
-  }
-
-  &__table-row {
-    text-align: center;
-  }
-
-  &__table-product {
+  &__item {
     color: var(--color-gray-light);
     font-weight: 500;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    gap: 1rem;
+  }
 
-    a {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 1.5rem;
-    }
+  &__product {
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
     img {
       width: 100px;
       border-radius: 8px;
     }
   }
 
-  &__table-title {
+  &__price {
   }
 
-  &__teble-price-currency {
-    color: var(--color-gray-light);
-    font-weight: 500;
+  &__quantity {
   }
 
-  &__table-currency {
-  }
-
-  &__table-price {
-  }
-
-  &__table-quantity {
-  }
-
-  &__table-input {
+  &__input {
+    color: var(--color-black);
     -moz-appearance: textfield;
     width: 30px;
     text-align: center;
-    border: 1px solid var(--color-black);
+    border: 1px solid var(--color-gray-light);
     border-radius: 4px;
     transition: border-color 0.3s ease;
 
@@ -85,34 +68,15 @@
     }
   }
 
-  &__table-subtotal {
-    font-weight: 500;
-  }
-
-  &__table-remove {
-    .icon {
-      color: var(--color-accent);
-    }
-  }
-
-  &__table-remove-btn {
-  }
-
   &__summary {
+    background-color: var(--bg-neutral-500);
   }
 
-  &__summary-title {
+  &__subtotal {
+    color: var(--color-black);
   }
 
-  &__summary-row {
-  }
-
-  &__summary-labe {
-  }
-
-  &__summary-row {
-  }
-
-  &__summary-btn-checkout {
+  &__remove-btn {
+    color: var(--color-accent);
   }
 }
