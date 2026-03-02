@@ -1,0 +1,118 @@
+.cart-page {
+  &__inner {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+  }
+
+  &__table {
+    border-collapse: collapse;
+  }
+
+  &__table-head {
+    background-color: var(--bg-neutral-500);
+  }
+
+  &__table-tr {
+    text-align: center;
+  }
+
+  &__table-th {
+    padding: 1rem;
+  }
+
+  &__table-body {
+  }
+
+  &__table-spacer {
+    height: 3.5rem;
+  }
+
+  &__table-row {
+    text-align: center;
+  }
+
+  &__table-product {
+    color: var(--color-gray-light);
+    font-weight: 500;
+
+    a {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    img {
+      width: 100px;
+      border-radius: 8px;
+    }
+  }
+
+  &__table-title {
+  }
+
+  &__teble-price-currency {
+    color: var(--color-gray-light);
+    font-weight: 500;
+  }
+
+  &__table-currency {
+  }
+
+  &__table-price {
+  }
+
+  &__table-quantity {
+  }
+
+  &__table-input {
+    -moz-appearance: textfield;
+    width: 30px;
+    text-align: center;
+    border: 1px solid var(--color-black);
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &:focus {
+      outline: none;
+      border: 1px solid var(--color-accent);
+    }
+  }
+
+  &__table-subtotal {
+    font-weight: 500;
+  }
+
+  &__table-remove {
+    .icon {
+      color: var(--color-accent);
+    }
+  }
+
+  &__table-remove-btn {
+  }
+
+  &__summary {
+  }
+
+  &__summary-title {
+  }
+
+  &__summary-row {
+  }
+
+  &__summary-labe {
+  }
+
+  &__summary-row {
+  }
+
+  &__summary-btn-checkout {
+  }
+}

@@ -1,4 +1,4 @@
-@use "./abstract/variable";
+@use "./abstract/variables";
 
 @use "./base/base";
 @use "./base/typography";
@@ -15,7 +15,7 @@
 @use "./components/product-card";
 @use "./components/toolbar";
 @use "./components/filter-drawer";
-@use "./components/cart";
+@use "./components/cart" as componentCart;
 @use "./components/features-box";
 
 @use "./sections/features";
@@ -25,3 +25,4 @@
 @use "./pages/about";
 @use "./pages/contact";
 @use "./pages/product";
+@use "./pages/cart" as pageCart;
