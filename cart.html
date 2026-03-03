@@ -79,7 +79,12 @@
     <!-- PAGE HEADING SHOP -->
     <main class="page page--cart">
       <header class="page-hero mb-0">
-        <div class="container">
+        <div class="container page-hero__inner">
+          <img
+            src="./assets/images/Logo-crop.png"
+            alt="Logo-crop"
+            class="m-auto"
+          />
           <h1 class="page-title page-title--medium page-hero__title">Cart</h1>
           <nav
             class="page-hero__breadcrumb text-center"
@@ -102,27 +107,55 @@
               <span>Subtotal</span>
             </div>
 
-            <div class="cart-page__item">
-              <div class="cart-page__product">
-                <a href="#" class="cart-page__link">
-                  <img src="./assets/images/product-grifo.png" alt="Grifo" />
-                  <span>Grifo</span>
-                </a>
+            <div class="cart-page__item-wrapp">
+              <div class="cart-page__item">
+                <div class="cart-page__product">
+                  <a href="#" class="cart-page__link">
+                    <img src="./assets/images/product-grifo.png" alt="Grifo" />
+                    <span>Grifo</span>
+                  </a>
+                </div>
+
+                <div class="cart-page__price">
+                  <span class="cart-page__price-label">Price</span>
+                  <span>Rs. 250,00.00</span>
+                </div>
+
+                <div class="cart-page__quantity">
+                  <button
+                    type="button"
+                    class="btn cart-page__quantity-btn cart-page__quantity-btn--decrement"
+                  >
+                    -
+                  </button>
+
+                  <input
+                    type="number"
+                    min="1"
+                    value="1"
+                    id="quantity"
+                    class="cart-page__quantity-input"
+                  />
+
+                  <button
+                    type="button"
+                    class="btn cart-page__quantity-btn cart-page__quantity-btn--increment"
+                  >
+                    +
+                  </button>
+                </div>
+
+                <div class="cart-page__subtotal">
+                  <span class="cart-page__price-label">Subtotal</span>
+                  <span>Rs. 250,00.00</span>
+                </div>
+
+                <button class="cart-page__remove-btn">
+                  <svg class="icon">
+                    <use href="./assets/icons/sprite.svg#icon-bin2"></use>
+                  </svg>
+                </button>
               </div>
-
-              <div class="cart-page__price">Rs. 250,00.00</div>
-
-              <div class="cart-page__quantity">
-                <input type="number" class="cart-page__input" value="1" />
-              </div>
-
-              <div class="cart-page__subtotal">Rs. 250,00.00</div>
-
-              <button class="cart-page__remove-btn">
-                <svg class="icon">
-                  <use href="./assets/icons/sprite.svg#icon-bin2"></use>
-                </svg>
-              </button>
             </div>
           </div>
 
@@ -132,12 +165,20 @@
 
               <div class="cart-page__summary-row">
                 <span class="cart-page__summary-label">Subtotal</span>
-                <span class="cart-page__summary-price"> Rs. 250,000.00 </span>
+                <span
+                  class="cart-page__summary-price cart-page__summary-price--gray"
+                >
+                  Rs. 250,000.00
+                </span>
               </div>
 
               <div class="cart-page__summary-row">
                 <span class="cart-page__summary-label">Total</span>
-                <span class="cart-page__summary-price"> Rs. 250,000.00 </span>
+                <span
+                  class="cart-page__summary-price cart-page__summary-price--accent"
+                >
+                  Rs. 250,000.00
+                </span>
               </div>
             </div>
 

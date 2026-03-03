@@ -5,4 +5,12 @@
   display: flex;
   justify-content: center;
   margin-bottom: var(--space-section);
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+  }
 }
