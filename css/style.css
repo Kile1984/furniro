@@ -236,6 +236,10 @@ ol {
   border-bottom: 1px solid rgba(176, 176, 176, 0.5);
 }
 
+.border-right {
+  border-right: 1px solid rgba(176, 176, 176, 0.5);
+}
+
 .page {
   display: flex;
   flex-direction: column;
@@ -894,6 +898,33 @@ ol {
   grid-column: 2/-1;
   align-self: self-end;
   font-size: 20px;
+}
+
+.comparison__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.comparison__header {
+  display: grid;
+  grid-template-columns: 250px repeat(3, 1fr);
+}
+.comparison__specs {
+  display: grid;
+  grid-template-columns: 250px repeat(3, 1fr);
+  column-gap: 1rem;
+  position: relative;
+}
+.comparison__specs:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(#eee, #eee) 250px 0/1px 100% no-repeat, linear-gradient(#eee, #eee) calc(250px + (100% - 250px) / 3) 0/1px 100% no-repeat, linear-gradient(#eee, #eee) calc(250px + 2 * (100% - 250px) / 3) 0/1px 100% no-repeat;
+}
+.comparison__section {
+  grid-column: 1/-1;
+  font-weight: 700;
 }
 
 .features {

@@ -1,0 +1,39 @@
+.comparison {
+  &__grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  &__header {
+    display: grid;
+    grid-template-columns: 250px repeat(3, 1fr);
+  }
+
+  &__specs {
+    display: grid;
+    grid-template-columns: 250px repeat(3, 1fr);
+    column-gap: 1rem;
+
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+
+      background:
+        linear-gradient(#eee, #eee) 250px 0 / 1px 100% no-repeat,
+        linear-gradient(#eee, #eee) calc(250px + (100% - 250px) / 3) 0 / 1px
+          100% no-repeat,
+        linear-gradient(#eee, #eee) calc(250px + 2 * (100% - 250px) / 3) 0 / 1px
+          100% no-repeat;
+    }
+  }
+
+  &__section {
+    grid-column: 1/-1;
+    font-weight: 700;
+  }
+}
