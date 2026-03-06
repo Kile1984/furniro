@@ -139,6 +139,9 @@ ol {
 .page-title--medium {
   font-weight: 500;
 }
+.page-title--bold {
+  font-weight: 500;
+}
 
 .page-title--product {
   font-size: var(--fs-page-product); /*42px*/
@@ -900,33 +903,6 @@ ol {
   font-size: 20px;
 }
 
-.comparison__grid {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr;
-}
-.comparison__header {
-  display: grid;
-  grid-template-columns: 250px repeat(3, 1fr);
-}
-.comparison__specs {
-  display: grid;
-  grid-template-columns: 250px repeat(3, 1fr);
-  column-gap: 1rem;
-  position: relative;
-}
-.comparison__specs:before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(#eee, #eee) 250px 0/1px 100% no-repeat, linear-gradient(#eee, #eee) calc(250px + (100% - 250px) / 3) 0/1px 100% no-repeat, linear-gradient(#eee, #eee) calc(250px + 2 * (100% - 250px) / 3) 0/1px 100% no-repeat;
-}
-.comparison__section {
-  grid-column: 1/-1;
-  font-weight: 700;
-}
-
 .features {
   background-color: var(--bg-neutral-400);
   margin-top: var(--space-section);
@@ -1011,7 +987,7 @@ ol {
   grid-template-columns: repeat(4, 1fr);
   gap: var(--gap-lg);
 }
-.products__load-more {
+.products__btn-load-more {
   justify-self: center;
   grid-column: 1/-1;
 }

@@ -10,7 +10,7 @@
       sizes="32x32"
       href="./assets/images/favicon.png"
     />
-    <script src="js/main.js defer"></script>
+    <script src="js/main.js" defer></script>
     <title>Furniro | Comparasion</title>
   </head>
   <body>
@@ -23,16 +23,16 @@
 
         <nav class="header__nav" aria-label="Main navigation">
           <ul class="header__nav-list">
-            <li>
+            <li class="header__nav-list">
               <a href="index.html" class="header__nav-link nav-link">Home</a>
             </li>
-            <li>
+            <li class="header__nav-list">
               <a href="shop.html" class="header__nav-link nav-link">Shop</a>
             </li>
-            <li>
+            <li class="header__nav-list">
               <a href="about.html" class="header__nav-link nav-link">About</a>
             </li>
-            <li>
+            <li class="header__nav-list">
               <a href="contact.html" class="header__nav-link nav-link"
                 >Contact</a
               >
@@ -57,7 +57,7 @@
             </li>
 
             <li>
-              <a href="whishlist.html" aria-label="Whishlist">
+              <a href="whishlist.html" aria-label="Wishlist">
                 <svg class="icon">
                   <use href="./assets/icons/sprite.svg#icon-heart"></use>
                 </svg>
@@ -65,7 +65,7 @@
             </li>
 
             <li>
-              <a href="shopping-cart" aria-label="Cart">
+              <a href="cart.html" aria-label="Cart">
                 <svg class="icon icon-search">
                   <use href="./assets/icons/sprite.svg#icon-cart"></use>
                 </svg>
@@ -101,196 +101,88 @@
       <!-- COMPARISON  -->
       <section class="comparison">
         <div class="container">
-          <div class="comparison__grid">
-            <div class="comparison__header">
-              <!-- HEADER ROW -->
-              <div class="comparison__info">
-                <p>Go to Product page for more products</p>
-                <a href="shop.html"></a>
-              </div>
-              <!-- 1 -->
-              <div class="comparison__product">
-                <img src="./assets/images/Asgaard-sofa.png" alt="Sofa" />
-                <h3>Asgaard Sofa</h3>
-                <p>Rs. 250,000</p>
-                <div class="comparison__product-review">
-                  <span>4.7</span>
-                  <span>
-                    <svg class="icon">
-                      <use
-                        href="./assets/icons/sprite.svg#icon-star-full"
-                      ></use>
-                    </svg>
-                    <svg class="icon">
-                      <use
-                        href="./assets/icons/sprite.svg#icon-star-full"
-                      ></use>
-                    </svg>
-                    <svg class="icon">
-                      <use
-                        href="./assets/icons/sprite.svg#icon-star-full"
-                      ></use>
-                    </svg>
-                    <svg class="icon">
-                      <use
-                        href="./assets/icons/sprite.svg#icon-star-full"
-                      ></use>
-                    </svg>
-                    <svg class="icon">
-                      <use
-                        href="./assets/icons/sprite.svg#icon-star-full"
-                      ></use>
-                    </svg>
-                  </span>
-                </div>
-              </div>
-              <!-- 2 -->
-              <div class="comparison__product">
-                <img src="./assets/images/Asgaard-sofa.png" alt="Sofa" />
-                <h3>Asgaard Sofa</h3>
-                <p>Rs. 250,000</p>
-                <div class="comparison__product-review">
-                  <span>4.7</span>
-                  <span>
-                    <svg class="icon">
-                      <use
-                        href="./assets/icons/sprite.svg#icon-star-full"
-                      ></use>
-                    </svg>
-                    <svg class="icon">
-                      <use
-                        href="./assets/icons/sprite.svg#icon-star-full"
-                      ></use>
-                    </svg>
-                    <svg class="icon">
-                      <use
-                        href="./assets/icons/sprite.svg#icon-star-full"
-                      ></use>
-                    </svg>
-                    <svg class="icon">
-                      <use
-                        href="./assets/icons/sprite.svg#icon-star-full"
-                      ></use>
-                    </svg>
-                    <svg class="icon">
-                      <use
-                        href="./assets/icons/sprite.svg#icon-star-full"
-                      ></use>
-                    </svg>
-                  </span>
-                </div>
-              </div>
-              <!-- 3  -->
-              <div class="comparison__add">
-                <h4>Add Product</h4>
-                <select>
-                  <option value="Chose">Choese product</option>
-                  <option value="Chose">Grifo</option>
-                  <option value="Chose">Leviosa</option>
-                </select>
+          <!-- COMPARISON TOP -->
+          <div class="comparison__top">
+            <div class="comparison__info">
+              <p class="comparison__text">
+                Go to Product page for more products
+              </p>
+              <a href="shop.html">View More</a>
+            </div>
+
+            <div class="comparison__product">
+              <img
+                src="./assets/images/products/sofa/sofa-03/sofa-03-1.png"
+                alt="Sofa"
+                class="comparison__product-image"
+              />
+              <h3 class="ui-title">Asgaard Sofa</h3>
+              <p class="comparison__price">250,000.00</p>
+              <div class="comparison__rating">
+                <span class="comparison__rating-value">4.7</span>
+                <span class="comparison__rating-stars">
+                  <svg class="icon">
+                    <use href="./assets/icons/sprite.svg#icon-star-full"></use>
+                  </svg>
+                  <svg class="icon">
+                    <use href="./assets/icons/sprite.svg#icon-star-full"></use>
+                  </svg>
+                  <svg class="icon">
+                    <use href="./assets/icons/sprite.svg#icon-star-full"></use>
+                  </svg>
+                </span>
+                <span class="comparison__rating-review"> 204 Reviews </span>
               </div>
             </div>
-            <div class="comparison__specs">
-              <!-- GENERAL -->
-              <!-- SPEC ROW -->
 
-              <div class="comparison__section">General</div>
-
-              <div class="comparison__label">Sales Packages</div>
-
-              <div class="comparison__cell">1 sectional sofa</div>
-              <div class="comparison__cell">
-                1 Three Seater, 2 Single Seater
+            <div class="comparison__product">
+              <img
+                src="./assets/images/products/chairs/chair-01/chair-01-1.png"
+                alt="Chair"
+                class="comparison__product-image"
+              />
+              <h3 class="ui-title">Asgaard Sofa</h3>
+              <p class="comparison__price">250,000.00</p>
+              <div class="comparison__rating">
+                <span class="comparison__rating-value">4.7</span>
+                <span class="comparison__rating-stars">
+                  <svg class="icon">
+                    <use href="./assets/icons/sprite.svg#icon-star-full"></use>
+                  </svg>
+                  <svg class="icon">
+                    <use href="./assets/icons/sprite.svg#icon-star-full"></use>
+                  </svg>
+                  <svg class="icon">
+                    <use href="./assets/icons/sprite.svg#icon-star-full"></use>
+                  </svg>
+                </span>
+                <span class="comparison__rating-review"> 204 Reviews </span>
               </div>
-              <div class="comparison__cell">-</div>
+            </div>
 
-              <!-- SPEC ROW -->
-              <div class="comparison__label">Model Number</div>
-
-              <div class="comparison__cell">TFCBLIGRBL6SRHS</div>
-              <div class="comparison__cell">DTUBLIGRBL568</div>
-              <div class="comparison__cell">-</div>
-
-              <!-- SPEC ROW -->
-              <div class="comparison__label">Secondary Material</div>
-
-              <div class="comparison__cell">Solid Wood</div>
-              <div class="comparison__cell">Solid Wood</div>
-              <div class="comparison__cell">-</div>
-
-              <!-- SPEC ROW -->
-              <div class="comparison__label">Configuration</div>
-
-              <div class="comparison__cell">L shape</div>
-              <div class="comparison__cell">3-seater</div>
-              <div class="comparison__cell">-</div>
-
-              <!-- PRODUCT -->
-              <!-- SPEC ROW -->
-              <div class="comparison__section">Product</div>
-              <div class="comparison__label">Primary Material</div>
-
-              <div class="comparison__cell">Foam</div>
-              <div class="comparison__cell">Matte</div>
-              <div class="comparison__cell">-</div>
-
-              <!-- SPEC ROW -->
-              <div class="comparison__label">Filling Material</div>
-
-              <div class="comparison__cell">Foam</div>
-              <div class="comparison__cell t">Matte</div>
-              <div class="comparison__cell">-</div>
-
-              <!-- SPEC ROW -->
-              <div class="comparison__label">Maximum Load Capacity</div>
-
-              <div class="comparison__cell">280 KG</div>
-              <div class="comparison__cell">300 KG</div>
-              <div class="comparison__cell">-</div>
-
-              <!-- DIMENSION -->
-              <!-- SPEC ROW -->
-              <div class="comparison__section">Dimensions</div>
-
-              <div class="comparison__label">Width</div>
-
-              <div class="comparison__cell">265.32 cm</div>
-              <div class="comparison__cell">265.32 cm</div>
-              <div class="comparison__cell">-</div>
-
-              <!-- SPEC ROW -->
-              <div class="comparison__label">Height</div>
-
-              <div class="comparison__cell">76 cm</div>
-              <div class="comparison__cell">76 cm</div>
-              <div class="comparison__cell">-</div>
-
-              <!-- SPEC ROW -->
-              <div class="comparison__label">Depth</div>
-
-              <div class="comparison__cell">167.76 cm</div>
-              <div class="comparison__cell">167.76 cm</div>
-              <div class="comparison__cell">-</div>
-
-              <!-- SPEC ROW -->
-              <div class="comparison__label">Wiight</div>
-
-              <div class="comparison__cell">300 kg</div>
-              <div class="comparison__cell">250 kg</div>
-              <div class="comparison__cell">-</div>
-
-              <!-- WARRANTY -->
-              <!-- SPEC ROW -->
-              <div class="comparison__section">Warranty</div>
-
-              <div class="comparison__label">Warranty Summary</div>
-              <div class="comparison__cell">1 Year Manufacturing Warranty</div>
-              <div class="comparison__cell">
-                1.2 Year Manufacturing Warranty
-              </div>
-              <div class="comparison__cell">-</div>
+            <div class="comparison__add">
+              <label for="compare-product" class="ui-title comparison__label">
+                Add A Product
+              </label>
+              <select
+                id="compare-product"
+                class="comparison__select"
+                aria-label="Choose product to compare"
+              >
+                <option value="" selected disabled>Choose a product</option>
+                <option value="" class="comparison__option">
+                  Asgaard Sofa
+                </option>
+                <option value="" class="comparison__option">
+                  Outdoor Sofa Set
+                </option>
+                <option value="" class="comparison__option">Syltherine</option>
+              </select>
             </div>
           </div>
+
+          <!-- COMPARISON TABLE -->
+          <div class="comparison__info"></div>
         </div>
       </section>
 
@@ -360,7 +252,7 @@
         </div>
 
         <ul class="footer__links">
-          <h4 class="footer__heading">Links</h4>
+          <li class="footer__heading">Links</li>
           <li class="footer__item">
             <a href="index.html" class="footer__link">Home</a>
           </li>
@@ -376,7 +268,7 @@
         </ul>
 
         <ul class="footer__links">
-          <h4 class="footer__heading">Help</h4>
+          <li class="footer__heading">Help</li>
           <li class="footer__item">
             <a href="payment.html" class="footer__link">Payment Options</a>
           </li>
@@ -407,148 +299,5 @@
         </div>
       </div>
     </footer>
-
-    <!-- FILTER DRAWER -->
-    <div class="filter">
-      <div class="filter-overlay"></div>
-
-      <aside
-        class="filter-drawer"
-        role="dialog"
-        arial-modal="true"
-        aria-labelledby="filter-title"
-      >
-        <div class="filter-drawer__header">
-          <h3 class="filter-drawer__title">Filter</h3>
-          <button type="button" class="filter-drawer__close">&times;</button>
-        </div>
-
-        <form class="filter-form">
-          <div class="filter-form__body">
-            <!-- Category -->
-            <div class="filter-form__group">
-              <h4 class="filter-form__title">Category</h4>
-              <label class="filter-form__option">
-                <input type="checkbox" name="category" value="chairs" />
-                <span class="filter-form__box"></span>
-                <span class="filter-form__label">Chairs</span>
-              </label>
-
-              <label class="filter-form__option">
-                <input type="checkbox" name="category" value="sofa" />
-                <span class="filter-form__box"></span>
-                <span class="filter-form__label">Sofa</span>
-              </label>
-
-              <label class="filter-form__option">
-                <input type="checkbox" name="category" value="tables" />
-                <span class="filter-form__box"></span>
-                <span class="filter-form__label">Tables</span>
-              </label>
-            </div>
-
-            <!-- Price -->
-            <div class="filter-form__group">
-              <h4 class="filter-form__title">Price</h4>
-              <div class="filter-form__price">
-                <input
-                  type="number"
-                  name="price-min"
-                  placeholder="Min"
-                  min="0"
-                />
-                <span> - </span>
-                <input
-                  type="number"
-                  name="price-max"
-                  placeholder="Max"
-                  min="0"
-                />
-              </div>
-            </div>
-
-            <!-- Size -->
-            <div class="filter-form__group">
-              <h4 class="filter-form__title">Size</h4>
-              <label class="filter-form__option">
-                <input type="checkbox" name="size" value="small" />
-                <span class="filter-form__box"></span>
-                <span class="filter-form__label">Small</span>
-              </label>
-
-              <label class="filter-form__option">
-                <input type="checkbox" name="size" value="medium" />
-                <span class="filter-form__box"></span>
-                <span class="filter-form__label">Medium</span>
-              </label>
-
-              <label class="filter-form__option">
-                <input type="checkbox" name="size" value="large" />
-                <span class="filter-form__box"></span>
-                <span class="filter-form__label">Large</span>
-              </label>
-            </div>
-
-            <!-- Rating -->
-            <div class="filter-form__group">
-              <h4 class="filter-form__title">Rating</h4>
-
-              <label class="filter-form__option">
-                <input type="radio" name="rating" value="4" />
-                <span class="filter-form__radio"></span>
-                <span class="filter-form__label"> 4★ & up</span>
-              </label>
-
-              <label class="filter-form__option">
-                <input type="radio" name="rating" value="3" />
-                <span class="filter-form__radio"></span>
-                <span class="filter-form__label">3★ & up</span>
-              </label>
-            </div>
-
-            <!-- Color -->
-            <div class="filter-form__group">
-              <h4 class="filter-form__title">Color</h4>
-              <div class="filter-form__colors">
-                <label class="filter-form__color">
-                  <input
-                    type="checkbox"
-                    name="color"
-                    value="black"
-                    class="filter-form__color-input"
-                  />
-                  <span class="filter-form__dot filter-form__dot--black"></span>
-                </label>
-
-                <label class="filter-form__color">
-                  <input
-                    type="checkbox"
-                    name="color"
-                    value="gray"
-                    class="filter-form__color-input"
-                  />
-                  <span class="filter-form__dot filter-form__dot--gray"></span>
-                </label>
-
-                <label class="filter-form__color">
-                  <input
-                    type="checkbox"
-                    name="color"
-                    value="beige"
-                    class="filter-form__color-input"
-                  />
-                  <span class="filter-form__dot filter-form__dot--beige"></span>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <div class="filter-drawer__footer">
-            <button class="btn btn--secondary">Reset</button>
-            <button class="btn btn--primary">Apply</button>
-          </div>
-        </form>
-      </aside>
-    </div>
   </body>
 </html>
