@@ -1,0 +1,32 @@
+.comparison {
+  &__row {
+    display: grid;
+    grid-template-columns: 250px repeat(3, 1fr);
+  }
+
+  &__label {
+    padding-block: 0.8rem;
+  }
+
+  &__info {
+    &-title {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    &-btn {
+      color: var(--color-gray);
+      text-transform: capitalize;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__section {
+    font-weight: 700;
+    font-size: 1.75rem;
+    padding-block: 1.75rem;
+  }
+}

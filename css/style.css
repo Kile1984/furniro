@@ -903,6 +903,30 @@ ol {
   font-size: 20px;
 }
 
+.comparison__row {
+  display: grid;
+  grid-template-columns: 250px repeat(3, 1fr);
+}
+.comparison__label {
+  padding-block: 0.8rem;
+}
+.comparison__info-title {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.comparison__info-btn {
+  color: var(--color-gray);
+  text-transform: capitalize;
+}
+.comparison__info-btn:hover {
+  text-decoration: underline;
+}
+.comparison__section {
+  font-weight: 700;
+  font-size: 1.75rem;
+  padding-block: 1.75rem;
+}
+
 .features {
   background-color: var(--bg-neutral-400);
   margin-top: var(--space-section);

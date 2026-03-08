@@ -99,15 +99,15 @@
       </header>
 
       <!-- COMPARISON  -->
-      <section class="comparison">
-        <div class="container">
-          <!-- COMPARISON TOP -->
-          <div class="comparison__top">
+      <div class="comparison">
+        <div class="container comparison__table">
+          <!-- HEADER -->
+          <div class="comparison__row comparison__row--header">
             <div class="comparison__info">
-              <p class="comparison__text">
+              <p class="comparison__info-title">
                 Go to Product page for more products
               </p>
-              <a href="shop.html">View More</a>
+              <a class="btn comparison__info-btn" href="shop.html">View More</a>
             </div>
 
             <div class="comparison__product">
@@ -116,7 +116,7 @@
                 alt="Sofa"
                 class="comparison__product-image"
               />
-              <h3 class="ui-title">Asgaard Sofa</h3>
+              <a href="product.html" class="ui-title">Asgaard Sofa</a>
               <p class="comparison__price">250,000.00</p>
               <div class="comparison__rating">
                 <span class="comparison__rating-value">4.7</span>
@@ -137,11 +137,11 @@
 
             <div class="comparison__product">
               <img
-                src="./assets/images/products/chairs/chair-01/chair-01-1.png"
-                alt="Chair"
+                src="./assets/images/products/sofa/sofa-03/sofa-03-1.png"
+                alt="Sofa"
                 class="comparison__product-image"
               />
-              <h3 class="ui-title">Asgaard Sofa</h3>
+              <a href="product.html" class="ui-title">Asgaard Sofa</a>
               <p class="comparison__price">250,000.00</p>
               <div class="comparison__rating">
                 <span class="comparison__rating-value">4.7</span>
@@ -160,31 +160,185 @@
               </div>
             </div>
 
-            <div class="comparison__add">
-              <label for="compare-product" class="ui-title comparison__label">
-                Add A Product
-              </label>
-              <select
-                id="compare-product"
-                class="comparison__select"
-                aria-label="Choose product to compare"
-              >
-                <option value="" selected disabled>Choose a product</option>
-                <option value="" class="comparison__option">
-                  Asgaard Sofa
-                </option>
-                <option value="" class="comparison__option">
-                  Outdoor Sofa Set
-                </option>
-                <option value="" class="comparison__option">Syltherine</option>
-              </select>
+            <div class="comparison__product">
+              <img
+                src="./assets/images/products/sofa/sofa-03/sofa-03-1.png"
+                alt="Sofa"
+                class="comparison__product-image"
+              />
+              <a href="product.html" class="ui-title">Asgaard Sofa</a>
+              <p class="comparison__price">250,000.00</p>
+              <div class="comparison__rating">
+                <span class="comparison__rating-value">4.7</span>
+                <span class="comparison__rating-stars">
+                  <svg class="icon">
+                    <use href="./assets/icons/sprite.svg#icon-star-full"></use>
+                  </svg>
+                  <svg class="icon">
+                    <use href="./assets/icons/sprite.svg#icon-star-full"></use>
+                  </svg>
+                  <svg class="icon">
+                    <use href="./assets/icons/sprite.svg#icon-star-full"></use>
+                  </svg>
+                </span>
+                <span class="comparison__rating-review"> 204 Reviews </span>
+              </div>
             </div>
           </div>
 
-          <!-- COMPARISON TABLE -->
-          <div class="comparison__info"></div>
+          <!-- SECTION -->
+          <div class="comparison__row comparison__row--section">
+            <div class="comparison__section">General</div>
+          </div>
+
+          <!-- SPEC -->
+          <div class="comparison__row">
+            <div class="comparison__label">Sales Package</div>
+
+            <div class="comparison__spec">1 sectional sofa</div>
+
+            <div class="comparison__spec">1 three seater</div>
+
+            <div class="comparison__spec">-</div>
+          </div>
+
+          <!-- SPEC -->
+          <div class="comparison__row">
+            <div class="comparison__label">Model Number</div>
+
+            <div class="comparison__spec">TFCBLIGRBL6SRHS</div>
+
+            <div class="comparison__spec">DTUBLIGRBL568</div>
+
+            <div class="comparison__spec">-</div>
+          </div>
+
+          <!-- SPEC -->
+          <div class="comparison__row">
+            <div class="comparison__label">Secondary Material</div>
+
+            <div class="comparison__spec">Solid Wood</div>
+
+            <div class="comparison__spec">Solid Wood</div>
+
+            <div class="comparison__spec">-</div>
+          </div>
+
+          <!-- SPEC -->
+          <div class="comparison__row">
+            <div class="comparison__label">Configuration</div>
+
+            <div class="comparison__spec">L-shaped</div>
+
+            <div class="comparison__spec">L-shaped</div>
+
+            <div class="comparison__spec">-</div>
+          </div>
+
+          <!-- SECTION -->
+          <div class="comparison__row comparison__row--section">
+            <div class="comparison__section">Product</div>
+          </div>
+
+          <!-- SPEC -->
+          <div class="comparison__row">
+            <div class="comparison__label">Filling Material</div>
+
+            <div class="comparison__spec">Foam</div>
+
+            <div class="comparison__spec">Matte</div>
+
+            <div class="comparison__spec">-</div>
+          </div>
+
+          <!-- SPEC -->
+          <div class="comparison__row">
+            <div class="comparison__label">Maximum Load Capacity</div>
+
+            <div class="comparison__spec">280 KG</div>
+
+            <div class="comparison__spec">300 KG</div>
+
+            <div class="comparison__spec">-</div>
+          </div>
+
+          <!-- SPEC -->
+          <div class="comparison__row">
+            <div class="comparison__label">Origin of Manufacture</div>
+
+            <div class="comparison__spec">India</div>
+
+            <div class="comparison__spec">India</div>
+
+            <div class="comparison__spec">-</div>
+          </div>
+
+          <!-- SECTION -->
+          <div class="comparison__row comparison__row--section">
+            <div class="comparison__section">General</div>
+          </div>
+
+          <!-- SPEC -->
+          <div class="comparison__row">
+            <div class="comparison__label">Width</div>
+
+            <div class="comparison__spec">265.32 cm</div>
+
+            <div class="comparison__spec">265.32 cm</div>
+
+            <div class="comparison__spec">-</div>
+          </div>
+
+          <!-- SPEC -->
+          <div class="comparison__row">
+            <div class="comparison__label">Height</div>
+
+            <div class="comparison__spec">76 cm</div>
+
+            <div class="comparison__spec">76 cm</div>
+
+            <div class="comparison__spec">-</div>
+          </div>
+
+          <!-- SPEC -->
+          <div class="comparison__row">
+            <div class="comparison__label">Depth</div>
+
+            <div class="comparison__spec">167.76 cm</div>
+
+            <div class="comparison__spec">167.76 cm</div>
+
+            <div class="comparison__spec">-</div>
+          </div>
+
+          <!-- SPEC -->
+          <div class="comparison__row">
+            <div class="comparison__label">Weight</div>
+
+            <div class="comparison__spec">45 KG</div>
+
+            <div class="comparison__spec">65 KG</div>
+
+            <div class="comparison__spec">-</div>
+          </div>
+
+          <!-- SECTION -->
+          <div class="comparison__row comparison__row--section">
+            <div class="comparison__section">Warranty</div>
+          </div>
+
+          <!-- SPEC -->
+          <div class="comparison__row">
+            <div class="comparison__label">Warranty Summary</div>
+
+            <div class="comparison__spec">1 Year Manufacturing Warranty</div>
+
+            <div class="comparison__spec">1.2 Year Manufacturing Warranty</div>
+
+            <div class="comparison__spec">-</div>
+          </div>
         </div>
-      </section>
+      </div>
 
       <!-- FEATURES -->
       <section class="features">
