@@ -27,6 +27,8 @@
   /*Section, Heading spacing*/
   --space-heading-sm: 2rem; /* 32px */
   --space-heading-lg: 4rem; /* 64px */
+  /******BORDER*****/
+  --border-color-light: rgba(176, 176, 176, 0.5);
   /*****COLORS*****/
   /* Neutral backgrounds */
   --bg-neutral-100: #f4f5f7; /* page / light gray */
@@ -906,25 +908,89 @@ ol {
 .comparison__row {
   display: grid;
   grid-template-columns: 250px repeat(3, 1fr);
+  gap: 2rem;
 }
-.comparison__label {
-  padding-block: 0.8rem;
+.comparison__row--header {
+  margin-bottom: 2rem;
+}
+.comparison__row--section {
+  border-top: 1px solid var(--border-color-light);
+}
+.comparison__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
 }
 .comparison__info-title {
-  font-size: 1rem;
+  font-size: 1.75rem;
   font-weight: 500;
+  line-height: 1.2;
+  max-width: 12ch;
 }
 .comparison__info-btn {
   color: var(--color-gray);
   text-transform: capitalize;
+  padding-inline: 0;
 }
 .comparison__info-btn:hover {
   text-decoration: underline;
+}
+.comparison__rating {
+  display: flex;
+  gap: 1rem;
+}
+.comparison__rating-review {
+  border-left: 1px solid var(--color-gray);
+  padding-inline: 0.3rem;
+  color: var(--color-gray);
+}
+.comparison__rating-stars {
+  color: #ffc700;
 }
 .comparison__section {
   font-weight: 700;
   font-size: 1.75rem;
   padding-block: 1.75rem;
+  border-right: 1px solid var(--border-color-light);
+  margin-inline: -1rem;
+}
+.comparison__section-empty {
+  margin-inline: -1rem;
+}
+.comparison__section-empty:not(:last-child) {
+  border-right: 1px solid var(--border-color-light);
+}
+.comparison__label {
+  font-size: 1.25rem;
+  padding-block: 0.8rem;
+  border-right: 1px solid var(--border-color-light);
+  margin-inline: -1rem;
+}
+.comparison__spec {
+  font-size: 1.25rem;
+  padding: 0.8rem;
+  margin-inline: -1rem;
+}
+.comparison__spec:not(:last-child) {
+  border-right: 1px solid var(--border-color-light);
+}
+.comparison__product {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.comparison__product img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+.comparison__product-title {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.comparison__price {
+  font-weight: 500;
 }
 
 .features {
