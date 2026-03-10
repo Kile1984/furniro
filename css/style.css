@@ -911,7 +911,7 @@ ol {
   gap: 2rem;
 }
 .comparison__row--header {
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 .comparison__row--section {
   border-top: 1px solid var(--border-color-light);
@@ -953,10 +953,10 @@ ol {
   font-size: 1.75rem;
   padding-block: 1.75rem;
   border-right: 1px solid var(--border-color-light);
-  margin-inline: -1rem;
+  margin-right: -1rem;
 }
 .comparison__section-empty {
-  margin-inline: -1rem;
+  margin-right: -1rem;
 }
 .comparison__section-empty:not(:last-child) {
   border-right: 1px solid var(--border-color-light);
@@ -965,7 +965,7 @@ ol {
   font-size: 1.25rem;
   padding-block: 0.8rem;
   border-right: 1px solid var(--border-color-light);
-  margin-inline: -1rem;
+  margin-right: -1rem;
 }
 .comparison__spec {
   font-size: 1.25rem;

@@ -7,7 +7,7 @@
     gap: 2rem;
 
     &--header {
-      margin-bottom: 2rem;
+      margin-bottom: 4rem;
     }
 
     &--section {
@@ -60,10 +60,10 @@
     padding-block: 1.75rem;
     // grid-column: 1 / -1;
     border-right: 1px solid var(--border-color-light);
-    margin-inline: -1rem;
+    margin-right: -1rem;
 
     &-empty {
-      margin-inline: -1rem;
+      margin-right: -1rem;
     }
 
     &-empty:not(:last-child) {
@@ -75,7 +75,7 @@
     font-size: 1.25rem;
     padding-block: 0.8rem;
     border-right: 1px solid var(--border-color-light);
-    margin-inline: -1rem;
+    margin-right: -1rem;
   }
 
   &__spec {
