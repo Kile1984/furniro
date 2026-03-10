@@ -1,6 +1,25 @@
 @use "../abstract/mixins" as *;
 
 .comparison {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+
+  &__info,
+  &__section,
+  &__label {
+    position: sticky;
+    left: 1rem;
+    background: #fff;
+    z-index: 3;
+    box-shadow: -18px 0 0 #fff;
+  }
+
+  &__table {
+    min-width: 900px;
+  }
+
   &__row {
     display: grid;
     grid-template-columns: 250px repeat(3, 1fr);
@@ -80,7 +99,7 @@
 
   &__spec {
     font-size: 1.25rem;
-    padding: 0.8rem;
+    padding: 0.8rem 2rem;
     margin-inline: -1rem;
 
     &:not(:last-child) {
@@ -102,10 +121,46 @@
     &-title {
       font-weight: 600;
       font-size: 1.5rem;
+      margin-top: 0.5rem;
     }
   }
 
   &__price {
     font-weight: 500;
+  }
+
+  &__add {
+    display: flex;
+    flex-direction: column;
+
+    &-select-wrapper {
+      position: relative;
+
+      &::after {
+        content: "▾";
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__select {
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: var(--color-accent);
+    border-color: transparent;
+    border-radius: 8px;
+    color: var(--color-white);
+    height: 40px;
+    padding-inline: 1rem;
+    cursor: pointer;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
   }
 }
