@@ -1781,4 +1781,52 @@ ol {
   color: var(--color-accent);
 }
 
+.checkout__form {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--gap-lg);
+}
+.checkout__left {
+  display: grid;
+  row-gap: 2.5rem;
+}
+.checkout__header {
+  font-size: 36px;
+}
+.checkout__inputs-wrapper {
+  display: flex;
+  gap: 2rem;
+}
+.checkout__label {
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+.checkout__group {
+  display: flex;
+  flex-direction: column;
+}
+.checkout__input {
+  height: 75px;
+  border-radius: 8px;
+  border: 2px solid var(--color-gray-light);
+  padding-left: 1rem;
+  outline: none;
+  transition: border 0.3s ease;
+}
+.checkout__input:focus {
+  border-color: var(--color-accent);
+}
+.checkout__textarea {
+  height: 75px;
+  line-height: 70px;
+  border-radius: 8px;
+  border: 2px solid var(--color-gray-light);
+  padding-left: 1rem;
+  outline: none;
+  transition: border 0.3s ease;
+}
+.checkout__textarea:focus {
+  border-color: var(--color-accent);
+}
+
 /*# sourceMappingURL=style.css.map */

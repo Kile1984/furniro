@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon.png"
+    />
+    <script src="js/main.js" defer></script>
+    <title>Furniro | Checkout</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="container container--wide header__inner">
+        <a href="index.html" class="header__logo">
+          <img src="./assets/images/Logo.png" alt="Logo" />
+        </a>
+
+        <nav class="header__nav" aria-label="Main navigation">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a href="index.html" class="header__nav-link nav-link">Home</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="shop.html" class="header__nav-link nav-link">Shop</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="about.html" class="header__nav-link nav-link">About</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="contact.html" class="header__nav-link nav-link"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="header__actions">
+          <ul class="header__actions-list">
+            <li>
+              <a href="account.html" aria-label="Account">
+                <svg class="icon">
+                  <use href="./assets/icons/sprite.svg#icon-user"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="search.html" aria-label="Search">
+                <svg class="icon">
+                  <use href="./assets/icons/sprite.svg#icon-search"></use>
+                </svg>
+              </a>
+            </li>
+
+            <li>
+              <a href="whishlist.html" aria-label="Wishlist">
+                <svg class="icon">
+                  <use href="./assets/icons/sprite.svg#icon-heart"></use>
+                </svg>
+              </a>
+            </li>
+
+            <li>
+              <a href="cart.html" aria-label="Cart">
+                <svg class="icon icon-search">
+                  <use href="./assets/icons/sprite.svg#icon-cart"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main class="page page--contact">
+      <header class="page-hero">
+        <div class="container page-hero__inner">
+          <img
+            src="./assets/images/Logo-crop.png"
+            alt="Logo-crop"
+            class="m-auto"
+          />
+          <h1 class="page-title page-title--medium page-hero__title">
+            Checkout
+          </h1>
+          <nav
+            class="page-hero__breadcrumb text-center"
+            aria-label="Breadcrumb"
+          >
+            <a href="index.html" class="text-body text-body--medium">Home</a> >
+            <span>Checkout</span>
+          </nav>
+        </div>
+      </header>
+
+      <!-- CTA -->
+      <section class="checkout">
+        <div class="container">
+          <form action="#" class="checkout__form">
+            <div class="checkout__left">
+              <h2 class="checkout__header">Billing details</h2>
+
+              <div class="checkout__inputs-wrapper">
+                <div class="checkout__group">
+                  <label for="name" class="checkout__label">First Name</label>
+                  <input id="name" type="text" class="checkout__input" />
+                </div>
+                <div class="checkout__group">
+                  <label for="lastname" class="checkout__label"
+                    >Last Name</label
+                  >
+                  <input
+                    id="lastname"
+                    name="lastname"
+                    type="text"
+                    class="checkout__input"
+                  />
+                </div>
+              </div>
+
+              <div class="checkout__group">
+                <label for="company" class="checkout__label"
+                  >Company Name (Optional)</label
+                >
+                <input
+                  id="company"
+                  type="text"
+                  name="company"
+                  class="checkout__input"
+                />
+              </div>
+
+              <div class="checkout__group">
+                <label for="address" class="checkout__label"
+                  >Street address</label
+                >
+                <input
+                  id="address"
+                  type="text"
+                  name="address"
+                  class="checkout__input"
+                />
+              </div>
+
+              <div class="checkout__group">
+                <label for="town" class="checkout__label">Town / City</label>
+                <input
+                  id="town"
+                  type="text"
+                  name="town"
+                  class="checkout__input"
+                />
+              </div>
+
+              <div class="checkout__group">
+                <label for="zip" class="checkout__label">ZIP code</label>
+                <input
+                  id="zip"
+                  type="text"
+                  name="zip"
+                  class="checkout__input"
+                />
+              </div>
+
+              <div class="checkout__group">
+                <label for="phone" class="checkout__label">Phone</label>
+                <input
+                  id="phone"
+                  type="tel"
+                  name="phone"
+                  class="checkout__input"
+                />
+              </div>
+
+              <div class="checkout__group">
+                <label for="mail" class="checkout__label">Email address</label>
+                <input
+                  id="mail"
+                  type="email"
+                  name="mail"
+                  class="checkout__input"
+                />
+              </div>
+
+              <div class="checkout__group">
+                <textarea
+                  id="message"
+                  type="text"
+                  name="message"
+                  class="checkout__textarea"
+                  placeholder="Additional information"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="checkout__right">
+              <div class="checkout__product-wrapper">
+                <h2 class="checkout__title">Product</h2>
+                <p class="checkout__product">Asgaard sofa x 1</p>
+                <p class="checkout__subtotal-text">Subtotal</p>
+                <p class="checkout__total-text">Total</p>
+              </div>
+
+              <div class="checkout__total-wrapper">
+                <h2 class="checkout__title">Subtotal</h2>
+                <p class="checkout__price">Rs. 250,000.00</p>
+                <p class="checkout__subtotal">Rs. 250,000.00</p>
+                <p class="checkout__total">Rs. 250,000.00</p>
+              </div>
+
+              <div class="checkout__payment">
+                <div class="checkout__payment-options">
+                  <input
+                    type="radio"
+                    id="bank"
+                    name="payment"
+                    class="checkout__radio"
+                  />
+                  <label for="bank" class="checkout__label">
+                    Direct Bank Transfer
+                  </label>
+                  <p class="checkout__payment-text">
+                    Make your payment directly into our bank account. Please use
+                    your Order ID as the payment reference. Your order will not
+                    be shipped until the funds have cleared in our account.
+                  </p>
+                </div>
+
+                <div class="checkout__payment-options">
+                  <input
+                    type="radio"
+                    id="delivery"
+                    name="payment"
+                    class="checkout__radio"
+                  />
+                  <label for="delivery" class="checkout__label">
+                    Cash On Delivery
+                  </label>
+                  <p class="checkout__payment-text">
+                    Make your payment to the courier service upon delivery of
+                    the product.
+                  </p>
+                </div>
+              </div>
+
+              <button class="btn form__submit" type="submit">
+                Place order
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section class="features">
+        <div class="container container--wide features__inner">
+          <div class="features__box features__quality">
+            <img
+              src="./assets/images/trophy.png"
+              alt=""
+              class="features__img"
+            />
+            <h3 class="features__title ui-title ui-title--dark">
+              High Quality
+            </h3>
+            <p class="text-body-xl features__text">
+              crafted from top materials
+            </p>
+          </div>
+          <div class="features__box features__warranty">
+            <img
+              src="./assets/images/guarantee.png"
+              alt=""
+              class="features__img"
+            />
+            <h3 class="features__title ui-title ui-title--dark">
+              Warranty Protection
+            </h3>
+            <p class="text-body-xl features__text">Over 2 years</p>
+          </div>
+          <div class="features__box features__shipping">
+            <img
+              src="./assets/images/shipping.png"
+              alt=""
+              class="features__img"
+            />
+            <h3 class="features__title ui-title ui-title--dark">
+              Free Shipping
+            </h3>
+            <p class="text-body-xl features__text">Order over 150 $</p>
+          </div>
+          <div class="features__box features__support">
+            <img
+              src="./assets/images/customer-support.png"
+              alt=""
+              class="features__img"
+            />
+            <h3 class="features__title ui-title ui-title--dark">
+              24 / 7 Support
+            </h3>
+            <p class="text-body-xl features__text">Dedicated support</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner container">
+        <div class="footer__info">
+          <a href="#" class="footer__logo">
+            <img src="./assets/images/Logo.png" alt="Logo" />
+          </a>
+          <p class="footer__address text-body">
+            400 University Drive Suite 200 Coral Gables, <br />FL 33134 USA
+          </p>
+        </div>
+
+        <ul class="footer__links">
+          <li class="footer__heading">Links</li>
+          <li class="footer__item">
+            <a href="index.html" class="footer__link">Home</a>
+          </li>
+          <li class="footer__item">
+            <a href="shop.html" class="footer__link">Shop</a>
+          </li>
+          <li class="footer__item">
+            <a href="about.html" class="footer__link">About</a>
+          </li>
+          <li class="footer__item">
+            <a href="contact.html" class="footer__link">Contact</a>
+          </li>
+        </ul>
+
+        <ul class="footer__links">
+          <li class="footer__heading">Help</li>
+          <li class="footer__item">
+            <a href="payment.html" class="footer__link">Payment Options</a>
+          </li>
+          <li class="footer__item">
+            <a href="returns.html" class="footer__link">Returns</a>
+          </li>
+          <li class="footer__item">
+            <a href="privacy.html" class="footer__link">Privacy Policies</a>
+          </li>
+        </ul>
+
+        <div class="footer__newsletter">
+          <h4 class="footer__heading">Newsletter</h4>
+          <form action="#" class="footer__form">
+            <input
+              type="email"
+              class="footer__mail"
+              id="footer-mail"
+              placeholder="Enter Your Email Address"
+            />
+
+            <button class="footer__submit btn">Subscribe</button>
+          </form>
+        </div>
+
+        <div class="footer__rights">
+          <p>2023 Furniro. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
