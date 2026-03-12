@@ -199,29 +199,35 @@
 
             <div class="checkout__right">
               <div class="checkout__product-wrapper">
-                <h2 class="checkout__title">Product</h2>
-                <p class="checkout__product">Asgaard sofa x 1</p>
-                <p class="checkout__subtotal-text">Subtotal</p>
-                <p class="checkout__total-text">Total</p>
-              </div>
+                <div class="checkout__product">
+                  <h2 class="checkout__title">Product</h2>
+                  <p class="checkout__product-text">
+                    <span
+                      class="checkout__product-text checkout__product-text--gray"
+                      >Asgaard sofa</span
+                    >
+                    <span>x 1</span>
+                  </p>
+                  <p class="checkout__subtotal-text">Subtotal</p>
+                  <p class="checkout__total-text">Total</p>
+                </div>
 
-              <div class="checkout__total-wrapper">
-                <h2 class="checkout__title">Subtotal</h2>
-                <p class="checkout__price">Rs. 250,000.00</p>
-                <p class="checkout__subtotal">Rs. 250,000.00</p>
-                <p class="checkout__total">Rs. 250,000.00</p>
+                <div class="checkout__total">
+                  <h2 class="checkout__title">Subtotal</h2>
+                  <p class="checkout__price">Rs. 250,000.00</p>
+                  <p class="checkout__subtotal">Rs. 250,000.00</p>
+                  <p class="checkout__total">Rs. 250,000.00</p>
+                </div>
               </div>
 
               <div class="checkout__payment">
                 <div class="checkout__payment-options">
-                  <input
-                    type="radio"
-                    id="bank"
-                    name="payment"
-                    class="checkout__radio"
-                  />
-                  <label for="bank" class="checkout__label">
-                    Direct Bank Transfer
+                  <label for="bank" class="checkout__payment-option">
+                    <input type="radio" name="payment" />
+                    <span class="checkout__payment-radio"></span>
+                    <span class="checkout__payment-label"
+                      >Direct Bank Transfer</span
+                    >
                   </label>
                   <p class="checkout__payment-text">
                     Make your payment directly into our bank account. Please use
@@ -231,14 +237,12 @@
                 </div>
 
                 <div class="checkout__payment-options">
-                  <input
-                    type="radio"
-                    id="delivery"
-                    name="payment"
-                    class="checkout__radio"
-                  />
-                  <label for="delivery" class="checkout__label">
-                    Cash On Delivery
+                  <label for="delivery" class="checkout__payment-option">
+                    <input type="radio" name="payment" />
+                    <span class="checkout__payment-radio"></span>
+                    <span class="checkout__payment-label">
+                      Cash On Delivery</span
+                    >
                   </label>
                   <p class="checkout__payment-text">
                     Make your payment to the courier service upon delivery of
