@@ -223,35 +223,46 @@
               <div class="checkout__payment">
                 <div class="checkout__payment-options">
                   <label for="bank" class="checkout__payment-option">
-                    <input type="radio" name="payment" />
-                    <span class="checkout__payment-radio"></span>
-                    <span class="checkout__payment-label"
-                      >Direct Bank Transfer</span
-                    >
+                    <input type="radio" name="payment" id="bank" />
+                    <div class="checkout__payment-wrapper">
+                      <span class="checkout__payment-radio"></span>
+                      <span class="checkout__payment-label"
+                        >Direct Bank Transfer</span
+                      >
+                    </div>
                   </label>
-                  <p class="checkout__payment-text">
-                    Make your payment directly into our bank account. Please use
-                    your Order ID as the payment reference. Your order will not
-                    be shipped until the funds have cleared in our account.
-                  </p>
                 </div>
 
                 <div class="checkout__payment-options">
                   <label for="delivery" class="checkout__payment-option">
-                    <input type="radio" name="payment" />
-                    <span class="checkout__payment-radio"></span>
-                    <span class="checkout__payment-label">
-                      Cash On Delivery</span
-                    >
+                    <input type="radio" name="payment" id="delivery" />
+                    <div class="checkout__payment-wrapper">
+                      <span class="checkout__payment-radio"></span>
+                      <span class="checkout__payment-label">
+                        Cash On Delivery</span
+                      >
+                    </div>
                   </label>
-                  <p class="checkout__payment-text">
+                </div>
+
+                <div class="checkout__option-texts">
+                  <p
+                    class="checkout__payment-text checkout__payment-text--bank"
+                  >
+                    Make your payment directly into our bank account. Please use
+                    your Order ID as the payment reference.
+                  </p>
+
+                  <p
+                    class="checkout__payment-text checkout__payment-text--delivery"
+                  >
                     Make your payment to the courier service upon delivery of
                     the product.
                   </p>
                 </div>
               </div>
 
-              <button class="btn form__submit" type="submit">
+              <button class="btn checkout__submit" type="submit">
                 Place order
               </button>
             </div>
