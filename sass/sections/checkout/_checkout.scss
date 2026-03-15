@@ -84,7 +84,14 @@
   &__total {
     display: flex;
     flex-direction: column;
+    align-items: end;
     gap: 1rem;
+
+    &-value {
+      font-size: 24px;
+      font-weight: 500;
+      color: var(--color-accent);
+    }
   }
 
   &__payment {
@@ -159,6 +166,7 @@
     }
 
     &-text {
+      color: var(--color-gray-light);
       display: none;
       height: 4rem;
     }

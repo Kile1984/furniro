@@ -1,3 +1,7 @@
+/****************************
+****** CSS VARIABLES *******
+*****************************/
+
 :root {
   /*****FONT*****/
   --ff-primary:
@@ -60,3 +64,20 @@
   --color-pink: #e97171;
   --color-green: #2ec1ac;
 }
+
+/****************************
+****** SASS VARIABLES *******
+*****************************/
+
+/*****BREAKPOINTS*****/
+
+$breakpoints: (
+  //1200px
+  desktop: 75em,
+  // 992 px
+  tablet: 62em,
+  // 768px
+  mobile: 48em,
+  // 576px
+  small: 36em
+);
