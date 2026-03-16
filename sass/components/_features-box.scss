@@ -1,13 +1,19 @@
+@use "../abstract/mixins" as *;
+
 .features {
   &__box {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 0.5rem;
     align-self: self-start;
+
+    @include respond(mobile) {
+      display: block;
+    }
   }
 
   &__title {
-    font-size: 25px;
+    font-size: 23px;
   }
   &__img {
     grid-row: 1 / span 2;

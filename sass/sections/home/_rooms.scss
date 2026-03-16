@@ -1,3 +1,5 @@
+@use "../../abstract/mixins" as *;
+
 .rooms {
   background-color: var(--bg-neutral-200);
   padding-block: 3rem;
@@ -12,6 +14,14 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
     // margin-left: max(1rem, calc((100vw - 75rem)));
+
+    @include respond(mobile) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include respond(small) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__title {
@@ -26,6 +36,10 @@
 
   &__main {
     position: relative;
+
+    @include respond(tablet) {
+      display: none;
+    }
   }
 
   &__overlay {
@@ -59,9 +73,25 @@
 
       &--right {
         right: 3rem;
+
+        @include respond(tablet) {
+          right: -1.5rem;
+        }
+
+        @include respond(mobile) {
+          right: -1.5rem;
+        }
+
+        @include respond(small) {
+          right: -1.375rem;
+        }
       }
       &--left {
         left: -2rem;
+
+        @include respond(small) {
+          left: -1rem;
+        }
       }
     }
   }
@@ -75,6 +105,10 @@
 
   &__slide {
     flex: 0 0 80%;
+
+    @include respond(tablet) {
+      flex-basis: 100%;
+    }
 
     img {
       height: 100%;

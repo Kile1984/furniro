@@ -1,3 +1,5 @@
+@use "../../abstract/mixins" as *;
+
 .range {
   padding-top: var(--space-section);
 
@@ -17,6 +19,10 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--gap-sm);
+
+    @include respond(small) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &__box {

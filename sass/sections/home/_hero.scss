@@ -1,3 +1,4 @@
+@use "../../abstract/mixins" as *;
 .hero {
   background-image: url(../../assets/images/hero-img.png);
   background-size: cover;
@@ -15,6 +16,11 @@
 
     padding: 3.8rem 2.2rem 2.2rem 2.2rem;
     border-radius: var(--radius-sm);
+
+    @include respond(mobile) {
+      grid-column: 1 / -1;
+      background-color: rgba(#fff3e3, 0.8);
+    }
   }
 
   &__badge {

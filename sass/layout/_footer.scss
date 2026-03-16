@@ -1,3 +1,5 @@
+@use "../abstract/mixins" as *;
+
 .footer {
   border-top: 2px solid var(--bg-neutral-100);
   padding-block: 3.125rem;
@@ -7,12 +9,29 @@
     grid-template-columns: repeat(4, 1fr);
     column-gap: 1rem;
     row-gap: 3rem;
+
+    @include respond(tablet) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include respond(mobile) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(small) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__info {
     display: flex;
     flex-direction: column;
     gap: 3rem;
+
+    @include respond(small) {
+      align-items: center;
+      text-align: center;
+    }
   }
 
   &__address {
@@ -24,12 +43,22 @@
     flex-direction: column;
     gap: 3rem;
     margin-left: 3.5rem;
+
+    @include respond(mobile) {
+      margin: 0;
+      gap: 1.5rem;
+      align-items: center;
+    }
   }
 
   &__heading {
     font-size: 16px;
     color: var(--color-gray-light);
     font-weight: 500;
+
+    @include respond(mobile) {
+      text-align: center;
+    }
   }
 
   &__item {
@@ -54,6 +83,11 @@
     display: flex;
     margin-top: 2rem;
     gap: 1rem;
+
+    @include respond(mobile) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__mail {
@@ -95,5 +129,9 @@
     padding-top: 3.125rem;
     grid-column: 1/-1;
     border-top: 2px solid var(--bg-neutral-100);
+
+    @include respond(small) {
+      text-align: center;
+    }
   }
 }

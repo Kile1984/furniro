@@ -1,3 +1,5 @@
+@use "../../abstract/mixins" as *;
+
 .products {
   &__main-title {
     margin-bottom: var(--space-heading-lg);
@@ -5,8 +7,17 @@
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--gap-lg);
+
+    @include respond(small) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--gap-xs);
+    }
+
+    // @include respond(small) {
+    //   grid-template-columns: 1fr;
+    // }
   }
 
   &__btn-load-more {

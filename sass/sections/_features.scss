@@ -1,3 +1,5 @@
+@use "../abstract/mixins" as *;
+
 .features {
   background-color: var(--bg-neutral-400);
   margin-top: var(--space-section);
@@ -5,6 +7,18 @@
 
   &__inner {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    @include respond(tablet) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: space-between;
+    }
+
+    @include respond(mobile) {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
   }
 }

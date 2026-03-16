@@ -13,7 +13,7 @@
   }
 
   &--open .header__toggle-line:nth-child(1) {
-    transform: translateY(15px) rotate(45deg);
+    transform: translateY(16px) rotate(45deg);
   }
 
   &--open .header__toggle-line:nth-child(2) {
@@ -30,6 +30,7 @@
 
   &__toggle {
     display: none;
+
     @include respond(tablet) {
       width: 2rem;
       height: 1.5rem;
@@ -50,6 +51,11 @@
         background-color: var(--color-black);
         transition: all 0.3s ease;
       }
+    }
+
+    @include respond(mobile) {
+      width: 1.2rem;
+      height: 1rem;
     }
   }
 
@@ -103,6 +109,10 @@
 
     a {
       display: flex;
+    }
+
+    @include respond(mobile) {
+      gap: 1rem;
     }
   }
 }
