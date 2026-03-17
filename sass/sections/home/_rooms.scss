@@ -83,7 +83,7 @@
         }
 
         @include respond(small) {
-          right: -1.375rem;
+          right: -1rem;
         }
       }
       &--left {
