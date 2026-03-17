@@ -698,7 +698,7 @@ body.menu-open {
 }
 @media (max-width: 48em) {
   .toolbar__inner {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 }
 .toolbar__group {
@@ -714,6 +714,7 @@ body.menu-open {
 @media (max-width: 48em) {
   .toolbar__group--start {
     border: none;
+    margin-bottom: 1rem;
   }
 }
 .toolbar__group--center {
@@ -727,6 +728,11 @@ body.menu-open {
 }
 .toolbar__group--end {
   justify-self: self-end;
+}
+@media (max-width: 48em) {
+  .toolbar__group--end {
+    justify-self: self-start;
+  }
 }
 .toolbar__control {
   display: flex;

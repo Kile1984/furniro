@@ -12,7 +12,7 @@
     padding-block: 1.5rem;
 
     @include respond(mobile) {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
     }
   }
 
@@ -28,6 +28,7 @@
 
       @include respond(mobile) {
         border: none;
+        margin-bottom: 1rem;
       }
     }
 
@@ -42,6 +43,10 @@
 
     &--end {
       justify-self: self-end;
+
+      @include respond(mobile) {
+        justify-self: self-start;
+      }
     }
   }
 
