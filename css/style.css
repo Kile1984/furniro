@@ -1392,8 +1392,13 @@ body.menu-open {
 }
 .products__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--gap-lg);
+}
+@media (max-width: 62em) {
+  .products__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 @media (max-width: 36em) {
   .products__grid {
