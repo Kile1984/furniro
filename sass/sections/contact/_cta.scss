@@ -1,3 +1,4 @@
+@use "../../abstract/mixins" as *;
 .contact-cta {
   &__text {
     color: var(--color-gray);
@@ -9,12 +10,29 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding-top: 7.5rem;
+
+    @include respond(mobile) {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      padding-top: 3.5rem;
+    }
   }
 
   &__info {
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
+
+    @include respond(mobile) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      margin-bottom: 4rem;
+    }
+
+    @include respond(mobile) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__box {
@@ -26,6 +44,12 @@
 
   &__icon {
     grid-row: 1/-1;
+  }
+
+  &__form {
+    @include respond(mobile) {
+      justify-self: stretch;
+    }
   }
 
   &__form-group {

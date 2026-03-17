@@ -715,6 +715,8 @@ body.menu-open {
   .toolbar__group--start {
     border: none;
     margin-bottom: 1rem;
+    padding: 0;
+    justify-self: center;
   }
 }
 .toolbar__group--center {
@@ -731,7 +733,7 @@ body.menu-open {
 }
 @media (max-width: 48em) {
   .toolbar__group--end {
-    justify-self: self-start;
+    justify-self: center;
   }
 }
 .toolbar__control {
@@ -1115,7 +1117,7 @@ body.menu-open {
   gap: 0.5rem;
   align-self: self-start;
 }
-@media (max-width: 48em) {
+@media (max-width: 36em) {
   .features__box {
     display: block;
   }
@@ -1127,6 +1129,11 @@ body.menu-open {
   grid-row: 1/span 2;
   align-self: center;
   justify-self: center;
+}
+@media (max-width: 62em) {
+  .features__img {
+    margin-bottom: 1rem;
+  }
 }
 .features__text {
   color: var(--color-gray-light);
@@ -1297,9 +1304,8 @@ body.menu-open {
     justify-content: space-between;
   }
 }
-@media (max-width: 48em) {
+@media (max-width: 36em) {
   .features__inner {
-    grid-template-columns: 1fr;
     text-align: center;
   }
 }
@@ -1761,6 +1767,21 @@ body.menu-open {
   grid-template-columns: 1fr 1fr;
   gap: var(--gap-xl);
 }
+@media (max-width: 62em) {
+  .about-story__inner {
+    grid-template-columns: 0.5fr 1fr;
+  }
+}
+@media (max-width: 36em) {
+  .about-story__inner {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 36em) {
+  .about-story__img {
+    order: 2;
+  }
+}
 .about-story__title {
   color: var(--color-gray);
   margin-bottom: 2rem;
@@ -1779,10 +1800,29 @@ body.menu-open {
   grid-template-columns: 1fr 1fr;
   padding-top: 7.5rem;
 }
+@media (max-width: 48em) {
+  .contact-cta__content {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    padding-top: 3.5rem;
+  }
+}
 .contact-cta__info {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
+}
+@media (max-width: 48em) {
+  .contact-cta__info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 4rem;
+  }
+}
+@media (max-width: 48em) {
+  .contact-cta__info {
+    grid-template-columns: 1fr;
+  }
 }
 .contact-cta__box {
   display: grid;
@@ -1792,6 +1832,11 @@ body.menu-open {
 }
 .contact-cta__icon {
   grid-row: 1/-1;
+}
+@media (max-width: 48em) {
+  .contact-cta__form {
+    justify-self: stretch;
+  }
 }
 .contact-cta__form-group {
   display: flex;

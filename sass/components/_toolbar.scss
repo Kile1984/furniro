@@ -29,6 +29,8 @@
       @include respond(mobile) {
         border: none;
         margin-bottom: 1rem;
+        padding: 0;
+        justify-self: center;
       }
     }
 
@@ -45,7 +47,7 @@
       justify-self: self-end;
 
       @include respond(mobile) {
-        justify-self: self-start;
+        justify-self: center;
       }
     }
   }

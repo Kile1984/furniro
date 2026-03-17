@@ -1,8 +1,24 @@
+@use "../../abstract/mixins" as *;
+
 .about-story {
   &__inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--gap-xl);
+
+    @include respond(tablet) {
+      grid-template-columns: 0.5fr 1fr;
+    }
+
+    @include respond(small) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__img {
+    @include respond(small) {
+      order: 2;
+    }
   }
 
   &__title {
