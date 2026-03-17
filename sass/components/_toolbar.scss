@@ -1,3 +1,5 @@
+@use "../abstract/mixins" as *;
+
 .toolbar {
   background-color: var(--bg-neutral-400);
   margin-bottom: 3.5rem;
@@ -8,25 +10,73 @@
     align-items: center;
     justify-content: center;
     padding-block: 1.5rem;
+
+    @include respond(mobile) {
+      grid-template-columns: 1fr;
+      justify-items: start;
+      gap: 1rem;
+    }
   }
 
   &__group {
     display: inline-flex;
     gap: 1.5rem;
     align-items: center;
+
     &--start {
       padding-right: 2rem;
       justify-self: self-start;
       border-right: 2px solid var(--color-gray-dark);
+
+      @include respond(mobile) {
+        border: none;
+        padding: 0;
+      }
     }
 
     &--center {
       padding-left: 2rem;
       justify-self: self-start;
+
+      @include respond(mobile) {
+        display: none;
+      }
     }
 
     &--end {
       justify-self: self-end;
+
+      @include respond(mobile) {
+        justify-self: self-start;
+      }
+    }
+  }
+
+  &__control {
+    display: flex;
+    align-items: center;
+
+    @include respond(desktop) {
+      flex-direction: column;
+      align-items: start;
+    }
+
+    @include respond(mobile) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &__label {
+    font-size: 20px;
+
+    @include respond(desktop) {
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+
+    @include respond(mobile) {
+      display: none;
     }
   }
 
@@ -59,9 +109,15 @@
       outline: none;
       border: 2px solid #b88e2f;
     }
-  }
 
-  &__label {
-    font-size: 20px;
+    &--sort {
+      @include respond(desktop) {
+        width: 100%;
+      }
+
+      @include respond(mobile) {
+        width: auto;
+      }
+    }
   }
 }
