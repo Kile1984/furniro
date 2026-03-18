@@ -11,11 +11,11 @@
     gap: var(--gap-lg);
 
     @include respond(tablet) {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
 
     @include respond(small) {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: var(--gap-xs);
     }
 
