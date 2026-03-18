@@ -570,17 +570,29 @@ body.menu-open {
 }
 .product-card:hover .product-card__overlay {
   opacity: 1;
+  pointer-events: auto;
   transform: translate3d(0, 0, 0);
+}
+.product-card__stretched-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 .product-card__view {
   padding: 0.3rem 1rem;
   margin-bottom: 1rem;
 }
+@media (max-width: 62em) {
+  .product-card__view {
+    display: none;
+  }
+}
 .product-card__overlay {
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 3;
   background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -588,6 +600,21 @@ body.menu-open {
   opacity: 0;
   transform: translate3d(10px, 0, 0);
   transition: opacity 0.3s ease, transform 0.3s ease-in-out;
+}
+@media (max-width: 62em) {
+  .product-card__overlay {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 3;
+    transform: translate(0);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    justify-content: start;
+    flex-direction: row;
+    background-color: transparent;
+  }
 }
 .product-card__btn {
   background-color: var(--color-white);
@@ -598,9 +625,32 @@ body.menu-open {
   background-color: var(--color-white);
   color: var(--color-accent);
 }
+@media (max-width: 62em) {
+  .product-card__btn {
+    margin: 0;
+    padding: 0.5rem;
+  }
+}
 .product-card__actions {
   display: flex;
   gap: 16px;
+}
+@media (max-width: 62em) {
+  .product-card__actions span {
+    display: none;
+  }
+}
+@media (max-width: 62em) {
+  .product-card__actions {
+    background-color: rgba(244, 245, 247, 0.3);
+    padding: 0.5rem;
+    flex: 1;
+    justify-content: center;
+    align-self: stretch;
+  }
+}
+.product-card__actions .icon {
+  filter: drop-shadow(0 4px 6px rgb(0, 0, 0));
 }
 .product-card__action {
   color: var(--color-white);
@@ -630,7 +680,7 @@ body.menu-open {
   justify-content: center;
   align-items: center;
 }
-@media (max-width: 36em) {
+@media (max-width: 62em) {
   .product-card__badge {
     top: 8px;
     right: 8px;
@@ -1397,12 +1447,12 @@ body.menu-open {
 }
 @media (max-width: 62em) {
   .products__grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (max-width: 36em) {
   .products__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: var(--gap-xs);
   }
 }

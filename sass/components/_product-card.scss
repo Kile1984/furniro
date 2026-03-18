@@ -6,19 +6,32 @@
 
   &:hover .product-card__overlay {
     opacity: 1;
+    pointer-events: auto;
     transform: translate3d(0, 0, 0);
+  }
+
+  &__stretched-link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
   }
 
   &__view {
     padding: 0.3rem 1rem;
     margin-bottom: 1rem;
+
+    @include respond(tablet) {
+      display: none;
+    }
   }
 
   &__overlay {
     position: absolute;
     inset: 0;
-    z-index: 2;
+    z-index: 3;
     background-color: rgba(0, 0, 0, 0.5);
+
+    pointer-events: none;
 
     display: flex;
     flex-direction: column;
@@ -31,6 +44,24 @@
     transition:
       opacity 0.3s ease,
       transform 0.3s ease-in-out;
+
+    @include respond(tablet) {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 3;
+      transform: translate(0);
+
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: auto;
+      justify-content: start;
+
+      flex-direction: row;
+
+      // background-color: rgba(0, 0, 0, 0.4);
+      background-color: transparent;
+    }
   }
 
   &__btn {
@@ -42,11 +73,34 @@
       background-color: var(--color-white);
       color: var(--color-accent);
     }
+
+    @include respond(tablet) {
+      margin: 0;
+      padding: 0.5rem;
+    }
   }
 
   &__actions {
     display: flex;
     gap: 16px;
+
+    span {
+      @include respond(tablet) {
+        display: none;
+      }
+    }
+
+    @include respond(tablet) {
+      background-color: rgba(#f4f5f7, 0.3);
+      padding: 0.5rem;
+      flex: 1;
+      justify-content: center;
+      align-self: stretch;
+    }
+
+    .icon {
+      filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 1));
+    }
   }
 
   &__action {
@@ -85,7 +139,7 @@
     justify-content: center;
     align-items: center;
 
-    @include respond(small) {
+    @include respond(tablet) {
       top: 8px;
       right: 8px;
     }
