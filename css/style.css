@@ -336,7 +336,9 @@ ol {
 @media (max-width: 36em) {
   .header__toggle {
     align-self: center;
-    justify-self: end;
+    justify-self: center;
+    grid-row: 2/span 1;
+    grid-column: 1/-1;
   }
 }
 @media (max-width: 62em) {
@@ -377,8 +379,8 @@ ol {
 }
 @media (max-width: 36em) {
   .header__actions {
-    grid-column: 1/-1;
-    justify-self: center;
+    grid-column: 2/span 1;
+    justify-self: end;
   }
 }
 .header__actions-list {

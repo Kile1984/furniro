@@ -21,9 +21,6 @@
     }
   }
 
-  &__logo {
-  }
-
   &--open .header__toggle-line:nth-child(1) {
     transform: translateY(16px) rotate(45deg);
   }
@@ -72,7 +69,10 @@
 
     @include respond(small) {
       align-self: center;
-      justify-self: end;
+      justify-self: center;
+
+      grid-row: 2 / span 1;
+      grid-column: 1/-1;
     }
   }
 
@@ -121,8 +121,8 @@
 
   &__actions {
     @include respond(small) {
-      grid-column: 1 / -1;
-      justify-self: center;
+      grid-column: 2 / span 1;
+      justify-self: end;
     }
   }
 
