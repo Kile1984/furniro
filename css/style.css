@@ -290,7 +290,7 @@ ol {
 @media (max-width: 36em) {
   .header__inner {
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    gap: 2rem;
   }
 }
 .header--open .header__toggle-line:nth-child(1) {
