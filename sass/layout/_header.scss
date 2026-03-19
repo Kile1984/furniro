@@ -5,11 +5,23 @@
     position: relative;
   }
 
+  &.box-shadow {
+    box-shadow: 0px 1px 5px 0 rgba(0, 0, 0, 0.5);
+  }
+
   &__inner {
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
     padding-block: 1.87rem;
+
+    @include respond(small) {
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+  }
+
+  &__logo {
   }
 
   &--open .header__toggle-line:nth-child(1) {
@@ -57,6 +69,11 @@
       width: 1.2rem;
       height: 1rem;
     }
+
+    @include respond(small) {
+      align-self: center;
+      justify-self: end;
+    }
   }
 
   &__nav {
@@ -99,6 +116,13 @@
 
     &:active {
       opacity: 0.7;
+    }
+  }
+
+  &__actions {
+    @include respond(small) {
+      grid-column: 1 / -1;
+      justify-self: center;
     }
   }
 

@@ -106,62 +106,67 @@
       <!-- CART -->
       <section class="cart-page">
         <div class="container cart-page__inner">
-          <div class="cart-page__items">
-            <div class="cart-page__headers">
-              <span>Product</span>
-              <span>Price</span>
-              <span>Quantity</span>
-              <span>Subtotal</span>
-            </div>
+          <div class="cart-page__items-wrapper">
+            <div class="cart-page__items">
+              <div class="cart-page__headers">
+                <span>Product</span>
+                <span>Price</span>
+                <span>Quantity</span>
+                <span>Subtotal</span>
+              </div>
 
-            <div class="cart-page__item-wrapp">
-              <div class="cart-page__item">
-                <div class="cart-page__product">
-                  <a href="#" class="cart-page__link">
-                    <img src="./assets/images/product-grifo.png" alt="Grifo" />
-                    <span>Grifo</span>
-                  </a>
-                </div>
+              <div class="cart-page__item-wrapp">
+                <div class="cart-page__item">
+                  <div class="cart-page__product">
+                    <a href="#" class="cart-page__link">
+                      <img
+                        src="./assets/images/product-grifo.png"
+                        alt="Grifo"
+                      />
+                      <span>Grifo</span>
+                    </a>
+                  </div>
 
-                <div class="cart-page__price">
-                  <span class="cart-page__price-label">Price</span>
-                  <span>Rs. 250,00.00</span>
-                </div>
+                  <div class="cart-page__price">
+                    <span class="cart-page__price-label">Price</span>
+                    <span>Rs. 250,00.00</span>
+                  </div>
 
-                <div class="cart-page__quantity">
-                  <button
-                    type="button"
-                    class="btn cart-page__quantity-btn cart-page__quantity-btn--decrement"
-                  >
-                    -
+                  <div class="cart-page__quantity">
+                    <button
+                      type="button"
+                      class="btn cart-page__quantity-btn cart-page__quantity-btn--decrement"
+                    >
+                      -
+                    </button>
+
+                    <input
+                      type="number"
+                      min="1"
+                      value="1"
+                      id="quantity"
+                      class="cart-page__quantity-input"
+                    />
+
+                    <button
+                      type="button"
+                      class="btn cart-page__quantity-btn cart-page__quantity-btn--increment"
+                    >
+                      +
+                    </button>
+                  </div>
+
+                  <div class="cart-page__subtotal">
+                    <span class="cart-page__price-label">Subtotal</span>
+                    <span>Rs. 250,00.00</span>
+                  </div>
+
+                  <button class="cart-page__remove-btn">
+                    <svg class="icon">
+                      <use href="./assets/icons/sprite.svg#icon-bin2"></use>
+                    </svg>
                   </button>
-
-                  <input
-                    type="number"
-                    min="1"
-                    value="1"
-                    id="quantity"
-                    class="cart-page__quantity-input"
-                  />
-
-                  <button
-                    type="button"
-                    class="btn cart-page__quantity-btn cart-page__quantity-btn--increment"
-                  >
-                    +
-                  </button>
                 </div>
-
-                <div class="cart-page__subtotal">
-                  <span class="cart-page__price-label">Subtotal</span>
-                  <span>Rs. 250,00.00</span>
-                </div>
-
-                <button class="cart-page__remove-btn">
-                  <svg class="icon">
-                    <use href="./assets/icons/sprite.svg#icon-bin2"></use>
-                  </svg>
-                </button>
               </div>
             </div>
           </div>

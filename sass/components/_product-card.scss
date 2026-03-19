@@ -4,10 +4,12 @@
   position: relative;
   overflow: hidden;
 
-  &:hover .product-card__overlay {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translate3d(0, 0, 0);
+  @media (hover: hover) and (pointer: fine) {
+    &:hover .product-card__overlay {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate3d(0, 0, 0);
+    }
   }
 
   &__stretched-link {
@@ -31,8 +33,6 @@
     z-index: 3;
     background-color: rgba(0, 0, 0, 0.5);
 
-    pointer-events: none;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -47,20 +47,21 @@
 
     @include respond(tablet) {
       opacity: 1;
-      pointer-events: auto;
-      z-index: 3;
-      transform: translate(0);
+      transform: translate3d(0, 0, 0);
+      pointer-events: all;
 
-      top: 0;
+      top: auto;
+      bottom: 149px;
+      padding: 1rem 1rem 1.2rem;
       left: 0;
       right: 0;
-      bottom: auto;
-      justify-content: start;
 
-      flex-direction: row;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+      backdrop-filter: blur(4px);
+    }
 
-      // background-color: rgba(0, 0, 0, 0.4);
-      background-color: transparent;
+    @include respond(mobile) {
+      bottom: 160px;
     }
   }
 
@@ -75,8 +76,8 @@
     }
 
     @include respond(tablet) {
-      margin: 0;
-      padding: 0.5rem;
+      width: 100%;
+      margin-bottom: 0.5rem;
     }
   }
 
@@ -91,11 +92,10 @@
     }
 
     @include respond(tablet) {
-      background-color: rgba(#f4f5f7, 0.3);
-      padding: 0.5rem;
-      flex: 1;
+      display: flex;
       justify-content: center;
-      align-self: stretch;
+      gap: 24px;
+      padding-top: 0.5rem;
     }
 
     .icon {
@@ -107,6 +107,7 @@
     color: var(--color-white);
 
     display: flex;
+    flex: 1;
     align-items: center;
     gap: 0.2rem;
 
@@ -140,8 +141,12 @@
     align-items: center;
 
     @include respond(tablet) {
+      font-size: 12px;
+      width: 35px;
+      height: 35px;
       top: 8px;
       right: 8px;
+      z-index: 3;
     }
 
     &--red {

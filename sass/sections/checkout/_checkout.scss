@@ -1,22 +1,49 @@
+@use "../../abstract/mixins" as *;
+
 .checkout {
   &__form {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: var(--gap-lg);
+
+    @include respond(tablet) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__left {
     display: grid;
     row-gap: 2.5rem;
+
+    @include respond(tablet) {
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @include respond(small) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__header {
     font-size: 36px;
+
+    @include respond(tablet) {
+      grid-column: 1 / -1;
+    }
   }
 
   &__inputs-wrapper {
     display: flex;
     gap: 2rem;
+
+    @include respond(tablet) {
+      grid-column: 1 / -1;
+    }
+
+    @include respond(small) {
+      flex-direction: column;
+    }
   }
 
   &__label {
@@ -27,6 +54,17 @@
   &__group {
     display: flex;
     flex-direction: column;
+
+    &--name,
+    &--lastname {
+      @include respond(tablet) {
+        width: 100%;
+      }
+    }
+
+    &--additional {
+      grid-column: 1/-1;
+    }
   }
 
   &__input {
@@ -60,6 +98,15 @@
     display: flex;
     flex-direction: column;
     gap: 3rem;
+
+    @include respond(tablet) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include respond(small) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__product-wrapper {
@@ -67,6 +114,15 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    @include respond(tablet) {
+      justify-content: start;
+      gap: 1rem;
+    }
+
+    @include respond(small) {
+      justify-content: space-between;
+    }
   }
 
   &__product {
