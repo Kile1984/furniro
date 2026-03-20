@@ -11,14 +11,9 @@
 
   &__inner {
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 1fr 2fr;
     align-items: center;
     padding-block: 1.87rem;
-
-    @include respond(small) {
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
   }
 
   &--open .header__toggle-line:nth-child(1) {
@@ -44,11 +39,11 @@
       width: 2rem;
       height: 1.5rem;
 
-      justify-self: center;
-
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+
+      justify-self: end;
 
       background: none;
       border: none;
@@ -61,35 +56,28 @@
         transition: all 0.3s ease;
       }
     }
-
-    @include respond(mobile) {
-      width: 1.2rem;
-      height: 1rem;
-    }
-
-    @include respond(small) {
-      align-self: center;
-      justify-self: center;
-
-      grid-row: 2 / span 1;
-      grid-column: 1/-1;
-    }
   }
 
   &__nav {
+    display: flex;
+    justify-content: space-between;
+
     @include respond(tablet) {
       position: absolute;
       top: 100%;
       left: 0;
       width: 100%;
       background-color: var(--color-white);
-
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 
       transform-origin: top;
       transform: scaleY(0);
-
       transition: transform 0.35s ease;
+
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      padding-top: 1rem;
     }
   }
 
@@ -133,6 +121,11 @@
 
     a {
       display: flex;
+    }
+
+    @include respond(desktop) {
+      gap: 1.5rem;
+      color: var(--color-accent);
     }
 
     @include respond(mobile) {

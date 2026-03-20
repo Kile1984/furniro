@@ -25,6 +25,16 @@
     grid-template-columns: 250px repeat(3, 1fr);
     gap: 2rem;
 
+    @include respond(tablet) {
+      grid-template-columns: 180px repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    @include respond(mobile) {
+      grid-template-columns: 150px repeat(3, 1fr);
+      gap: 1rem;
+    }
+
     &--header {
       margin-bottom: 4rem;
     }
@@ -45,12 +55,22 @@
       font-weight: 500;
       line-height: 1.2;
       max-width: 12ch;
+
+      @include respond(mobile) {
+        visibility: hidden;
+        opacity: 0;
+      }
     }
 
     &-btn {
       color: var(--color-gray);
       text-transform: capitalize;
       padding-inline: 0;
+
+      @include respond(mobile) {
+        visibility: hidden;
+        opacity: 0;
+      }
 
       &:hover {
         text-decoration: underline;
@@ -70,6 +90,11 @@
 
     &-stars {
       color: #ffc700;
+    }
+
+    @include respond(desktop) {
+      flex-direction: column;
+      gap: 0.3rem;
     }
   }
 
@@ -95,12 +120,20 @@
     padding-block: 0.8rem;
     border-right: 1px solid var(--border-color-light);
     margin-right: -1rem;
+
+    @include respond(mobile) {
+      font-size: 16px;
+    }
   }
 
   &__spec {
     font-size: 1.25rem;
     padding: 0.8rem 2rem;
     margin-inline: -1rem;
+
+    @include respond(mobile) {
+      font-size: 14px;
+    }
 
     &:not(:last-child) {
       border-right: 1px solid var(--border-color-light);
