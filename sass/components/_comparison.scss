@@ -19,7 +19,7 @@
   &__table {
     min-width: 900px;
 
-    @include respond(tablet) {
+    @include respond(mobile) {
       min-width: 600px;
     }
   }
@@ -136,11 +136,12 @@
   &__spec {
     font-size: 1.25rem;
     padding: 0.8rem 2rem;
-    // margin-inline: -1rem;
+    margin-inline: -1rem;
 
     @include respond(mobile) {
       font-size: 16px;
       padding-left: 0;
+      margin-inline: 0;
     }
 
     &:not(:last-child) {
@@ -216,6 +217,12 @@
       outline: none;
       border-color: var(--color-accent);
       box-shadow: 0 0 0 2px rgba(184, 142, 47, 0.25);
+    }
+  }
+
+  &__btn {
+    @include respond(mobile) {
+      padding-inline: 0.75rem;
     }
   }
 }
