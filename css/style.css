@@ -1248,7 +1248,7 @@ body.menu-open {
 }
 @media (max-width: 48em) {
   .comparison__row {
-    grid-template-columns: 150px repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
   }
 }
@@ -1264,17 +1264,16 @@ body.menu-open {
   align-items: flex-start;
   gap: 1.5rem;
 }
+@media (max-width: 48em) {
+  .comparison__info {
+    display: none;
+  }
+}
 .comparison__info-title {
   font-size: 1.75rem;
   font-weight: 500;
   line-height: 1.2;
   max-width: 12ch;
-}
-@media (max-width: 48em) {
-  .comparison__info-title {
-    visibility: hidden;
-    opacity: 0;
-  }
 }
 .comparison__info-btn {
   color: var(--color-gray);
@@ -1315,6 +1314,11 @@ body.menu-open {
   border-right: 1px solid var(--border-color-light);
   margin-right: -1rem;
 }
+@media (max-width: 48em) {
+  .comparison__section {
+    display: none;
+  }
+}
 .comparison__section-empty {
   margin-right: -1rem;
 }
@@ -1329,17 +1333,17 @@ body.menu-open {
 }
 @media (max-width: 48em) {
   .comparison__label {
-    font-size: 16px;
+    display: none;
   }
 }
 .comparison__spec {
   font-size: 1.25rem;
   padding: 0.8rem 2rem;
-  margin-inline: -1rem;
 }
 @media (max-width: 48em) {
   .comparison__spec {
-    font-size: 14px;
+    font-size: 16px;
+    padding-left: 0;
   }
 }
 .comparison__spec:not(:last-child) {
