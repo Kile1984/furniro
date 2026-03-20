@@ -18,6 +18,10 @@
 
   &__table {
     min-width: 900px;
+
+    @include respond(tablet) {
+      min-width: 600px;
+    }
   }
 
   &__row {

@@ -1235,6 +1235,11 @@ body.menu-open {
 .comparison__table {
   min-width: 900px;
 }
+@media (max-width: 62em) {
+  .comparison__table {
+    min-width: 600px;
+  }
+}
 .comparison__row {
   display: grid;
   grid-template-columns: 250px repeat(3, 1fr);
