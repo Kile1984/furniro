@@ -1235,6 +1235,16 @@ body.menu-open {
 .comparison__table {
   min-width: 900px;
 }
+@media (max-width: 48em) {
+  .comparison__table {
+    min-width: 700px;
+  }
+}
+@media (max-width: 36em) {
+  .comparison__table {
+    min-width: 620px;
+  }
+}
 .comparison__row {
   display: grid;
   grid-template-columns: 250px repeat(3, 1fr);
@@ -1358,6 +1368,7 @@ body.menu-open {
   .comparison__spec {
     font-size: 14px;
     align-content: center;
+    padding: 0.5rem;
     margin-inline: 0;
     border-bottom: 1px solid var(--border-color-light);
   }

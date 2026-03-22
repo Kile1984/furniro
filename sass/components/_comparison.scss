@@ -19,9 +19,13 @@
   &__table {
     min-width: 900px;
 
-    // @include respond(mobile) {
-    //   min-width: 600px;
-    // }
+    @include respond(mobile) {
+      min-width: 700px;
+    }
+
+    @include respond(small) {
+      min-width: 620px;
+    }
   }
 
   &__row {
@@ -159,7 +163,7 @@
       font-size: 14px;
       align-content: center;
 
-      // padding-inline: 0.5rem;
+      padding: 0.5rem;
       margin-inline: 0;
       border-bottom: 1px solid var(--border-color-light);
 
