@@ -321,6 +321,12 @@ ol {
     transition: all 0.3s ease;
   }
 }
+@media (max-width: 62em) {
+  .header__toggle {
+    width: 1.5rem;
+    height: 1rem;
+  }
+}
 .header__nav {
   display: flex;
   justify-content: space-between;

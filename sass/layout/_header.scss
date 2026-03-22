@@ -56,6 +56,11 @@
         transition: all 0.3s ease;
       }
     }
+
+    @include respond(tablet) {
+      width: 1.5rem;
+      height: 1rem;
+    }
   }
 
   &__nav {
