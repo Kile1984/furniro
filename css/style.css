@@ -1225,6 +1225,41 @@ body.menu-open {
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
 }
+.comparison__scroll-hint {
+  display: none;
+  opacity: 0.4;
+}
+@media (max-width: 48em) {
+  .comparison__scroll-hint {
+    display: block;
+    animation: hintMove 1s ease-in-out 3, fadeOut 0.5s ease forwards;
+    animation-delay: 0s, 3s;
+  }
+  @keyframes hintMove {
+    0% {
+      transform: translateX(0);
+      opacity: 0.6;
+    }
+    50% {
+      transform: translateX(35%);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 6;
+    }
+  }
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
+.comparison__icon-swipe {
+  width: 60px;
+  height: 60px;
+}
 .comparison__info, .comparison__section, .comparison__label {
   position: sticky;
   left: 1rem;
@@ -1282,6 +1317,11 @@ body.menu-open {
   align-items: flex-start;
   gap: 1.5rem;
 }
+@media (max-width: 48em) {
+  .comparison__info {
+    justify-content: center;
+  }
+}
 .comparison__info-title {
   font-size: 1.75rem;
   font-weight: 500;
@@ -1290,8 +1330,7 @@ body.menu-open {
 }
 @media (max-width: 48em) {
   .comparison__info-title {
-    visibility: hidden;
-    opacity: 0;
+    display: none;
   }
 }
 .comparison__info-btn {
@@ -1301,8 +1340,7 @@ body.menu-open {
 }
 @media (max-width: 48em) {
   .comparison__info-btn {
-    visibility: hidden;
-    opacity: 0;
+    display: none;
   }
 }
 .comparison__info-btn:hover {
@@ -1352,7 +1390,7 @@ body.menu-open {
 }
 @media (max-width: 48em) {
   .comparison__label {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 500;
     border-bottom: 1px solid var(--border-color-light);
     white-space: normal;
@@ -1366,7 +1404,7 @@ body.menu-open {
 }
 @media (max-width: 48em) {
   .comparison__spec {
-    font-size: 14px;
+    font-size: 0.875rem;
     align-content: center;
     padding: 0.5rem;
     margin-inline: 0;
@@ -1388,13 +1426,18 @@ body.menu-open {
 }
 @media (max-width: 48em) {
   .comparison__product img {
-    width: 55%;
+    width: 80%;
   }
 }
 .comparison__product-title {
   font-weight: 600;
   font-size: 1.5rem;
   margin-top: 0.5rem;
+}
+@media (max-width: 48em) {
+  .comparison__product-title {
+    font-size: 1rem;
+  }
 }
 .comparison__price {
   font-weight: 500;
@@ -1404,7 +1447,7 @@ body.menu-open {
   flex-direction: column;
 }
 .comparison__add-label {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 .comparison__add-select-wrapper {
@@ -1412,7 +1455,7 @@ body.menu-open {
 }
 .comparison__select {
   width: 100%;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   background-color: var(--color-accent);
   border-radius: 8px;

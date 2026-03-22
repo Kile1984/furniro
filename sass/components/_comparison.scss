@@ -6,6 +6,46 @@
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
 
+  &__scroll-hint {
+    display: none;
+    opacity: 0.4;
+
+    @include respond(mobile) {
+      display: block;
+      animation:
+        hintMove 1s ease-in-out 3,
+        fadeOut 0.5s ease forwards;
+      animation-delay: 0s, 3s;
+
+      @keyframes hintMove {
+        0% {
+          transform: translateX(0);
+          opacity: 0.6;
+        }
+        50% {
+          transform: translateX(35%);
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(0);
+          opacity: 6;
+        }
+      }
+
+      @keyframes fadeOut {
+        to {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+    }
+  }
+
+  &__icon-swipe {
+    width: 60px;
+    height: 60px;
+  }
+
   &__info,
   &__section,
   &__label {
@@ -65,9 +105,9 @@
     align-items: flex-start;
     gap: 1.5rem;
 
-    // @include respond(mobile) {
-    //   display: none;
-    // }
+    @include respond(mobile) {
+      justify-content: center;
+    }
 
     &-title {
       font-size: 1.75rem;
@@ -76,8 +116,7 @@
       max-width: 12ch;
 
       @include respond(mobile) {
-        visibility: hidden;
-        opacity: 0;
+        display: none;
       }
     }
 
@@ -87,8 +126,7 @@
       padding-inline: 0;
 
       @include respond(mobile) {
-        visibility: hidden;
-        opacity: 0;
+        display: none;
       }
 
       &:hover {
@@ -145,7 +183,7 @@
     // margin-right: -1rem;
 
     @include respond(mobile) {
-      font-size: 14px;
+      font-size: 0.875rem;
       font-weight: 500;
       border-bottom: 1px solid var(--border-color-light);
       white-space: normal;
@@ -160,7 +198,7 @@
     // margin-inline: -1rem;
 
     @include respond(mobile) {
-      font-size: 14px;
+      font-size: 0.875rem;
       align-content: center;
 
       padding: 0.5rem;
@@ -194,7 +232,7 @@
       border-radius: 12px;
 
       @include respond(mobile) {
-        width: 55%;
+        width: 80%;
       }
     }
 
@@ -202,6 +240,10 @@
       font-weight: 600;
       font-size: 1.5rem;
       margin-top: 0.5rem;
+
+      @include respond(mobile) {
+        font-size: 1rem;
+      }
     }
   }
 
@@ -214,7 +256,7 @@
     flex-direction: column;
 
     &-label {
-      font-size: 24px;
+      font-size: 1.5rem;
       font-weight: 700;
     }
 
@@ -225,7 +267,7 @@
 
   &__select {
     width: 100%;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 500;
     background-color: var(--color-accent);
 

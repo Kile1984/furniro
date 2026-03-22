@@ -52,3 +52,10 @@ const products = {
     },
   },
 };
+
+const container = document.querySelector(".comparison");
+container.scrollLeft = 20;
+
+setTimeout(() => {
+  container.scrollLeft = 0;
+}, 300);
