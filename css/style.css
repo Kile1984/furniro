@@ -1152,6 +1152,11 @@ body.no-scroll {
   gap: 1rem;
   justify-content: space-between;
 }
+@media (max-width: 36em) {
+  .cart__item {
+    font-size: 12px;
+  }
+}
 .cart__item img {
   width: 65px;
   border-radius: 8px;
@@ -1161,12 +1166,22 @@ body.no-scroll {
   align-items: center;
   gap: 1rem;
 }
+@media (max-width: 36em) {
+  .cart__item-link {
+    gap: 0.5rem;
+  }
+}
 .cart__item-title {
   margin-bottom: 0.5rem;
   font-weight: 500;
 }
 .cart__item-multiplication {
   padding-inline: 1rem;
+}
+@media (max-width: 36em) {
+  .cart__item-multiplication {
+    padding-inline: 0.2rem;
+  }
 }
 .cart__item-price {
   color: var(--color-accent);
