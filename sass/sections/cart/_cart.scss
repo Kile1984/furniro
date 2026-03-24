@@ -51,6 +51,10 @@
     align-items: center;
     justify-items: center;
     gap: 1rem;
+
+    @include respond(mobile) {
+      gap: 0;
+    }
   }
 
   &__product {

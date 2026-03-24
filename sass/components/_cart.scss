@@ -1,3 +1,5 @@
+@use "../abstract/mixins" as *;
+
 .cart {
   position: fixed;
   top: 0;
@@ -11,9 +13,21 @@
   flex-direction: column;
   will-change: transform;
   transform: translateX(100%);
+  visibility: hidden;
+  opacity: 0;
   transition: transform 0.3s ease;
 
   z-index: 1000;
+
+  &.open {
+    transform: translateX(0);
+    visibility: visible;
+    opacity: 1;
+  }
+  &.open + &-overlay {
+    visibility: visible;
+    opacity: 1;
+  }
 
   &__inner {
     padding: 1.5rem;
@@ -59,7 +73,7 @@
     justify-content: space-between;
 
     img {
-      width: 100px;
+      width: 65px;
       border-radius: 8px;
     }
   }
@@ -99,13 +113,13 @@
   }
 
   &__footer {
-    padding-top: 1.5rem;
+    // padding-top: 1.5rem;
   }
 
   &__subtotal {
     display: flex;
     justify-content: space-between;
-    padding-block: 2rem;
+    padding-block: 1rem;
   }
 
   &__subtotal-label {
@@ -120,7 +134,12 @@
   &__actions {
     display: flex;
     justify-content: space-between;
-    gap: 1rem;
+
+    @include respond(mobile) {
+      flex-wrap: wrap;
+      justify-content: space-around;
+      row-gap: 1rem;
+    }
   }
 
   &__action {
