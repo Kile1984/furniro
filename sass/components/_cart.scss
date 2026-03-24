@@ -34,6 +34,13 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+
+    @include respond(tablet) {
+      overflow: scroll;
+    }
+    @include respond(mobile) {
+      overflow: visible;
+    }
   }
 
   &--open {
@@ -65,6 +72,14 @@
     flex: 1;
     overflow-y: auto;
     margin-bottom: 1.5rem;
+
+    @include respond(tablet) {
+      overflow-y: visible;
+    }
+
+    @include respond(mobile) {
+      overflow-y: auto;
+    }
   }
 
   &__item {
