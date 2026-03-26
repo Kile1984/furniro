@@ -1,6 +1,6 @@
 @use "../../abstract/mixins" as *;
 .hero {
-  background-image: url(../../assets/images/hero-img.png);
+  background-image: url("../assets/images/hero-img.png");
   background-size: cover;
   background-position: center;
   padding-block: clamp(6rem, 18vh, 20rem);
