@@ -1126,11 +1126,6 @@ body.no-scroll {
     overflow: scroll;
   }
 }
-@media (max-width: 48em) {
-  .cart__inner {
-    overflow: visible;
-  }
-}
 .cart--open {
   transform: translateX(0);
 }
@@ -1160,11 +1155,6 @@ body.no-scroll {
 @media (max-width: 62em) {
   .cart__items {
     overflow-y: visible;
-  }
-}
-@media (max-width: 48em) {
-  .cart__items {
-    overflow-y: auto;
   }
 }
 .cart__item {

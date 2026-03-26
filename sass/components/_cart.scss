@@ -38,9 +38,6 @@
     @include respond(tablet) {
       overflow: scroll;
     }
-    @include respond(mobile) {
-      overflow: visible;
-    }
   }
 
   &--open {
@@ -75,10 +72,6 @@
 
     @include respond(tablet) {
       overflow-y: visible;
-    }
-
-    @include respond(mobile) {
-      overflow-y: auto;
     }
   }
 
