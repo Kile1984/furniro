@@ -1,5 +1,6 @@
+import { PRODUCTS } from "./products";
 class AppState {
-  #products = [];
+  #products = PRODUCTS;
   #account = null;
   #wishlist = [];
   #cart = [];
@@ -12,12 +13,12 @@ class AppState {
   #itemsPerPage = 16;
   #sortBy = "default";
 
-  get product() {
-    return this.#product;
-  }
-
   get products() {
     return this.#products;
+  }
+
+  get product() {
+    return this.#product;
   }
 
   get account() {
@@ -60,3 +61,5 @@ class AppState {
     return this.#wishlist;
   }
 }
+
+export const appState = new AppState();
