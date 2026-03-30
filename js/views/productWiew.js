@@ -36,20 +36,20 @@ export const generateMarkup = function (products) {
                 <div class="product-card__actions">
                   <button type="button" class="product-card__action">
                     <svg class="icon">
-                      <use href="${icons}#icon-share2"></use>
+                      <use xlink:href="${icons}#icon-share2"></use>
                     </svg>
                     <span>Share</span>
                   </button>
                   <button type="button" class="product-card__action">
                     <svg class="icon">
-                      <use href="${icons}#icon-tab"></use>
+                      <use xlink:href="${icons}#icon-tab"></use>
                     </svg>
                     <span>Compare</span>
                   </button>
                   <button type="button" class="product-card__action">
                    <svg class="icon">
                      <use 
-                      href="${icons}#icon-heart">
+                      xlink:href="${icons}#icon-heart">
                     </use>
                     </svg>
                     <span>Like</span>
