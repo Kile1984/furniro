@@ -1,6 +1,5 @@
+import icons from "url:../../assets//icons/sprite.svg";
 export const container = document.querySelector(".products__grid");
-
-const iconPath = new URL("../../assets/icons/sprite.svg", import.meta.url).href;
 
 export const generateMarkup = function (products) {
   const markup = products
@@ -36,21 +35,20 @@ export const generateMarkup = function (products) {
                 <div class="product-card__actions">
                   <button type="button" class="product-card__action">
                     <svg class="icon">
-                      <use href="${iconPath}#icon-share2"></use>
+                      <use href="${icons}#icon-share2"></use>
                     </svg>
                     <span>Share</span>
                   </button>
                   <button type="button" class="product-card__action">
                     <svg class="icon">
-                      <use href="${iconPath}#icon-tab"></use>
+                      <use href="${icons}#icon-tab"></use>
                     </svg>
                     <span>Compare</span>
                   </button>
                   <button type="button" class="product-card__action">
                    <svg class="icon">
                      <use 
-                      href="${iconPath}#icon-heart"
-                      xlink:href="${iconPath}#icon-heart">
+                      href="${icons}#icon-heart">
                     </use>
                     </svg>
                     <span>Like</span>
