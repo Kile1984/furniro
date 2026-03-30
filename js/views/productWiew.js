@@ -1,5 +1,6 @@
 import icons from "url:../../assets/icons/sprite.svg";
 console.log(icons);
+
 export const container = document.querySelector(".products__grid");
 
 export const generateMarkup = function (products) {
@@ -36,20 +37,20 @@ export const generateMarkup = function (products) {
                 <div class="product-card__actions">
                   <button type="button" class="product-card__action">
                     <svg class="icon">
-                      <use xlink:href="${icons}#icon-share2"></use>
+                      <use href="${icons}#icon-share2"></use>
                     </svg>
                     <span>Share</span>
                   </button>
                   <button type="button" class="product-card__action">
                     <svg class="icon">
-                      <use xlink:href="${icons}#icon-tab"></use>
+                      <use href="${icons}#icon-tab"></use>
                     </svg>
                     <span>Compare</span>
                   </button>
                   <button type="button" class="product-card__action">
                    <svg class="icon">
                      <use 
-                      xlink:href="${icons}#icon-heart">
+                      href="${icons}#icon-heart">
                     </use>
                     </svg>
                     <span>Like</span>
