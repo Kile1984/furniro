@@ -1,7 +1,5 @@
 import icons from "url:../../assets/icons/sprite.svg";
 
-console.log(icons);
-
 export const container = document.querySelector(".products__grid");
 
 export const generateMarkup = function (products) {
