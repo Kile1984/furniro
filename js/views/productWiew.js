@@ -47,8 +47,11 @@ export const generateMarkup = function (products) {
                     <span>Compare</span>
                   </button>
                   <button type="button" class="product-card__action">
-                    <svg class="icon">
-                     <use href="${iconPath}#icon-heart"></use>
+                   <svg class="icon">
+                     <use 
+                      href="${iconPath}#icon-heart"
+                      xlink:href="${iconPath}#icon-heart">
+                    </use>
                     </svg>
                     <span>Like</span>
                   </button>
