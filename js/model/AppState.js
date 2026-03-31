@@ -40,18 +40,19 @@ class AppState {
   }
 
   toggleWishList(id) {
-    const existingId = this.#wishlist.find((p) => p.id === id);
+    const index = this.#wishlist.findIndex((p) => p.id === id);
 
-    const product = this.products.find((p) => p.id === id);
-
-    if (existingId) {
-      this.#wishlist = this.#wishlist.filter((p) => p.id !== id);
+    if (index !== -1) {
+      this.#wishlist.splice(index, 1);
     } else {
+      const product = this.getProductById(id);
+      if (!product) return;
+
       this.#wishlist.push(product);
     }
   }
 
-  isWishList(id) {
+  isInWishlist(id) {
     return this.#wishlist.some((p) => p.id === id);
   }
 

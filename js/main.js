@@ -11,7 +11,7 @@ generateMarkup(appState.products);
 const controlToggleWishlist = function (id, btn) {
   appState.toggleWishList(id);
 
-  const isActive = appState.isWishList(id);
+  const isActive = appState.isInWishlist(id);
 
   updateWishListIcon(btn, isActive);
 

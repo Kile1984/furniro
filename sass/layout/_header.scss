@@ -157,6 +157,10 @@
     display: flex;
     justify-content: center;
     align-items: anchor-center;
+
+    &.hidden {
+      display: none;
+    }
   }
 }
 

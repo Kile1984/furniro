@@ -115,10 +115,6 @@ export const updateWishListIcon = function (btn, isActive) {
 };
 
 export const updateWishListCount = function (count) {
-  if (count === 0) {
-    wishListCount.style.display = "none";
-  } else {
-    wishListCount.style.display = "flex";
-    wishListCount.textContent = count;
-  }
+  wishListCount.textContent = count;
+  wishListCount.classList.toggle("hidden", count === 0);
 };
