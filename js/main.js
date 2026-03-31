@@ -4,7 +4,7 @@ import {
   handleToggleWishList,
   updateWishListIcon,
   updateWishListCount,
-} from "./views/productWiew.js";
+} from "./views/productView.js";
 
 generateMarkup(appState.products);
 
