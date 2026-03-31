@@ -39,14 +39,18 @@ class AppState {
     }
   }
 
-  toggleWishList(product) {
-    const existing = this.#wishlist.find((p) => p.id === product.id);
+  toggleWishList(id) {
+    const existingId = this.#wishlist.find((p) => p.id === id);
 
-    if (existing) {
-      this.#wishlist = this.#wishlist.filter((p) => p.id !== product.id);
+    const product = this.products.find((p) => p.id === id);
+
+    if (existingId) {
+      this.#wishlist = this.#wishlist.filter((p) => p.id !== id);
     } else {
       this.#wishlist.push(product);
     }
+
+    console.log(this.#wishlist);
   }
 
   isWishList(id) {

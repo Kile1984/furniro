@@ -1,21 +1,28 @@
 import icons from "url:../../assets/icons/sprite.svg";
-console.log(icons);
-export const container = document.querySelector(".products__grid");
 
+const container = document.querySelector(".products__grid");
+
+// Render products
 export const generateMarkup = function (products) {
+  const generateBadge = function (product) {
+    const hasDiscount = product.price.discountPercent > 0;
+    const isNew = product.badges.isNew;
+
+    if (hasDiscount) {
+      return `<span class="product-card__badge product-card__badge--red"
+                  >-${product.price.discountPercent}%</span`;
+    } else if (isNew) {
+      return ` <span class="product-card__badge product-card__badge--green"
+                  >NEW</span`;
+    }
+
+    return "";
+  };
+
   const markup = products
     .map((product) => {
-      const hasDiscount = product.price.discountPercent > 0;
-      const isNew = product.badges.isNew;
-      let badge = "";
+      let badge = generateBadge(product);
 
-      if (hasDiscount) {
-        badge = `<span class="product-card__badge product-card__badge--red"
-                  >-${product.price.discountPercent}%</span`;
-      } else if (isNew) {
-        badge = ` <span class="product-card__badge product-card__badge--green"
-                  >NEW</span`;
-      }
       return `<article class="product-card">
               <a href="product.html" class="product-card__stretched-link"></a>
               <div class="product-card__overlay">
@@ -46,7 +53,7 @@ export const generateMarkup = function (products) {
                     </svg>
                     <span>Compare</span>
                   </button>
-                  <button type="button" class="product-card__action">
+                  <button type="button" class="product-card__action product-card__action--like" data-id=${product.id}>
                    <svg class="icon">
                      <use 
                       href="${icons}#icon-heart">
@@ -72,7 +79,7 @@ export const generateMarkup = function (products) {
                 <div class="product-card__price">
                   <span class="product-card__price-current">$ ${product.price.current}</span>
                   ${
-                    hasDiscount
+                    product.price.discountPercent > 0
                       ? `<span class="product-card__price-old">$${product.price.original}</span>`
                       : ""
                   }
@@ -84,4 +91,25 @@ export const generateMarkup = function (products) {
     .join("");
 
   container.insertAdjacentHTML("afterbegin", markup);
+};
+
+// Wishlist toggle
+export const handleToggleWishList = function (handler) {
+  container.addEventListener("click", function (e) {
+    const btn = e.target.closest(".product-card__action--like");
+    if (!btn) return;
+    const id = btn.dataset.id;
+    handler(id, btn);
+  });
+};
+
+export const updateWishListIcon = function (btn, isActive) {
+  const useEl = btn.querySelector("use");
+  console.log(useEl);
+
+  useEl.setAttribute(
+    "href",
+    `${icons}#${isActive ? "icon-heart1" : "icon-heart"}`,
+  );
+  btn.classList.toggle("wishlist", isActive);
 };
