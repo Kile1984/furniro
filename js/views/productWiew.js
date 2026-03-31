@@ -1,6 +1,7 @@
 import icons from "url:../../assets/icons/sprite.svg";
 
 const container = document.querySelector(".products__grid");
+const wishListCount = document.querySelector(".header__count");
 
 // Render products
 export const generateMarkup = function (products) {
@@ -105,11 +106,19 @@ export const handleToggleWishList = function (handler) {
 
 export const updateWishListIcon = function (btn, isActive) {
   const useEl = btn.querySelector("use");
-  console.log(useEl);
 
   useEl.setAttribute(
     "href",
     `${icons}#${isActive ? "icon-heart1" : "icon-heart"}`,
   );
   btn.classList.toggle("wishlist", isActive);
+};
+
+export const updateWishListCount = function (count) {
+  if (count === 0) {
+    wishListCount.style.display = "none";
+  } else {
+    wishListCount.style.display = "flex";
+    wishListCount.textContent = count;
+  }
 };

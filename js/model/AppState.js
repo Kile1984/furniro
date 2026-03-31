@@ -49,13 +49,13 @@ class AppState {
     } else {
       this.#wishlist.push(product);
     }
-
-    console.log(this.#wishlist);
   }
 
   isWishList(id) {
     return this.#wishlist.some((p) => p.id === id);
   }
+
+  addWishListCount() {}
 
   get cart() {
     return this.#cart;

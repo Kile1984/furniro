@@ -3,20 +3,24 @@ import {
   generateMarkup,
   handleToggleWishList,
   updateWishListIcon,
+  updateWishListCount,
 } from "./views/productWiew.js";
 
 generateMarkup(appState.products);
 
-const controllToggleWishList = function (id, btn) {
+const controlToggleWishlist = function (id, btn) {
   appState.toggleWishList(id);
 
   const isActive = appState.isWishList(id);
 
   updateWishListIcon(btn, isActive);
+
+  updateWishListCount(appState.wishlist.length);
 };
 
 function init() {
-  handleToggleWishList(controllToggleWishList);
+  handleToggleWishList(controlToggleWishlist);
+  updateWishListCount(appState.wishlist.length);
 }
 
 init();
