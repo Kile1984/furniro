@@ -1,66 +1,13 @@
 import { PRODUCTS } from "./products";
 class AppState {
+  constructor() {
+    const data = JSON.parse(localStorage.getItem("wishlist"));
+    this.#wishlist = data || [];
+  }
+
   #products = PRODUCTS;
   #account = null;
-  #wishlist = [
-    {
-      id: "p1",
-      title: "Aurelia Chair",
-      category: "chair",
-
-      price: {
-        current: 120,
-        original: 160,
-        discountPercent: 25,
-      },
-
-      badges: {
-        isNew: false,
-      },
-
-      images: {
-        main: new URL(
-          "../../assets/images/products/chairs/chair-01/chair-01-1.png",
-          import.meta.url,
-        ).href,
-        gallery: [
-          new URL(
-            "../../assets/images/products/chairs/chair-01/chair-01-2.png",
-            import.meta.url,
-          ).href,
-          new URL(
-            "../../assets/images/products/chairs/chair-01/chair-01-3.png",
-            import.meta.url,
-          ).href,
-          new URL(
-            "../../assets/images/products/chairs/chair-01/chair-01-4.png",
-            import.meta.url,
-          ).href,
-        ],
-      },
-
-      shortDescription: "Soft comfort with modern design",
-
-      properties: {
-        salesPackage: "1 Chair",
-        modelNumber: "AUR-CHR-01",
-        secondaryMaterial: "Metal",
-        configuration: "Straight",
-        fillingMaterial: "Foam",
-        maximumLoadCapacity: "120 kg",
-        originOfManufacture: "Serbia",
-        dimensions: {
-          width: "60 cm",
-          height: "85 cm",
-          depth: "55 cm",
-          weight: "8 kg",
-        },
-        warrantySummary: "1 Year Manufacturer Warranty",
-      },
-
-      isWishlisted: false,
-    },
-  ];
+  #wishlist = [];
   #cart = [];
   #product = null;
   #comparison = [];
@@ -70,6 +17,14 @@ class AppState {
   };
   #itemsPerPage = 16;
   #sortBy = "default";
+
+  get cart() {
+    return this.#cart;
+  }
+
+  get wishlist() {
+    return this.#wishlist;
+  }
 
   get products() {
     return this.#products;
@@ -81,6 +36,10 @@ class AppState {
 
   get account() {
     return this.#account;
+  }
+
+  #persistWishlist() {
+    localStorage.setItem("wishlist", JSON.stringify(this.#wishlist));
   }
 
   getProductById(id) {
@@ -108,20 +67,16 @@ class AppState {
 
       this.#wishlist.push(product);
     }
+
+    this.#persistWishlist();
   }
 
   isInWishlist(id) {
     return this.#wishlist.some((p) => p.id === id);
   }
 
-  addWishListCount() {}
-
-  get cart() {
-    return this.#cart;
-  }
-
-  get wishlist() {
-    return this.#wishlist;
+  deleteProductInWishList(id) {
+    console.log(id);
   }
 }
 

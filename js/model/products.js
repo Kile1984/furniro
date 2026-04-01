@@ -53,8 +53,6 @@ export const PRODUCTS = [
       },
       warrantySummary: "1 Year Manufacturer Warranty",
     },
-
-    isWishlisted: false,
   },
   {
     id: "p2",
@@ -110,8 +108,6 @@ export const PRODUCTS = [
       },
       warrantySummary: "1 Year Manufacturer Warranty",
     },
-
-    isWishlisted: false,
   },
   {
     id: "p3",
@@ -167,8 +163,6 @@ export const PRODUCTS = [
       },
       warrantySummary: "1 Year Manufacturer Warranty",
     },
-
-    isWishlisted: false,
   },
   {
     id: "p4",
@@ -224,7 +218,5 @@ export const PRODUCTS = [
       },
       warrantySummary: "1 Year Manufacturer Warranty",
     },
-
-    isWishlisted: false,
   },
 ];

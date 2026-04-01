@@ -1,13 +1,10 @@
 import icons from "url:../../assets/icons/sprite.svg";
 
 // render wishlist
-
 export const renderWishlistItems = function (products) {
   const container = document.querySelector(".wishlist-page__item-wrapp");
-
   const markup = products
     .map((product) => {
-      console.log(products);
       return `
     <div class="wishlist-page__item">
         <div class="wishlist-page__product">
@@ -27,7 +24,7 @@ export const renderWishlistItems = function (products) {
 
         <button class="btn btn--primary">Add to cart</button>
 
-         <button class="wishlist-page__remove-btn">
+         <button class="wishlist-page__remove-btn" data-id=${product.id}>
             <svg class="icon">
             <use href="${icons}#icon-bin2"></use>
             </svg>

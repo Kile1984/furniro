@@ -4,7 +4,7 @@ const container = document.querySelector(".products__grid");
 const wishListCount = document.querySelector(".header__count");
 
 // Render products
-export const generateMarkup = function (products) {
+export const renderProducts = function (products) {
   const generateBadge = function (product) {
     const hasDiscount = product.price.discountPercent > 0;
     const isNew = product.badges.isNew;
@@ -23,6 +23,7 @@ export const generateMarkup = function (products) {
   const markup = products
     .map((product) => {
       let badge = generateBadge(product);
+      console.log(product.isWishlisted);
 
       return `<article class="product-card">
               <a href="product.html" class="product-card__stretched-link"></a>
@@ -57,7 +58,7 @@ export const generateMarkup = function (products) {
                   <button type="button" class="product-card__action product-card__action--like" data-id=${product.id}>
                    <svg class="icon">
                      <use 
-                      href="${icons}#icon-heart">
+                      href="${icons}#${product.isWishlisted ? "icon-heart1" : "icon-heart"}">
                     </use>
                     </svg>
                     <span>Like</span>
@@ -104,6 +105,7 @@ export const handleToggleWishList = function (handler) {
   });
 };
 
+// Wishlist icon
 export const updateWishListIcon = function (btn, isActive) {
   const useEl = btn.querySelector("use");
 
@@ -114,6 +116,7 @@ export const updateWishListIcon = function (btn, isActive) {
   btn.classList.toggle("wishlist", isActive);
 };
 
+// Wishlist counter
 export const updateWishListCount = function (count) {
   wishListCount.textContent = count;
   wishListCount.classList.toggle("hidden", count === 0);
