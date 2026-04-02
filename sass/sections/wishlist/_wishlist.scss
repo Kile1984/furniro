@@ -72,4 +72,14 @@
       display: none;
     }
   }
+
+  &__empty {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    @include respond(mobile) {
+      flex-direction: column;
+    }
+  }
 }

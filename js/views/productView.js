@@ -23,7 +23,6 @@ export const renderProducts = function (products) {
   const markup = products
     .map((product) => {
       let badge = generateBadge(product);
-      console.log(product.isWishlisted);
 
       return `<article class="product-card">
               <a href="product.html" class="product-card__stretched-link"></a>
@@ -92,7 +91,7 @@ export const renderProducts = function (products) {
     })
     .join("");
 
-  container.insertAdjacentHTML("afterbegin", markup);
+  container.innerHTML = markup;
 };
 
 // Wishlist toggle

@@ -1,8 +1,13 @@
 import icons from "url:../../assets/icons/sprite.svg";
 
-// render wishlist
+const container = document.querySelector(".wishlist-page__item-wrapp");
+// Render wishlist
 export const renderWishlistItems = function (products) {
-  const container = document.querySelector(".wishlist-page__item-wrapp");
+  if (products.length === 0) {
+    container.innerHTML = `<div class="wishlist-page__empty"><span class="text-body-xl">Wishlist is empty</span><a class="btn btn--primary" href="shop.html">Got to products</a></div>`;
+    return;
+  }
+
   const markup = products
     .map((product) => {
       return `
@@ -22,7 +27,7 @@ export const renderWishlistItems = function (products) {
         <span>$ ${product.price.current}</span>
         </div>
 
-        <button class="btn btn--primary">Add to cart</button>
+        <button class="btn btn--primary wishlist-page__add-btn"  data-id=${product.id}>Add to cart</button>
 
          <button class="wishlist-page__remove-btn" data-id=${product.id}>
             <svg class="icon">
@@ -34,5 +39,31 @@ export const renderWishlistItems = function (products) {
     })
     .join("");
 
-  container.insertAdjacentHTML("afterbegin", markup);
+  container.innerHTML = markup;
+};
+// Remove from wishlist
+export const handleRemoveItem = function (handler) {
+  const container = document.querySelector(".wishlist-page__item-wrapp");
+  container.addEventListener("click", function (e) {
+    const btn = e.target.closest(".wishlist-page__remove-btn");
+
+    if (!btn) return;
+
+    const id = btn.dataset.id;
+
+    handler(id);
+  });
+};
+
+// Add to cart
+
+export const handleAddToCart = function (handler) {
+  container.addEventListener("click", function (e) {
+    const btn = e.target.closest(".wishlist-page__add-btn");
+    if (!btn) return;
+
+    const id = btn.dataset.id;
+
+    handler(id);
+  });
 };

@@ -1,8 +1,11 @@
 import { PRODUCTS } from "./products";
 class AppState {
   constructor() {
-    const data = JSON.parse(localStorage.getItem("wishlist"));
-    this.#wishlist = data || [];
+    const wishlistData = JSON.parse(localStorage.getItem("wishlist"));
+    this.#wishlist = wishlistData || [];
+
+    const cartData = JSON.parse(localStorage.getItem("cart"));
+    this.#cart = cartData || [];
   }
 
   #products = PRODUCTS;
@@ -38,8 +41,12 @@ class AppState {
     return this.#account;
   }
 
-  #persistWishlist() {
-    localStorage.setItem("wishlist", JSON.stringify(this.#wishlist));
+  // #persistWishlist() {
+  //   localStorage.setItem("wishlist", JSON.stringify(this.#wishlist));
+  // }
+
+  #persist(key, value) {
+    localStorage.setItem(key, JSON.stringify(value));
   }
 
   getProductById(id) {
@@ -54,6 +61,8 @@ class AppState {
     } else {
       this.#cart.push({ ...product, quantity: 1 });
     }
+
+    this.#persist("cart", this.#cart);
   }
 
   toggleWishList(id) {
@@ -68,15 +77,16 @@ class AppState {
       this.#wishlist.push(product);
     }
 
-    this.#persistWishlist();
+    this.#persist("wishlist", this.#wishlist);
   }
 
   isInWishlist(id) {
     return this.#wishlist.some((p) => p.id === id);
   }
 
-  deleteProductInWishList(id) {
-    console.log(id);
+  removeFromWishlist(id) {
+    this.#wishlist = this.#wishlist.filter((product) => product.id !== id);
+    this.#persist("wishlist", this.#wishlist);
   }
 }
 
