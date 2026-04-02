@@ -25,6 +25,11 @@
     min-width: 600px;
   }
 
+  &__toggle-min-width {
+    min-width: auto;
+    text-align: center;
+  }
+
   &__headers {
     font-weight: 500;
     background-color: var(--bg-neutral-500);
@@ -80,6 +85,10 @@
 
     @include respond(mobile) {
       flex-direction: column;
+      gap: 1rem;
+    }
+    a {
+      align-self: center;
     }
   }
 }

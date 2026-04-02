@@ -4,7 +4,11 @@ const container = document.querySelector(".wishlist-page__item-wrapp");
 // Render wishlist
 export const renderWishlistItems = function (products) {
   if (products.length === 0) {
-    container.innerHTML = `<div class="wishlist-page__empty"><span class="text-body-xl">Wishlist is empty</span><a class="btn btn--primary" href="shop.html">Got to products</a></div>`;
+    container.innerHTML = `<div class="wishlist-page__empty"><span class="text-body-xl">!!! Wishlist is empty !!!</span><a class="btn btn--primary" href="shop.html">Got to products</a></div>`;
+
+    document
+      .querySelector(".wishlist-page__items")
+      .classList.toggle("wishlist-page__toggle-min-width");
     return;
   }
 
