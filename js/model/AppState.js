@@ -41,9 +41,9 @@ class AppState {
     return this.#account;
   }
 
-  // #persistWishlist() {
-  //   localStorage.setItem("wishlist", JSON.stringify(this.#wishlist));
-  // }
+  get cartItemsCount() {
+    return this.#cart.reduce((acc, p) => acc + p.quantity, 0);
+  }
 
   #persist(key, value) {
     localStorage.setItem(key, JSON.stringify(value));
@@ -60,6 +60,24 @@ class AppState {
       existing.quantity++;
     } else {
       this.#cart.push({ ...product, quantity: 1 });
+    }
+
+    this.#persist("cart", this.#cart);
+  }
+
+  removeFromCart(id) {
+    this.#cart = this.#cart.filter((p) => p.id !== id);
+    this.#persist("cart", this.#cart);
+  }
+
+  updateQuantity(id, act) {
+    const product = this.#cart.find((p) => p.id === id);
+    if (!product) return;
+
+    const delta = act === "increment" ? 1 : -1;
+
+    if (product.quantity + delta >= 1) {
+      product.quantity += delta;
     }
 
     this.#persist("cart", this.#cart);

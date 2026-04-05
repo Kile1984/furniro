@@ -4,6 +4,7 @@ import {
   handleToggleWishList,
   updateWishListIcon,
   updateWishListCount,
+  updateCartCount,
 } from "./views/productView.js";
 
 // Check is in wishlist
@@ -33,6 +34,7 @@ const controlToggleWishlist = function (id, btn) {
 function init() {
   handleToggleWishList(controlToggleWishlist);
   updateWishListCount(appState.wishlist.length);
+  updateCartCount(appState.cart.length);
 }
 
 init();

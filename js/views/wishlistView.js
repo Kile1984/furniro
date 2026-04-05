@@ -31,7 +31,7 @@ export const renderWishlistItems = function (products) {
         <span>$ ${product.price.current}</span>
         </div>
 
-        <button class="btn btn--primary wishlist-page__add-btn"  data-id=${product.id}>Add to cart</button>
+        <button class="btn btn--secondary wishlist-page__add-btn"  data-id=${product.id}>Add to cart</button>
 
          <button class="wishlist-page__remove-btn" data-id=${product.id}>
             <svg class="icon">
@@ -60,7 +60,6 @@ export const handleRemoveItem = function (handler) {
 };
 
 // Add to cart
-
 export const handleAddToCart = function (handler) {
   container.addEventListener("click", function (e) {
     const btn = e.target.closest(".wishlist-page__add-btn");

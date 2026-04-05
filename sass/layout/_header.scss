@@ -138,11 +138,13 @@
     }
   }
 
-  &__wishlist-item {
+  &__wishlist-item,
+  &__cart-item {
     position: relative;
   }
 
-  &__count {
+  &__count,
+  &__count-cart {
     font-weight: 700;
     font-size: 12px;
     color: var(--color-white);

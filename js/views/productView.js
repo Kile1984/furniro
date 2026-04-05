@@ -2,6 +2,7 @@ import icons from "url:../../assets/icons/sprite.svg";
 
 const container = document.querySelector(".products__grid");
 const wishListCount = document.querySelector(".header__count");
+const cartCount = document.querySelector(".header__count-cart");
 
 // Render products
 export const renderProducts = function (products) {
@@ -30,6 +31,7 @@ export const renderProducts = function (products) {
                 <button
                   type="button"
                   class="btn btn--secondary product-card__btn"
+                  data-id=${product.id}
                 >
                   Add to cart
                 </button>
@@ -119,4 +121,22 @@ export const updateWishListIcon = function (btn, isActive) {
 export const updateWishListCount = function (count) {
   wishListCount.textContent = count;
   wishListCount.classList.toggle("hidden", count === 0);
+};
+
+// Cart counter
+export const updateCartCount = function (count) {
+  cartCount.textContent = count;
+  console.log(count);
+  cartCount.classList.toggle("hidden", count === 0);
+};
+
+// Add product to cart
+export const handleAddToCart = function (handler) {
+  container.addEventListener("click", function (e) {
+    const btn = e.target.closest(".product-card__btn");
+    if (!btn) return;
+
+    const id = btn.dataset.id;
+    handler(id);
+  });
 };

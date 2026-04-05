@@ -10,7 +10,7 @@
       sizes="32x32"
       href="./assets/images/favicon.png"
     />
-    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/controller/appController.js"></script>
     <title>Furniro | Shop</title>
   </head>
   <body>
@@ -74,11 +74,12 @@
                 </a>
               </li>
 
-              <li>
-                <a href="#" aria-label="Cart">
+              <li class="header__cart-item">
+                <a href="cart.html" aria-label="Cart">
                   <svg class="icon icon-search">
-                    <use href="/assets/icons/sprite.svg#icon-cart"></use>
+                    <use href="./assets/icons/sprite.svg#icon-cart"></use>
                   </svg>
+                  <span class="header__count-cart"></span>
                 </a>
               </li>
             </ul>

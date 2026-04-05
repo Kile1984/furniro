@@ -10,12 +10,11 @@
       sizes="32x32"
       href="./assets/images/favicon.png"
     />
-    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/controller/appController.js"></script>
     <title>Furniro | Home</title>
   </head>
   <body>
     <!-- HEADER -->
-
     <header class="header">
       <div class="container container--wide header__inner">
         <a href="index.html" class="header__logo">
@@ -75,11 +74,12 @@
                 </a>
               </li>
 
-              <li>
-                <a href="#" aria-label="Cart">
+              <li class="header__cart-item">
+                <a href="cart.html" aria-label="Cart">
                   <svg class="icon icon-search">
                     <use href="./assets/icons/sprite.svg#icon-cart"></use>
                   </svg>
+                  <span class="header__count-cart"></span>
                 </a>
               </li>
             </ul>
@@ -88,6 +88,7 @@
       </div>
     </header>
 
+    <!-- HERO -->
     <section class="hero">
       <div class="container container--wide">
         <div class="hero__panel">
@@ -107,6 +108,7 @@
     </section>
 
     <main class="page">
+      <!-- RANGE -->
       <section class="section range">
         <div class="container">
           <div class="range__header text-center">
@@ -153,6 +155,7 @@
         </div>
       </section>
 
+      <!-- PRODUCTS -->
       <section class="section products">
         <div class="container">
           <h2 class="section-title products__main-title text-center">
@@ -166,7 +169,7 @@
           </div>
         </div>
       </section>
-
+      <!-- ROOMS -->
       <section class="section rooms">
         <div class="rooms__inner container">
           <div class="rooms__content">
@@ -249,6 +252,7 @@
         </div>
       </section>
 
+      <!-- SHARE -->
       <section class="section share">
         <div class="share__heading text-center">
           <p class="text-body-xl range__text">Share your setup with</p>
@@ -306,6 +310,7 @@
       </section>
     </main>
 
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="footer__inner container">
         <div class="footer__info">
