@@ -28,7 +28,7 @@ class AppState {
   get wishlist() {
     return this.#wishlist;
   }
-  // OVDE SAM STAO
+  // NASTAVI OVDE
   getWishlistProduct() {
     return this.#wishlist.map((id) => this.getProductById(id));
   }
