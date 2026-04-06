@@ -3,6 +3,7 @@ import icons from "url:../../assets/icons/sprite.svg";
 const container = document.querySelector(".wishlist-page__item-wrapp");
 // Render wishlist
 export const renderWishlistItems = function (products) {
+  console.log(products);
   if (products.length === 0) {
     container.innerHTML = `<div class="wishlist-page__empty"><span class="text-body-xl">!!! Wishlist is empty !!!</span><a class="btn btn--primary" href="shop.html">Got to products</a></div>`;
 

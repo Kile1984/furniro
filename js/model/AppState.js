@@ -29,7 +29,9 @@ class AppState {
     return this.#wishlist;
   }
   // NASTAVI OVDE
-  getWishlistProduct() {
+  get wishlistProduct() {
+    const pr = this.#wishlist.map((id) => this.getProductById(id));
+    console.log(this.#wishlist);
     return this.#wishlist.map((id) => this.getProductById(id));
   }
 
@@ -96,7 +98,7 @@ class AppState {
   }
 
   toggleWishList(id) {
-    const index = this.#wishlist.findIndex((p) => p.id === id);
+    const index = this.#wishlist.findIndex((pId) => pId === id);
 
     if (index !== -1) {
       this.#wishlist.splice(index, 1);
@@ -104,18 +106,18 @@ class AppState {
       const product = this.getProductById(id);
       if (!product) return;
 
-      this.#wishlist.push(product);
+      this.#wishlist.push(id);
     }
 
     this.#persist("wishlist", this.#wishlist);
   }
 
   isInWishlist(id) {
-    return this.#wishlist.some((p) => p.id === id);
+    return this.#wishlist.some((pId) => pId === id);
   }
 
   removeFromWishlist(id) {
-    this.#wishlist = this.#wishlist.filter((product) => product.id !== id);
+    this.#wishlist = this.#wishlist.filter((productId) => productId !== id);
     this.#persist("wishlist", this.#wishlist);
   }
 }
