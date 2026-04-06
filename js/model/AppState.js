@@ -28,6 +28,10 @@ class AppState {
   get wishlist() {
     return this.#wishlist;
   }
+  // OVDE SAM STAO
+  getWishlistProduct() {
+    return this.#wishlist.map((id) => this.getProductById(id));
+  }
 
   get products() {
     return this.#products;
@@ -59,7 +63,13 @@ class AppState {
     if (existing) {
       existing.quantity++;
     } else {
-      this.#cart.push({ ...product, quantity: 1 });
+      this.#cart.push({
+        id: product.id,
+        title: product.title,
+        price: product.price.current,
+        image: product.images.main,
+        quantity: 1,
+      });
     }
 
     this.#persist("cart", this.#cart);
@@ -76,7 +86,9 @@ class AppState {
 
     const delta = act === "increment" ? 1 : -1;
 
-    if (product.quantity + delta >= 1) {
+    if (product.quantity + delta < 1) {
+      this.removeFromCart(id);
+    } else {
       product.quantity += delta;
     }
 

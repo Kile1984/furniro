@@ -9,12 +9,13 @@ export const renderCart = function (products) {
 
   const markup = products
     .map((p) => {
+      console.log(p);
       return `
             <div class="cart-page__item">
             <div class="cart-page__product">
             <a href="#" class="cart-page__link">
                 <img
-                src="${p.images.main}"
+                src="${p.image}"
                 alt="${p.title}"
                 />
                 <span>${p.title}</span>
@@ -23,7 +24,7 @@ export const renderCart = function (products) {
 
             <div class="cart-page__price">
             <span class="cart-page__price-label">Price</span>
-            <span>$ ${p.price.current}</span>
+            <span>$ ${p.price}</span>
             </div>
 
             <div class="cart-page__quantity">
@@ -40,7 +41,6 @@ export const renderCart = function (products) {
                 type="number"
                 min="1"
                 value=${p.quantity}
-                id="quantity"
                 class="cart-page__quantity-input"
             />
 
@@ -56,7 +56,7 @@ export const renderCart = function (products) {
 
             <div class="cart-page__subtotal">
             <span class="cart-page__price-label">Subtotal</span>
-            <span> $ ${p.price.current * p.quantity}</span>
+            <span> $ ${p.price * p.quantity}</span>
             </div>
 
             <button class="cart-page__remove-btn" data-id=${p.id}>
