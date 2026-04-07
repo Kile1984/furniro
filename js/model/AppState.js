@@ -28,10 +28,8 @@ class AppState {
   get wishlist() {
     return this.#wishlist;
   }
-  // NASTAVI OVDE
+
   get wishlistProduct() {
-    const pr = this.#wishlist.map((id) => this.getProductById(id));
-    console.log(this.#wishlist);
     return this.#wishlist.map((id) => this.getProductById(id));
   }
 
@@ -117,7 +115,7 @@ class AppState {
   }
 
   removeFromWishlist(id) {
-    this.#wishlist = this.#wishlist.filter((productId) => productId !== id);
+    this.#wishlist = this.#wishlist.filter((pId) => pId !== id);
     this.#persist("wishlist", this.#wishlist);
   }
 }

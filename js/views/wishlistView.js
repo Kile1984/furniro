@@ -46,6 +46,7 @@ export const renderWishlistItems = function (products) {
 
   container.innerHTML = markup;
 };
+
 // Remove from wishlist
 export const handleRemoveItem = function (handler) {
   const container = document.querySelector(".wishlist-page__item-wrapp");
