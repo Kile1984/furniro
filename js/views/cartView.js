@@ -1,11 +1,22 @@
 import icons from "url:../../assets/icons/sprite.svg";
 
-const container = document.querySelector(".cart-page__item-wrapp");
+const DOM = {
+  container: document.querySelector(".cart-page__item-wrapp"),
+  subtotal: document.querySelector(".cart-page__summary-price--subtotal"),
+  total: document.querySelector(".cart-page__summary-price--total"),
+  items: document.querySelector(".cart-page__items"),
+};
 
 export const renderCart = function (products) {
   if (products.length === 0) {
-    container.innerHTML = `<div class="cart-page__empty"><span class="text-body-xl">!!! Cart is empty !!!</span><a class="btn btn--primary" href="shop.html">Got to products</a></div>`;
+    DOM.container.innerHTML = `
+    <div class="cart-page__empty"><span class="text-body-xl">!!! Cart is empty !!!</span><a class="btn btn--primary" href="shop.html">Got to products</a></div>
+    `;
+    DOM.items.classList.add("cart-page__toggle-min-width");
+    return;
   }
+
+  DOM.items.classList.remove("cart-page__toggle-min-width");
 
   const markup = products
     .map((p) => {
@@ -24,7 +35,7 @@ export const renderCart = function (products) {
 
             <div class="cart-page__price">
             <span class="cart-page__price-label">Price</span>
-            <span>$ ${p.price}</span>
+            <span>${p.priceFormatted}</span>
             </div>
 
             <div class="cart-page__quantity">
@@ -33,6 +44,7 @@ export const renderCart = function (products) {
                 class="btn cart-page__quantity-btn cart-page__quantity-btn--decrement"
                 data-id=${p.id}
                 data-action="decrement"
+                
             >
                 -
             </button>
@@ -56,7 +68,7 @@ export const renderCart = function (products) {
 
             <div class="cart-page__subtotal">
             <span class="cart-page__price-label">Subtotal</span>
-            <span> $ ${p.price * p.quantity}</span>
+            <span> ${p.subtotalFormatted}</span>
             </div>
 
             <button class="cart-page__remove-btn" data-id=${p.id}>
@@ -68,11 +80,11 @@ export const renderCart = function (products) {
     `;
     })
     .join("");
-  container.innerHTML = markup;
+  DOM.container.innerHTML = markup;
 };
 
 export const handleRemoveFromCart = function (handler) {
-  container.addEventListener("click", function (e) {
+  DOM.container.addEventListener("click", function (e) {
     const btn = e.target.closest(".cart-page__remove-btn");
 
     if (!btn) return;
@@ -83,7 +95,7 @@ export const handleRemoveFromCart = function (handler) {
 };
 
 export const handleQuantity = function (handler) {
-  container.addEventListener("click", function (e) {
+  DOM.container.addEventListener("click", function (e) {
     const btn = e.target.closest(".cart-page__quantity-btn");
 
     if (!btn) return;
@@ -93,4 +105,18 @@ export const handleQuantity = function (handler) {
 
     handler(id, action);
   });
+};
+
+export const updateCartSubtotal = function (value) {
+  console.log(value);
+  if (!DOM.subtotal) return;
+
+  DOM.subtotal.textContent = `$ ${value}`;
+};
+
+export const updateTotal = function (value) {
+  console.log(value);
+  if (!DOM.total) return;
+
+  DOM.total.textContent = `$ ${value}`;
 };

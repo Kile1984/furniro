@@ -5,24 +5,31 @@ import {
   renderCart,
   handleRemoveFromCart,
   handleQuantity,
+  updateCartSubtotal,
+  updateTotal,
 } from "../views/cartView.js";
 
-const controlRemoveFromCart = function (product) {
-  appState.removeFromCart(product);
-  renderCart(appState.cart);
+const renderUI = function () {
+  renderCart(appState.cartProducts);
   updateCartCount(appState.cartItemsCount);
+  updateCartSubtotal(appState.cartSubtotal);
+  updateTotal(appState.cartTotal);
+};
+
+const controlRemoveFromCart = function (id) {
+  appState.removeFromCart(id);
+  renderUI();
 };
 
 const controlQuantity = function (id, act) {
   appState.updateQuantity(id, act);
-  renderCart(appState.cart);
-  updateCartCount(appState.cartItemsCount);
+  renderUI();
 };
 
 function init() {
-  renderCart(appState.cart);
+  renderUI();
   updateWishListCount(appState.wishlist.length);
-  updateCartCount(appState.cartItemsCount);
+
   handleRemoveFromCart(controlRemoveFromCart);
   handleQuantity(controlQuantity);
 }

@@ -1,33 +1,26 @@
 import { appState } from "../model/AppState.js";
 import {
   renderWishlistItems,
-  handleRemoveItem,
-  handleAddToCart,
+  handleWishlistActions,
 } from "../views/wishlistView.js";
 import { updateWishListCount, updateCartCount } from "../views/productView.js";
 
-const controlRemoveProductFromWishlist = function (id) {
-  appState.removeFromWishlist(id);
-  renderWishlistItems(appState.wishlistProduct);
-  updateWishListCount(appState.wishlist.length);
-};
-
-const controlAddToCart = function (id) {
-  const product = appState.getProductById(id);
-  if (!product) return;
-  appState.addToCart(product);
-  appState.removeFromWishlist(product.id);
-  renderWishlistItems(appState.wishlistProduct);
+const renderUI = function () {
+  renderWishlistItems(appState.wishlistProducts);
   updateWishListCount(appState.wishlist.length);
   updateCartCount(appState.cartItemsCount);
+};
+
+const controlWishlist = function (type, id) {
+  if (type === "remove") appState.removeFromWishlist(id);
+  if (type === "add") appState.moveToCartFromWishlist(id);
+
+  renderUI();
 };
 
 function init() {
-  renderWishlistItems(appState.wishlistProduct);
-  updateWishListCount(appState.wishlist.length);
-  updateCartCount(appState.cartItemsCount);
-  handleRemoveItem(controlRemoveProductFromWishlist);
-  handleAddToCart(controlAddToCart);
+  renderUI();
+  handleWishlistActions(controlWishlist);
 }
 
 init();
