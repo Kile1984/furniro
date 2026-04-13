@@ -5,9 +5,8 @@ export const PRODUCTS = [
     category: "chair",
 
     price: {
-      current: 120,
-      original: 160,
-      discountPercent: 25,
+      original: 100,
+      discountPercent: 0,
     },
 
     badges: {
@@ -60,8 +59,7 @@ export const PRODUCTS = [
     category: "chair",
 
     price: {
-      current: 160,
-      original: null,
+      original: 160,
       discountPercent: 0,
     },
 
@@ -115,7 +113,6 @@ export const PRODUCTS = [
     category: "chair",
 
     price: {
-      current: 80,
       original: 100,
       discountPercent: 20,
     },
@@ -170,9 +167,8 @@ export const PRODUCTS = [
     category: "chair",
 
     price: {
-      current: 160,
-      original: null,
-      discountPercent: 0,
+      original: 185,
+      discountPercent: 20,
     },
 
     badges: {

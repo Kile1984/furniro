@@ -1,88 +1,62 @@
 import icons from "url:../../assets/icons/sprite.svg";
+import { formatPrice } from "../utils/format.js";
+import { delegate } from "../utils/delegate.js";
+import { renderEmpty } from "./viewHelpers.js";
 
 const DOM = {
   container: document.querySelector(".wishlist-page__item-wrapp"),
   parent: document.querySelector(".wishlist-page__items"),
 };
 
-// Render wishlist
-export const renderWishlistItems = function (products) {
-  console.log(products);
-  if (products.length === 0) {
-    DOM.container.innerHTML = `
-    <div class="wishlist-page__empty"><span class="text-body-xl">!!! Wishlist is empty !!!</span><a class="btn btn--primary" href="shop.html">Got to products</a></div>
-    `;
-
-    DOM.parent.classList.add("wishlist-page__toggle-min-width");
-
-    return;
-  }
-
-  DOM.parent.classList.remove("wishlist-page__toggle-min-width");
-
-  const markup = products
-    .map((product) => {
-      return `
+const generateWishlistMarkup = function (p) {
+  return `
     <div class="wishlist-page__item">
         <div class="wishlist-page__product">
         <a href="#" class="wishlist-page__link">
             <img
-            src="${product.image}"
-            alt="Grifo"
+            src="${p.image}"
+            alt="${p.title}"
             />
-            <span>${product.title}</span>
+            <span>${p.title}</span>
         </a>
         </div>
 
         <div class="wishlist-page__price">
         <span class="wishlist-page__price-label">Price</span>
-        <span>$ ${product.priceFormatted}</span>
+        <span> ${formatPrice(p.price)}</span>
         </div>
 
-        <button class="btn btn--secondary wishlist-page__add-btn"  data-id=${product.id}>Add to cart</button>
+        <button class="btn btn--secondary wishlist-page__add-btn"  data-id=${p.id}>Add to cart</button>
 
-         <button class="wishlist-page__remove-btn" data-id=${product.id}>
+         <button class="wishlist-page__remove-btn" data-id=${p.id}>
             <svg class="icon">
             <use href="${icons}#icon-bin2"></use>
             </svg>
         </button>
     </div>
     `;
-    })
-    .join("");
+};
+
+export const renderWishlistItems = function (p) {
+  if (p.length === 0) {
+    renderEmpty(DOM.container, "Wishlist is empty");
+    DOM.parent.classList.add("wishlist-page__toggle-min-width");
+    return;
+  }
+
+  DOM.parent.classList.remove("wishlist-page__toggle-min-width");
+
+  const markup = p.map(generateWishlistMarkup).join("");
 
   DOM.container.innerHTML = markup;
 };
 
-// Remove from wishlist
-export const handleRemoveItem = function (handler) {
-  DOM.container.addEventListener("click", function (e) {
-    const btn = e.target.closest(".wishlist-page__remove-btn");
-    if (!btn) return;
-
-    const id = btn.dataset.id;
-    handler(id);
-  });
-};
-
-// Add to cart
-export const handleAddToCart = function (handler) {
-  DOM.container.addEventListener("click", function (e) {
-    const btn = e.target.closest(".wishlist-page__add-btn");
-    if (!btn) return;
-
-    const id = btn.dataset.id;
-    handler(id);
-  });
-};
-
-// Add & Remove wishlist
 export const handleWishlistActions = function (handler) {
-  DOM.container.addEventListener("click", function (e) {
-    const removeBtn = e.target.closest(".wishlist-page__remove-btn");
-    const addBtn = e.target.closest(".wishlist-page__add-btn");
+  delegate(DOM.container, "click", ".wishlist-page__remove-btn", (el) => {
+    handler("remove", el.dataset.id);
+  });
 
-    if (removeBtn) handler("remove", removeBtn.dataset.id);
-    if (addBtn) handler("add", addBtn.dataset.id);
+  delegate(DOM.container, "click", ".wishlist-page__add-btn", (el) => {
+    handler("add", el.dataset.id);
   });
 };

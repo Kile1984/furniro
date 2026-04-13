@@ -1,37 +1,23 @@
 import icons from "url:../../assets/icons/sprite.svg";
+import { formatPrice } from "../utils/format.js";
+import { delegate } from "../utils/delegate.js";
 
-const container = document.querySelector(".products__grid");
-const wishListCount = document.querySelector(".header__count");
-const cartCount = document.querySelector(".header__count-cart");
+const DOM = {
+  container: document.querySelector(".products__grid"),
+  wishListCount: document.querySelector(".header__count"),
+  cartCount: document.querySelector(".header__count-cart"),
+};
+// Generate product markup
+const generateProductMarkup = function (p) {
+  let badge = generateBadge(p);
 
-// Render products
-export const renderProducts = function (products) {
-  const generateBadge = function (product) {
-    const hasDiscount = product.price.discountPercent > 0;
-    const isNew = product.badges.isNew;
-
-    if (hasDiscount) {
-      return `<span class="product-card__badge product-card__badge--red"
-                  >-${product.price.discountPercent}%</span`;
-    } else if (isNew) {
-      return ` <span class="product-card__badge product-card__badge--green"
-                  >NEW</span`;
-    }
-
-    return "";
-  };
-
-  const markup = products
-    .map((product) => {
-      let badge = generateBadge(product);
-
-      return `<article class="product-card">
+  return `<article class="product-card">
               <a href="product.html" class="product-card__stretched-link"></a>
               <div class="product-card__overlay">
                 <button
                   type="button"
                   class="btn btn--secondary product-card__btn"
-                  data-id=${product.id}
+                  data-id=${p.id}
                 >
                   Add to cart
                 </button>
@@ -56,10 +42,10 @@ export const renderProducts = function (products) {
                     </svg>
                     <span>Compare</span>
                   </button>
-                  <button type="button" class="product-card__action product-card__action--like" data-id=${product.id}>
+                  <button type="button" class="product-card__action product-card__action--like" data-id=${p.id}>
                    <svg class="icon">
                      <use 
-                      href="${icons}#${product.isWishlisted ? "icon-heart1" : "icon-heart"}">
+                      href="${icons}#${p.isWishlisted ? "icon-heart1" : "icon-heart"}">
                     </use>
                     </svg>
                     <span>Like</span>
@@ -69,40 +55,56 @@ export const renderProducts = function (products) {
 
               <div class="product-card__image-wrapper">
                 <img
-                  src="${product.images.main}"
-                  alt="${product.title}"
+                  src="${p.image}"
+                  alt="${p.title}"
                   class="product-card__image"
                 />
                ${badge}
               </div>
 
               <div class="product-card__content">
-                <h3 class="product-card__title">${product.title}</h3>
-                <p class="product-card__description">${product.shortDescription}</p>
+                <h3 class="product-card__title">${p.title}</h3>
+                <p class="product-card__description">${p.shortDescription}</p>
                 <div class="product-card__price">
-                  <span class="product-card__price-current">$ ${product.price.current}</span>
+                  <span class="product-card__price-current">${formatPrice(p.price)}</span>
                   ${
-                    product.price.discountPercent > 0
-                      ? `<span class="product-card__price-old">$${product.price.original}</span>`
+                    p.discountPercent > 0
+                      ? `<span class="product-card__price-old">${formatPrice(p.originalPrice)}</span>`
                       : ""
                   }
                  
                 </div>
               </div>
             </article>`;
-    })
-    .join("");
+};
 
-  container.innerHTML = markup;
+// Generate badge
+const generateBadge = function (p) {
+  if (!p.badge) return "";
+
+  return `<span class="product-card__badge product-card__badge--${p.badge.type}">${p.badge.value}</span`;
+};
+
+// Render products
+export const renderProducts = function (products) {
+  const markup = products.map(generateProductMarkup).join("");
+
+  DOM.container.innerHTML = markup;
+};
+
+// Add product to cart
+export const handleAddToCart = function (handler) {
+  delegate(DOM.container, "click", ".product-card__btn", (el) => {
+    const id = el.dataset.id;
+    handler(id);
+  });
 };
 
 // Wishlist toggle
 export const handleToggleWishList = function (handler) {
-  container.addEventListener("click", function (e) {
-    const btn = e.target.closest(".product-card__action--like");
-    if (!btn) return;
-    const id = btn.dataset.id;
-    handler(id, btn);
+  delegate(DOM.container, "click", ".product-card__action--like", (el) => {
+    const id = el.dataset.id;
+    handler(id, el);
   });
 };
 
@@ -115,28 +117,4 @@ export const updateWishListIcon = function (btn, isActive) {
     `${icons}#${isActive ? "icon-heart1" : "icon-heart"}`,
   );
   btn.classList.toggle("wishlist", isActive);
-};
-
-// Wishlist counter
-export const updateWishListCount = function (count) {
-  wishListCount.textContent = count;
-  wishListCount.classList.toggle("hidden", count === 0);
-};
-
-// Cart counter
-export const updateCartCount = function (count) {
-  cartCount.textContent = count;
-  console.log(count);
-  cartCount.classList.toggle("hidden", count === 0);
-};
-
-// Add product to cart
-export const handleAddToCart = function (handler) {
-  container.addEventListener("click", function (e) {
-    const btn = e.target.closest(".product-card__btn");
-    if (!btn) return;
-
-    const id = btn.dataset.id;
-    handler(id);
-  });
 };

@@ -20,9 +20,40 @@ class AppState {
   };
   #itemsPerPage = 16;
   #sortBy = "default";
+  #shippingThreshold = 300;
+  #shippingCost = 20;
+  #taxRate = 0.1;
 
+  #getDiscountedPrice(product) {
+    const original = Number(product.price.original);
+    const discount = Number(product.price.discountPercent);
+
+    return original * (1 - discount / 100);
+  }
+
+  #getProductBadge(product) {
+    if (product.price.discountPercent > 0) {
+      return {
+        type: "discount",
+        value: `-${product.price.discountPercent}%`,
+      };
+    } else if (product.badges.isNew) {
+      return {
+        type: "new",
+        value: "NEW",
+      };
+    }
+
+    return null;
+  }
+
+  // CART
   get cart() {
     return this.#cart;
+  }
+
+  get cartItemsCount() {
+    return this.#cart.reduce((acc, p) => acc + p.quantity, 0);
   }
 
   get cartSubtotal() {
@@ -30,16 +61,21 @@ class AppState {
   }
 
   get cartShipping() {
-    return this.cartSubtotal > 300 ? 0 : 20;
+    const subtotal = this.cartSubtotal;
+    if (subtotal === 0) return 0;
+
+    return this.cartSubtotal > this.#shippingThreshold ? 0 : this.#shippingCost;
   }
 
   get cartTax() {
-    return this.cartSubtotal * 0.1;
+    return this.cartSubtotal * this.#taxRate;
   }
 
   get cartTotal() {
-    if (this.cartSubtotal === 0) return 0;
-    return this.cartSubtotal + this.cartShipping + this.cartTax;
+    const subtotal = this.cartSubtotal;
+
+    if (subtotal === 0) return 0;
+    return subtotal + this.cartShipping + this.cartTax;
   }
 
   get cartProducts() {
@@ -49,72 +85,24 @@ class AppState {
 
         if (!product) return null;
 
-        const price = product.price.current;
+        const price = this.#getDiscountedPrice(product);
+
         const quantity = item.quantity;
 
         return {
           id: item.id,
           title: product.title,
           price: price,
-          priceFormatted: this.formatPrice(price),
           image: product.images.main,
           quantity: quantity,
-          subtotalFormatted: this.formatPrice(price * quantity),
-          subtotal: product.price.current * item.quantity,
+          subtotal: price * quantity,
         };
       })
       .filter(Boolean);
   }
 
-  get wishlist() {
-    return this.#wishlist;
-  }
-
-  get wishlistProducts() {
-    return this.#wishlist
-      .map((id) => {
-        const product = this.getProductById(id);
-        if (!product) return null;
-
-        const price = Number(product.price.current);
-
-        return {
-          id: product.id,
-          title: product.title,
-          image: product.images.main,
-          price,
-          priceFormatted: this.formatPrice(price),
-        };
-      })
-      .filter(Boolean);
-  }
-
-  get products() {
-    return this.#products;
-  }
-
-  get product() {
-    return this.#product;
-  }
-
-  get account() {
-    return this.#account;
-  }
-
-  get cartItemsCount() {
-    return this.#cart.reduce((acc, p) => acc + p.quantity, 0);
-  }
-
-  #persist(key, value) {
-    localStorage.setItem(key, JSON.stringify(value));
-  }
-
-  formatPrice(value) {
-    return `$ ${value.toFixed(2)}`;
-  }
-
-  getProductById(id) {
-    return this.#products.find((prod) => prod.id === id);
+  getCartItem(id) {
+    return this.#cart.find((p) => p.id === id);
   }
 
   addToCart(product) {
@@ -137,19 +125,50 @@ class AppState {
     this.#persist("cart", this.#cart);
   }
 
-  updateQuantity(id, act) {
-    const product = this.#cart.find((p) => p.id === id);
+  updateQuantity(id, qt) {
+    const product = this.getCartItem(id);
     if (!product) return;
 
-    const delta = act === "increment" ? 1 : -1;
-
-    if (product.quantity + delta < 1) {
+    if (!Number.isFinite(qt) || qt < 1) {
       this.removeFromCart(id);
-    } else {
-      product.quantity += delta;
+      return;
     }
 
+    product.quantity = qt;
+
     this.#persist("cart", this.#cart);
+  }
+
+  moveToCartFromWishlist(id) {
+    const product = this.getProductById(id);
+
+    if (!product) return;
+
+    this.addToCart(product);
+    this.removeFromWishlist(product.id);
+  }
+
+  // WISHLIST
+  get wishlist() {
+    return this.#wishlist;
+  }
+
+  get wishlistProducts() {
+    return this.#wishlist
+      .map((id) => {
+        const product = this.getProductById(id);
+        if (!product) return null;
+
+        const price = this.#getDiscountedPrice(product);
+
+        return {
+          id: product.id,
+          title: product.title,
+          image: product.images.main,
+          price,
+        };
+      })
+      .filter(Boolean);
   }
 
   toggleWishList(id) {
@@ -168,16 +187,52 @@ class AppState {
     return this.#wishlist.some((pId) => pId === id);
   }
 
-  moveToCartFromWishlist(id) {
-    const product = appState.getProductById(id);
-    if (!product) return;
-    this.addToCart(product);
-    this.removeFromWishlist(product.id);
-  }
-
   removeFromWishlist(id) {
     this.#wishlist = this.#wishlist.filter((pId) => pId !== id);
     this.#persist("wishlist", this.#wishlist);
+  }
+
+  // PRODUCTS
+  get products() {
+    return this.#products;
+  }
+
+  get product() {
+    return this.#product;
+  }
+
+  getProductById(id) {
+    return this.#products.find((prod) => prod.id === id);
+  }
+
+  get enrichedProducts() {
+    return this.#products.map((product) => {
+      const price = this.#getDiscountedPrice(product);
+      const badge = this.#getProductBadge(product);
+
+      return {
+        id: product.id,
+        title: product.title,
+        image: product.images.main,
+        shortDescription: product.shortDescription,
+        price,
+        originalPrice: product.price.original,
+        discountPercent: product.price.discountPercent,
+        badge,
+        isNew: product.badges.isNew,
+        isWishlisted: this.isInWishlist(product.id),
+      };
+    });
+  }
+
+  // ACCOUNT
+  get account() {
+    return this.#account;
+  }
+
+  // LOCAL STORAGE
+  #persist(key, value) {
+    localStorage.setItem(key, JSON.stringify(value));
   }
 }
 
