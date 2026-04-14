@@ -10,25 +10,29 @@ const DOM = {
 // Generate product markup
 const generateProductMarkup = function (p) {
   let badge = generateBadge(p);
+  console.log(p);
 
   return `<article class="product-card">
               <a href="product.html" class="product-card__stretched-link"></a>
               <div class="product-card__overlay">
                 <button
                   type="button"
-                  class="btn btn--secondary product-card__btn"
-                  data-id=${p.id}
-                 ${p.isInCart ? "disabled" : ""}
+                 
+                  class="${p.isInCart ? "btn btn--primary product-card__btn product-card__btn--remove" : "btn btn--primary product-card__btn product-card__btn--add"}"
+                  data-id="${p.id}"
+                 
                 
                 >
-                  ${p.isInCart ? "In Cart" : "Add to Cart"}
+              ${p.isInCart ? "Remove" : "Add to cart"}
                 </button>
 
                 <a
                   href="product.html"
-                  class="btn btn--outline product-card__view"
+                  class="btn  product-card__view"
                 >
-                  View details
+                <svg class="icon">
+                    <use href="/sprite.fb5d180f.svg#icon-search"></use>
+                  </svg>
                 </a>
 
                 <div class="product-card__actions">
@@ -96,12 +100,23 @@ export const renderProducts = function (products) {
 
 // Add product to cart
 export const handleAddToCart = function (handler) {
-  delegate(DOM.container, "click", ".product-card__btn", (el) => {
+  delegate(DOM.container, "click", ".product-card__btn--add", (el) => {
     const id = el.dataset.id;
 
     handler(id);
   });
 };
+
+// Remove from cart
+export const handleRemoveFromCart = function (handler) {
+  delegate(DOM.container, "click", ".product-card__btn--remove", (el) => {
+    const id = el.dataset.id;
+    handler(id);
+  });
+};
+
+// Button state
+export const handleCartButtonState = function () {};
 
 // Wishlist toggle
 export const handleToggleWishList = function (handler) {

@@ -4,6 +4,7 @@ import {
   handleToggleWishList,
   updateWishListIcon,
   handleAddToCart,
+  handleRemoveFromCart,
 } from "../views/productView.js";
 import { updateHeader } from "./headerController.js";
 
@@ -19,12 +20,22 @@ const controlToggleWishlist = function (id, btn) {
 
 const controlAddToCart = function (id) {
   const existing = appState.getProductById(id);
-
   if (!existing) return;
-
   appState.addToCart(existing);
 
   renderProducts(appState.enrichedProducts);
+
+  updateHeader();
+};
+
+const controlRemoveFromCart = function (id) {
+  const existing = appState.getProductById(id);
+  if (!existing) return;
+
+  appState.removeFromCart(existing.id);
+
+  renderProducts(appState.enrichedProducts);
+
   updateHeader();
 };
 
@@ -34,6 +45,7 @@ function init() {
   renderProducts(appState.enrichedProducts);
   handleToggleWishList(controlToggleWishlist);
   handleAddToCart(controlAddToCart);
+  handleRemoveFromCart(controlRemoveFromCart);
 }
 
 init();

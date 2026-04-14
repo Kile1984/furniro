@@ -102,7 +102,6 @@ class AppState {
   }
 
   isInCart(id) {
-    console.log(id);
     return this.#cart.some((p) => p.id === id);
   }
 
