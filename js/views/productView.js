@@ -18,8 +18,10 @@ const generateProductMarkup = function (p) {
                   type="button"
                   class="btn btn--secondary product-card__btn"
                   data-id=${p.id}
+                 ${p.isInCart ? "disabled" : ""}
+                
                 >
-                  Add to cart
+                  ${p.isInCart ? "In Cart" : "Add to Cart"}
                 </button>
 
                 <a
@@ -96,6 +98,7 @@ export const renderProducts = function (products) {
 export const handleAddToCart = function (handler) {
   delegate(DOM.container, "click", ".product-card__btn", (el) => {
     const id = el.dataset.id;
+
     handler(id);
   });
 };

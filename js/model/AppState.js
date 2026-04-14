@@ -101,6 +101,11 @@ class AppState {
       .filter(Boolean);
   }
 
+  isInCart(id) {
+    console.log(id);
+    return this.#cart.some((p) => p.id === id);
+  }
+
   getCartItem(id) {
     return this.#cart.find((p) => p.id === id);
   }
@@ -221,6 +226,7 @@ class AppState {
         badge,
         isNew: product.badges.isNew,
         isWishlisted: this.isInWishlist(product.id),
+        isInCart: this.isInCart(product.id),
       };
     });
   }

@@ -19,8 +19,12 @@ const controlToggleWishlist = function (id, btn) {
 
 const controlAddToCart = function (id) {
   const existing = appState.getProductById(id);
+
+  if (!existing) return;
+
   appState.addToCart(existing);
 
+  renderProducts(appState.enrichedProducts);
   updateHeader();
 };
 
