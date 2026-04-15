@@ -84,9 +84,11 @@
     margin-bottom: 1.8rem;
     text-transform: capitalize;
 
-    &:hover {
-      background-color: var(--color-white);
-      color: var(--color-accent);
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--color-white);
+        color: var(--color-accent);
+      }
     }
 
     @include respond(tablet) {

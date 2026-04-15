@@ -21,9 +21,11 @@
     color: var(--color-white);
     border: 1px solid var(--color-accent);
 
-    &:hover {
-      background-color: transparent;
-      color: var(--color-accent);
+    @media (hover: hover) {
+      &:hover {
+        background-color: transparent;
+        color: var(--color-accent);
+      }
     }
   }
 
@@ -32,9 +34,11 @@
     color: var(--color-accent);
     border: 1px solid var(--color-accent);
 
-    &:hover {
-      background-color: var(--color-accent);
-      color: var(--color-white);
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--color-accent);
+        color: var(--color-white);
+      }
     }
   }
 
