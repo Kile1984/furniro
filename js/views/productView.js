@@ -21,16 +21,16 @@ const generateProductMarkup = function (p) {
                  
                 class="btn product-card__btn ${p.isInCart ? "btn--secondary" : "btn--primary"}"
                   data-id="${p.id}"
-                 
                 >
-             ${p.isInCart ? "Remove from cart" : "Add to cart"}                </button>
+                  ${p.isInCart ? "Remove from cart" : "Add to cart"} 
+                </button>
 
                 <a
                   href="product.html"
                   class="btn  product-card__view"
                 >
                 <svg class="icon">
-                    <use href="/sprite.fb5d180f.svg#icon-eye"></use>
+                     <use href="${icons}#icon-eye"></use>
                   </svg>
                 </a>
 
