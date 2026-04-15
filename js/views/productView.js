@@ -7,10 +7,10 @@ const DOM = {
   wishListCount: document.querySelector(".header__count"),
   cartCount: document.querySelector(".header__count-cart"),
 };
+
 // Generate product markup
 const generateProductMarkup = function (p) {
   let badge = generateBadge(p);
-  console.log(p);
 
   return `<article class="product-card">
               <a href="product.html" class="product-card__stretched-link"></a>
@@ -18,20 +18,19 @@ const generateProductMarkup = function (p) {
                 <button
                   type="button"
                  
-                  class="${p.isInCart ? "btn btn--primary product-card__btn product-card__btn--remove" : "btn btn--primary product-card__btn product-card__btn--add"}"
+                 
+                class="btn product-card__btn ${p.isInCart ? "btn--secondary" : "btn--primary"}"
                   data-id="${p.id}"
                  
-                
                 >
-              ${p.isInCart ? "Remove" : "Add to cart"}
-                </button>
+             ${p.isInCart ? "Remove from cart" : "Add to cart"}                </button>
 
                 <a
                   href="product.html"
                   class="btn  product-card__view"
                 >
                 <svg class="icon">
-                    <use href="/sprite.fb5d180f.svg#icon-search"></use>
+                    <use href="/sprite.fb5d180f.svg#icon-eye"></use>
                   </svg>
                 </a>
 
@@ -98,25 +97,24 @@ export const renderProducts = function (products) {
   DOM.container.innerHTML = markup;
 };
 
-// Add product to cart
-export const handleAddToCart = function (handler) {
-  delegate(DOM.container, "click", ".product-card__btn--add", (el) => {
-    const id = el.dataset.id;
-
-    handler(id);
-  });
-};
-
-// Remove from cart
-export const handleRemoveFromCart = function (handler) {
-  delegate(DOM.container, "click", ".product-card__btn--remove", (el) => {
+// Handle cart click
+export const handleCartClick = function (handler) {
+  delegate(DOM.container, "click", ".product-card__btn", (el) => {
     const id = el.dataset.id;
     handler(id);
   });
 };
 
 // Button state
-export const handleCartButtonState = function () {};
+export const handleCartButtonState = function (id, isInCart) {
+  const btn = document.querySelector(`.product-card__btn[data-id="${id}"]`);
+
+  if (!btn) return;
+
+  btn.textContent = `${isInCart ? "Remove from cart" : "Add to cart"}`;
+  btn.classList.toggle("btn--secondary", isInCart);
+  btn.classList.toggle("btn--primary", !isInCart);
+};
 
 // Wishlist toggle
 export const handleToggleWishList = function (handler) {
