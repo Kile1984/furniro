@@ -15,7 +15,7 @@ const DOM = {
 
 const generateCartMarkup = function (p) {
   return `
-      <div class="cart-page__item">
+      <div class="cart-page__item" data-id="${p.id}">
       <div class="cart-page__product">
       <a href="#" class="cart-page__link">
           <img
@@ -62,7 +62,7 @@ const generateCartMarkup = function (p) {
 
       <div class="cart-page__subtotal">
       <span class="cart-page__price-label">Subtotal</span>
-      <span> ${formatPrice(p.subtotal)}</span>
+      <span class="cart-page__subtotal-value"> ${formatPrice(p.subtotal)}</span>
     
       </div>
 
@@ -91,6 +91,14 @@ export const renderCart = function (products) {
   DOM.container.innerHTML = markup;
 };
 
+export const showEmptyCart = function () {
+  const wrapper = document.querySelector(".cart-page__item-wrapp");
+  const emptyEl = document.createElement("div");
+  emptyEl.classList.add("cart-page__empty");
+  emptyEl.innerHTML = ` <span class="text-body-xl">!!! Cart is empty !!!</span><a class="btn btn--primary" href="shop.html">Got to products</a>`;
+  wrapper.appendChild(emptyEl);
+};
+
 export const handleQuantity = function (handler) {
   delegate(DOM.container, "click", ".cart-page__quantity-btn", (el) => {
     const id = el.dataset.id;
@@ -98,6 +106,16 @@ export const handleQuantity = function (handler) {
 
     handler(id, action);
   });
+};
+
+export const updateCartQuantity = function (id, value) {
+  const input = document.querySelector(
+    `.cart-page__quantity-input[data-id="${id}"]`,
+  );
+  console.log(value);
+  if (!input) return;
+
+  input.value = value;
 };
 
 export const handleInputQuantity = function (handler) {
@@ -115,6 +133,23 @@ export const handleRemoveFromCart = function (handler) {
 
     handler(id);
   });
+};
+
+export const removeItem = function (id) {
+  const item = document.querySelector(`.cart-page__item[data-id="${id}"]`);
+
+  if (item) item.remove();
+};
+
+export const updateItemSubtotal = function (id, value) {
+  console.log(id);
+  const item = document
+    .querySelector(`.cart-page__quantity-input[data-id="${id}"]`)
+    ?.closest(".cart-page__item");
+
+  const subtotalEl = item?.querySelector(".cart-page__subtotal-value");
+
+  subtotalEl.textContent = formatPrice(value);
 };
 
 export const updateSummary = function (type, value) {

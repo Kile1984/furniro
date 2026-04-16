@@ -1,4 +1,5 @@
 import { PRODUCTS } from "./products";
+
 class AppState {
   constructor() {
     const wishlistData = JSON.parse(localStorage.getItem("wishlist"));
@@ -56,28 +57,6 @@ class AppState {
     return this.#cart.reduce((acc, p) => acc + p.quantity, 0);
   }
 
-  get cartSubtotal() {
-    return this.cartProducts.reduce((acc, p) => acc + p.subtotal, 0);
-  }
-
-  get cartShipping() {
-    const subtotal = this.cartSubtotal;
-    if (subtotal === 0) return 0;
-
-    return this.cartSubtotal > this.#shippingThreshold ? 0 : this.#shippingCost;
-  }
-
-  get cartTax() {
-    return this.cartSubtotal * this.#taxRate;
-  }
-
-  get cartTotal() {
-    const subtotal = this.cartSubtotal;
-
-    if (subtotal === 0) return 0;
-    return subtotal + this.cartShipping + this.cartTax;
-  }
-
   get cartProducts() {
     return this.#cart
       .map((item) => {
@@ -101,6 +80,32 @@ class AppState {
       .filter(Boolean);
   }
 
+  get cartSubtotal() {
+    return this.cartProducts.reduce((acc, p) => acc + p.subtotal, 0);
+  }
+
+  get cartShipping() {
+    const subtotal = this.cartSubtotal;
+    if (subtotal === 0) return 0;
+
+    return this.cartSubtotal > this.#shippingThreshold ? 0 : this.#shippingCost;
+  }
+
+  get cartTax() {
+    return this.cartSubtotal * this.#taxRate;
+  }
+
+  get cartTotal() {
+    const subtotal = this.cartSubtotal;
+
+    if (subtotal === 0) return 0;
+    return subtotal + this.cartShipping + this.cartTax;
+  }
+
+  getCartItemUI(id) {
+    return this.cartProducts.find((p) => p.id === id) || null;
+  }
+
   isInCart(id) {
     return this.#cart.some((p) => p.id === id);
   }
@@ -109,6 +114,9 @@ class AppState {
     return this.#cart.find((p) => p.id === id);
   }
 
+  isCartEmpty() {
+    return this.cart.length === 0;
+  }
   addToCart(product) {
     const existing = this.#cart.find((p) => p.id === product.id);
 
