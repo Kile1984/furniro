@@ -112,7 +112,7 @@ export const updateCartQuantity = function (id, value) {
   const input = document.querySelector(
     `.cart-page__quantity-input[data-id="${id}"]`,
   );
-  console.log(value);
+
   if (!input) return;
 
   input.value = value;
@@ -142,7 +142,6 @@ export const removeItem = function (id) {
 };
 
 export const updateItemSubtotal = function (id, value) {
-  console.log(id);
   const item = document
     .querySelector(`.cart-page__quantity-input[data-id="${id}"]`)
     ?.closest(".cart-page__item");

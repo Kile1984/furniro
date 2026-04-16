@@ -69,12 +69,18 @@ const controlQuantity = function (id, act) {
   const newQuantity = product.quantity + delta;
 
   appState.updateQuantity(id, newQuantity);
-  updateCartQuantity(id, newQuantity);
-
   const item = appState.getCartItemUI(id);
-  if (!item) return;
 
-  updateItemSubtotal(id, item.subtotal);
+  if (!item) {
+    removeItem(id);
+
+    if (appState.isCartEmpty()) {
+      showEmptyCart();
+    }
+  } else {
+    updateItemSubtotal(id, item.subtotal);
+    updateCartQuantity(id, newQuantity);
+  }
   renderSummary();
   updateHeader();
 };
