@@ -7,6 +7,7 @@ import {
   handleCartButtonState,
 } from "../views/productView.js";
 import { updateHeader } from "./headerController.js";
+import { renderTemplate } from "../views/baseView.js";
 
 // Toggle wishlist and update wishlist counter
 const controlToggleWishlist = function (id, btn) {
@@ -34,12 +35,38 @@ const controlCart = function (id) {
 
   updateHeader();
 };
-// Initial function
-function init() {
-  updateHeader();
-  renderProducts(appState.enrichedProducts);
-  handleToggleWishList(controlToggleWishlist);
-  handleCartClick(controlCart);
+
+function getProductContainer() {
+  const container = document.querySelector(".products__grid");
+  if (!container) {
+    console.error("Product container not found");
+    return null;
+  }
+
+  return container;
 }
 
-init();
+function initProducts(container, products) {
+  renderProducts(container, products);
+  handleToggleWishList(container, controlToggleWishlist);
+  handleCartClick(container, controlCart);
+}
+
+function homeController() {
+  renderTemplate("home");
+  const container = getProductContainer();
+  const featured = appState.enrichedProducts.slice(0, 8);
+
+  updateHeader();
+  initProducts(container, featured);
+}
+
+function shopController() {
+  renderTemplate("shop");
+  const container = getProductContainer();
+
+  updateHeader();
+  initProducts(container, appState.enrichedProducts);
+}
+
+export { homeController, shopController };

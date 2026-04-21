@@ -1,7 +1,9 @@
 import { initHeader } from "./headerController.js";
+import { renderTemplate } from "../views/baseView.js";
 
-function init() {
+function aboutController() {
+  renderTemplate("about");
   initHeader();
 }
 
-init();
+export default aboutController;

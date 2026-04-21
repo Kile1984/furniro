@@ -1,7 +1,8 @@
 import { initHeader } from "./headerController.js";
+import { renderTemplate } from "../views/baseView.js";
 
-function init() {
+function contactController() {
+  renderTemplate("contact");
   initHeader();
 }
-
-init();
+export default contactController;

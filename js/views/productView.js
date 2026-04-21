@@ -3,7 +3,7 @@ import { formatPrice } from "../utils/format.js";
 import { delegate } from "../utils/delegate.js";
 
 const DOM = {
-  container: document.querySelector(".products__grid"),
+  // container: document.querySelector(".products__grid"),
   wishListCount: document.querySelector(".header__count"),
   cartCount: document.querySelector(".header__count-cart"),
 };
@@ -91,15 +91,15 @@ const generateBadge = function (p) {
 };
 
 // Render products
-export const renderProducts = function (products) {
+export const renderProducts = function (container, products) {
   const markup = products.map(generateProductMarkup).join("");
 
-  DOM.container.innerHTML = markup;
+  container.innerHTML = markup;
 };
 
 // Handle cart click
-export const handleCartClick = function (handler) {
-  delegate(DOM.container, "click", ".product-card__btn", (el) => {
+export const handleCartClick = function (container, handler) {
+  delegate(container, "click", ".product-card__btn", (el) => {
     const id = el.dataset.id;
     handler(id);
   });
@@ -117,8 +117,8 @@ export const handleCartButtonState = function (id, isInCart) {
 };
 
 // Wishlist toggle
-export const handleToggleWishList = function (handler) {
-  delegate(DOM.container, "click", ".product-card__action--like", (el) => {
+export const handleToggleWishList = function (container, handler) {
+  delegate(container, "click", ".product-card__action--like", (el) => {
     const id = el.dataset.id;
     handler(id, el);
   });
