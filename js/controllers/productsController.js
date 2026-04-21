@@ -54,6 +54,7 @@ function initProducts(container, products) {
 
 function homeController() {
   renderTemplate("home");
+
   const container = getProductContainer();
   const featured = appState.enrichedProducts.slice(0, 8);
 
@@ -63,8 +64,8 @@ function homeController() {
 
 function shopController() {
   renderTemplate("shop");
-  const container = getProductContainer();
 
+  const container = getProductContainer();
   updateHeader();
   initProducts(container, appState.enrichedProducts);
 }

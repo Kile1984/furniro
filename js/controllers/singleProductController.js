@@ -1,7 +1,7 @@
 import { initHeader } from "./headerController";
 
-function init() {
+const init = function () {
   initHeader();
-}
+};
 
 init();

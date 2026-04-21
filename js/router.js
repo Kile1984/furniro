@@ -1,18 +1,18 @@
-import productController from "./controllers/productController.js";
-import aboutController from "./controllers/aboutController.js";
 import {
   homeController,
   shopController,
-} from "./controllers/productController.js";
-
-import contactController from "./controllers/contactController.js";
+} from "./controllers/productsController.js";
+import { createStaticPageController } from "./controllers/staticController.js";
 
 // ROUTES
 const routes = {
   "/": homeController,
-  "/about": aboutController,
   "/shop": shopController,
-  "/contact": contactController,
+  "/about": createStaticPageController("about"),
+  "/contact": createStaticPageController("contact"),
+  "/payment": createStaticPageController("paymant"),
+  "/returns": createStaticPageController("returns"),
+  "/policy": createStaticPageController("policy"),
 };
 
 // PARSE URL
