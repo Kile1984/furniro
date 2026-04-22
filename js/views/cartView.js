@@ -1,17 +1,8 @@
+import { DOM } from "./dom.js";
 import icons from "url:../../assets/icons/sprite.svg";
 import { formatPrice } from "../utils/format.js";
 import { delegate } from "../utils/delegate.js";
 import { renderEmpty } from "./viewHelpers.js";
-
-const DOM = {
-  container: document.querySelector(".cart-page__item-wrapp"),
-  subtotal: document.querySelector(".cart-page__summary-price--subtotal"),
-  total: document.querySelector(".cart-page__summary-price--total"),
-  items: document.querySelector(".cart-page__items"),
-  tax: document.querySelector(".cart-page__summary-price--tax"),
-  shipping: document.querySelector(".cart-page__summary-price--shipping"),
-  input: document.querySelector(".cart-page__quantity-input"),
-};
 
 const generateCartMarkup = function (p) {
   return `
@@ -76,40 +67,45 @@ const generateCartMarkup = function (p) {
 };
 
 export const renderCart = function (products) {
-  if (products.length === 0) {
-    renderEmpty(DOM.container, "Cart is empty");
+  const container = DOM.cart.container();
+  const items = DOM.cart.items();
+  if (!container) return;
 
-    DOM.items.classList.add("cart-page__toggle-min-width");
+  if (products.length === 0) {
+    renderEmpty(container, "Cart is empty");
+
+    if (items) {
+      items.classList.add("cart-page__toggle-min-width");
+    }
 
     return;
   }
 
-  DOM.items.classList.remove("cart-page__toggle-min-width");
+  if (items) {
+    items.classList.remove("cart-page__toggle-min-width");
+  }
 
   const markup = products.map(generateCartMarkup).join("");
 
-  DOM.container.innerHTML = markup;
-};
-
-export const showEmptyCart = function () {
-  const wrapper = document.querySelector(".cart-page__item-wrapp");
-  const emptyEl = document.createElement("div");
-  emptyEl.classList.add("cart-page__empty");
-  emptyEl.innerHTML = ` <span class="text-body-xl">!!! Cart is empty !!!</span><a class="btn btn--primary" href="shop.html">Got to products</a>`;
-  wrapper.appendChild(emptyEl);
+  container.innerHTML = markup;
 };
 
 export const handleQuantity = function (handler) {
-  delegate(DOM.container, "click", ".cart-page__quantity-btn", (el) => {
-    const id = el.dataset.id;
-    const action = el.dataset.action;
+  const container = DOM.cart.container();
+  if (!container) return;
+
+  delegate(container, "click", ".cart-page__quantity-btn", (el) => {
+    const { id, action } = el.dataset;
 
     handler(id, action);
   });
 };
 
 export const updateCartQuantity = function (id, value) {
-  const input = document.querySelector(
+  const container = DOM.cart.container();
+  if (!container) return;
+
+  const input = container.querySelector(
     `.cart-page__quantity-input[data-id="${id}"]`,
   );
 
@@ -118,17 +114,11 @@ export const updateCartQuantity = function (id, value) {
   input.value = value;
 };
 
-export const handleInputQuantity = function (handler) {
-  delegate(DOM.container, "change", ".cart-page__quantity-input", (el) => {
-    const id = el.dataset.id;
-    const quantity = el.value;
-
-    handler(id, quantity);
-  });
-};
-
 export const handleRemoveFromCart = function (handler) {
-  delegate(DOM.container, "click", ".cart-page__remove-btn", (el) => {
+  const container = DOM.cart.container();
+  if (!container) return;
+
+  delegate(container, "click", ".cart-page__remove-btn", (el) => {
     const id = el.dataset.id;
 
     handler(id);
@@ -136,34 +126,53 @@ export const handleRemoveFromCart = function (handler) {
 };
 
 export const removeItem = function (id) {
-  const item = document.querySelector(`.cart-page__item[data-id="${id}"]`);
+  const container = DOM.cart.container();
+  if (!container) return;
+
+  const item = container.querySelector(`.cart-page__item[data-id="${id}"]`);
 
   if (item) item.remove();
 };
 
 export const updateItemSubtotal = function (id, value) {
-  const item = document
-    .querySelector(`.cart-page__quantity-input[data-id="${id}"]`)
-    ?.closest(".cart-page__item");
+  const container = DOM.cart.container();
+  if (!container) return;
+
+  const item = container.querySelector(`.cart-page__item[data-id="${id}"]`);
 
   const subtotalEl = item?.querySelector(".cart-page__subtotal-value");
 
-  subtotalEl.textContent = formatPrice(value);
+  if (subtotalEl) {
+    subtotalEl.textContent = formatPrice(value);
+  }
 };
 
-export const updateSummary = function (type, value) {
-  const el = DOM[type];
+export const updateSummary = function (summary) {
+  if (!summary) return;
 
-  if (!el) return;
+  const container = DOM.cart.container();
+  if (!container) return;
 
-  el.textContent = formatPrice(value);
+  const { subtotal, total, tax, shipping } = summary;
+
+  const setText = (el, value) => el && (el.textContent = value);
+
+  setText(DOM.cart.subtotal(), formatPrice(subtotal));
+
+  setText(DOM.cart.subtotal(), formatPrice(subtotal));
+  setText(DOM.cart.total(), formatPrice(total));
+  setText(DOM.cart.tax(), formatPrice(tax));
+  setText(DOM.cart.shipping(), formatPrice(shipping));
 };
 
-export const handleInputValue = function (handler) {
-  delegate(DOM.container, "change", ".cart-page__quantity-input", (el) => {
+export const handleInputQuantity = function (handler) {
+  const container = DOM.cart.container();
+  if (!container) return;
+
+  delegate(container, "change", ".cart-page__quantity-input", (el) => {
     const id = el.dataset.id;
-    const value = el.value;
+    const quantity = el.value;
 
-    handler(id, value);
+    handler(id, quantity);
   });
 };

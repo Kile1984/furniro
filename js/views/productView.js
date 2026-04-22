@@ -1,12 +1,7 @@
+import { DOM } from "./dom.js";
 import icons from "url:../../assets/icons/sprite.svg";
 import { formatPrice } from "../utils/format.js";
 import { delegate } from "../utils/delegate.js";
-
-const DOM = {
-  // container: document.querySelector(".products__grid"),
-  wishListCount: document.querySelector(".header__count"),
-  cartCount: document.querySelector(".header__count-cart"),
-};
 
 // Generate product markup
 const generateProductMarkup = function (p) {
@@ -91,14 +86,18 @@ const generateBadge = function (p) {
 };
 
 // Render products
-export const renderProducts = function (container, products) {
+export const renderProducts = function (products) {
+  const container = DOM.productGrid();
+
   const markup = products.map(generateProductMarkup).join("");
 
   container.innerHTML = markup;
 };
 
 // Handle cart click
-export const handleCartClick = function (container, handler) {
+export const handleCartClick = function (handler) {
+  const container = DOM.productGrid();
+
   delegate(container, "click", ".product-card__btn", (el) => {
     const id = el.dataset.id;
     handler(id);
@@ -108,7 +107,6 @@ export const handleCartClick = function (container, handler) {
 // Button state
 export const handleCartButtonState = function (id, isInCart) {
   const btn = document.querySelector(`.product-card__btn[data-id="${id}"]`);
-
   if (!btn) return;
 
   btn.textContent = `${isInCart ? "Remove from cart" : "Add to cart"}`;
@@ -117,7 +115,9 @@ export const handleCartButtonState = function (id, isInCart) {
 };
 
 // Wishlist toggle
-export const handleToggleWishList = function (container, handler) {
+export const handleToggleWishList = function (handler) {
+  const container = DOM.productGrid();
+
   delegate(container, "click", ".product-card__action--like", (el) => {
     const id = el.dataset.id;
     handler(id, el);

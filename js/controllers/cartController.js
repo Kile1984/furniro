@@ -6,13 +6,11 @@ import {
   handleQuantity,
   updateSummary,
   handleInputQuantity,
-  updateCartQuantity,
-  updateItemSubtotal,
-  removeItem,
-  showEmptyCart,
 } from "../views/cartView.js";
+
 import { updateHeader } from "./headerController.js";
 
+// SUMMARY
 const getSummary = function () {
   return {
     subtotal: appState.cartSubtotal,
@@ -23,42 +21,21 @@ const getSummary = function () {
 };
 
 const renderSummary = function () {
-  Object.entries(getSummary()).forEach(([type, value]) => {
-    updateSummary(type, value);
-  });
+  updateSummary(getSummary());
 };
 
+// MAIN UI RENDER
 const renderUI = function () {
   renderCart(appState.cartProducts);
   updateHeader();
-
-  // const summary = {
-  //   subtotal: appState.cartSubtotal,
-  //   total: appState.cartTotal,
-  //   tax: appState.cartTax,
-  //   shipping: appState.cartShipping,
-  // };
-
-  // Object.entries(summary).forEach(([type, value]) => {
-  //   updateSummary(type, value);
-  // });
-  // updateSummary("subtotal", appState.cartSubtotal);
-  // updateSummary("total", appState.cartTotal);
-  // updateSummary("tax", appState.cartTax);
-  // updateSummary("shipping", appState.cartShipping);
+  renderSummary();
 };
+
+// CONTROLLERS
 
 const controlRemoveFromCart = function (id) {
   appState.removeFromCart(id);
-  removeItem(id);
-
-  if (appState.isCartEmpty()) {
-    showEmptyCart();
-  }
-
-  renderSummary();
-  updateHeader();
-  // renderUI();
+  renderUI();
 };
 
 const controlQuantity = function (id, act) {
@@ -69,20 +46,8 @@ const controlQuantity = function (id, act) {
   const newQuantity = product.quantity + delta;
 
   appState.updateQuantity(id, newQuantity);
-  const item = appState.getCartItemUI(id);
 
-  if (!item) {
-    removeItem(id);
-
-    if (appState.isCartEmpty()) {
-      showEmptyCart();
-    }
-  } else {
-    updateItemSubtotal(id, item.subtotal);
-    updateCartQuantity(id, newQuantity);
-  }
-  renderSummary();
-  updateHeader();
+  renderUI();
 };
 
 const controlInputQuantity = function (id, qt) {
@@ -91,10 +56,11 @@ const controlInputQuantity = function (id, qt) {
   if (!Number.isFinite(quantity) || quantity < 1) quantity = 1;
 
   appState.updateQuantity(id, quantity);
-  updateCartQuantity(id, quantity);
-  renderSummary();
-  updateHeader();
+
+  renderUI();
 };
+
+// INIT
 
 function init() {
   handleRemoveFromCart(controlRemoveFromCart);
@@ -102,7 +68,6 @@ function init() {
   handleInputQuantity(controlInputQuantity);
 
   renderUI();
-  renderSummary();
 }
 
 init();
