@@ -1,7 +1,7 @@
 const getEl = (selector) => document.querySelector(selector);
 
 export const DOM = {
-  // ROOT (kritičan)
+  // ROOT
   app: () => getEl("#app"),
 
   // PRODUCTS

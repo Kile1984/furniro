@@ -1,3 +1,9 @@
 -ROUTING (not finis)
 -SCOPED DOM (factory pattern)
 -GLOBAL EVENT LISTENER
+
+Routing ✔
+centralni event system ✔
+jasno odvojen state ✔
+render vs update ✔
+više view-ova ✔
