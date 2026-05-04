@@ -1,9 +1,18 @@
--ROUTING (not finis)
--SCOPED DOM (factory pattern)
--GLOBAL EVENT LISTENER
+PRAVA LISTA (SVE ŠTO TREBA DA URADIŠ)
+🔴 FAZA 1 — FUNDAMENT (bez ovoga ništa nema smisla)
+ Jasno odvojen state
+ Render vs Update
+ Više view-ova
 
-Routing ✔
-centralni event system ✔
-jasno odvojen state ✔
-render vs update ✔
-više view-ova ✔
+👉 Ovo je baza. Ako ovo nije stabilno → sve ostalo puca.
+
+🟠 FAZA 2 — FLOW APLIKACIJE
+ Routing (osnovni)
+ Centralni event system
+
+👉 Ovo povezuje aplikaciju u celinu.
+
+🟡 FAZA 3 — ARHITEKTURA (clean & scalable)
+ Scoped DOM (factory pattern)
+ Global Event Listener (clean verzija)
+ Routing (finish / refactor)
